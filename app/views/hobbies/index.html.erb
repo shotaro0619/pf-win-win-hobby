@@ -1,0 +1,13 @@
+<% @hobbies.each do |hobby| %>
+    <div>
+      <p>投稿ユーザー画像：
+      <%= link_to user_path(hobby.user) do %>
+        <%= attachment_image_tag hobby.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
+      <% end %>
+      </p>
+      <p>ニックネーム：<%= hobby.user.name %></p>
+      <p>趣味名：<%= hobby.name %></p>
+      <p>ジャンル：<%#= hobby.genre.name %></p>
+      <p>コメント <%= hobby.comment %></p>
+    </div>
+<% end %>

@@ -15,16 +15,28 @@ class HobbiesController < ApplicationController
   end
 
   def index
-    @hobbies = Hobby.
+    @hobbies = Hobby.all
   end
 
   def show
+    @hobby = Hobby.find(params[:id])
   end
 
   def edit
+    @hobby = Hobby.find(params[:id])
+  end
+
+  def update
+    @hobby = Hobby.find(params[:id])
+    @hobby.update(hobby_params)
+    redirect_to hobbies_path
+  # 　とりあえず
   end
 
   def destroy
+    @hobby = Hobby.find(params[:id])
+    @hobby.destroy
+    redirect_to hobbies_path
   end
 
   private

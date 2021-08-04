@@ -10,13 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_02_134048) do
+ActiveRecord::Schema.define(version: 2021_08_04_061644) do
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "hobbies", force: :cascade do |t|
     t.integer "user_id"
     t.integer "genre_id"
     t.string "name"
     t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,7 +43,7 @@ ActiveRecord::Schema.define(version: 2021_08_02_134048) do
     t.string "name"
     t.string "nickname"
     t.string "category"
-    t.string "profile_image_url"
+    t.string "profile_image_id"
     t.text "introduction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
