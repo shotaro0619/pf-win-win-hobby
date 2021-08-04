@@ -1,7 +1,7 @@
 <% if @user.id == current_user.id %>
  <h1>マイページ</h1>
 <% else %>
- <h1>user詳細</h1>
+ <h1><%= @user.nickname %>さんのページ</h1>
 <% end %>
 
 <% if @user.id == current_user.id %>
@@ -16,18 +16,31 @@
   <% end %>
 <% end %>
 
+<% unless @user.id == current_user.id %>
+  <% if @isRoom == true %>
+    <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg">チャットへ</a>
+  <% else %>
+    <%= form_for @room do |f| %>
+      <%= fields_for @entry do |e| %>
+        <%= e.hidden_field :user_id, value: @user.id %>
+      <% end %>
+      <%= f.submit "チャットを始める", class:"btn btn-primary btn-lg user-show-chat"%>
+    <% end %>
+  <% end %>
+<% end %>
+
 <div class="profile-container">
   <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
   <h3 class="profile-name"><%= @user.nickname %></h3>
   <div><%= @user.introduction %></div>
-  <%= link_to @user.followings.count, user_followings_path(@user) %>
-  <%= link_to @user.followers.count, user_followers_path(@user) %>
+  <div>フォロー<%= link_to @user.followings.count, user_followings_path(@user) %></div>
+  <div>フォロワー<%= link_to @user.followers.count, user_followers_path(@user) %></div>
 </div>
 
 <% @hobbies.each do |hobby| %>
   <div>
     <p>投稿ユーザー画像：<%= attachment_image_tag hobby.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></p>
-    <p>ニックネーム：<%= hobby.user.name %></p>
+    <p>ニックネーム：<%= hobby.user.nickname %></p>
     <p>趣味名：<%= hobby.name %></p>
     <p>ジャンル：<%#= hobby.genre.name %></p>
     <p>コメント <%= hobby.comment %></p>
