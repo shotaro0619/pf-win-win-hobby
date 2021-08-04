@@ -42,7 +42,7 @@ class HobbiesController < ApplicationController
   private
 
   def hobby_params
-    params.require(:hobby).permit(:name, :comment)
+    params.require(:hobby).permit(:name, :comment, :genre)
   end
 
 end

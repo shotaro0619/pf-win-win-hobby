@@ -8,7 +8,8 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
   選ぶ
 </button>
-
+    <%= f.label :ジャンル %>
+    <%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "--選択して下さい--" %>
 <!-- Modal -->
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -20,6 +21,15 @@
         </button>
       </div>
       <div class="modal-body">
+
+
+        <%#= form_with model: @hobby, local:true do |f| %>
+          <%#= f.collection_check_boxes :genre_id, Genre.all, :id, :name %>
+        <%# end %>
+
+        <%#= f.label :genre, "ジャンル：" %>
+        <%#= f.radio_button :genre, "楽器" %>
+        <%#= f.radio_button :genre, "音楽ライブ" %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
