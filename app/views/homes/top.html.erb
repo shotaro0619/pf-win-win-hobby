@@ -1,4 +1,13 @@
-<div class="main-container">
-  <div><%= link_to "新規登録", new_user_registration_path %></div>
-  <div><%= link_to "ログイン", new_user_session_path %></div>
+<div class="container top-page">
+  <div class="row">
+    <div class="main-container col">
+
+    </div>
+    <div class="col">
+      <div class="top-theme">趣味を通じて<br>
+      <span>最高の仲間</span><br>
+      に出会ってみませんか？</div>
+      <div class="btn btn-lg btn-gradient shadow my-3 rounded-pill"><%= link_to "はじめる", new_user_registration_path %></div>
+      <div>アカウントをお持ちの方は<%= link_to "こちら", new_user_session_path %></div>
+  </div>
 </div>

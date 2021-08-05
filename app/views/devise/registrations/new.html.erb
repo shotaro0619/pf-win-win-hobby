@@ -1,46 +1,49 @@
-<h2>Sign up</h2>
+<div class="sign-up">
 
-<%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+  　<div class="box rounded">
+     <div class="box-in">
+       <h2 class="text-center mb-3">新規登録</h2>
+        <div class="field text-center">
+          <%#= f.label :name, "お名前" %>
+          <%= f.text_field :name, autofocus: true , placeholder: 'お名前' %>
+        </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
-  </div>
+        <div class="field text-center">
+          <%#= f.label :nickname, "ニックネーム" %>
+          <%= f.text_field :nickname, autofocus: true, placeholder: 'ニックネーム' %>
+        </div>
+        <div class="field text-center pt-2">
+          <span><%= f.label :category, "先生or生徒：" %></span>
+          <%= f.radio_button :category, "先生" %>
+          <%= f.label :category, "先生", value: "先生" %>
+          <%= f.radio_button :category, "生徒" %>
+          <%= f.label :category, "生徒", value: "生徒" %>
+        </div>
 
-  <div class="field">
-    <%= f.label :nickname %><br />
-    <%= f.text_field :nickname, autofocus: true %>
-  </div>
-  <div class="field">
-    <span><%= f.label :category, "先生or生徒：" %></span>
-    <%= f.radio_button :category, "先生" %>
-    <%= f.label :category, "先生", value: "先生" %>
-    <%= f.radio_button :category, "生徒" %>
-    <%= f.label :category, "生徒", value: "生徒" %>
-  </div>
+        <div class="field text-center">
+          <%#= f.label :email, "メールアドレス" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス' %>
+        </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+        <div class="field text-center">
+          <%#= f.label :password, "パスワード" %>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: 'パスワード（6文字以上）' %>
+        </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+        <div class="field text-center">
+          <%#= f.label :password_confirmation, "パスワード 確認用" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'パスワード（確認用）' %>
+        </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+        <div class="actions text-center mt-3">
+          <%= f.submit "新規登録", class: "btn-outline-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+<div class="mt-5"><%= render "devise/shared/links" %></div>
+</div>

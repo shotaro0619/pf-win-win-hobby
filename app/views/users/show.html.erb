@@ -1,59 +1,84 @@
-<% if @user.id == current_user.id %>
- <h1>マイページ</h1>
-<% else %>
- <h1><%= @user.nickname %>さんのページ</h1>
-<% end %>
-
-<% if @user.category == "先生" %>
- <div>先生</div>
-<% else %>
- <div>生徒</div>
-<% end %>
-<% if @user.id == current_user.id %>
-    <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
-<% end %>
-
-<% if @user.id != current_user.id %>
-  <% if current_user.following?(@user) %>
-    <%= link_to "フォロー解除", user_relationships_path(@user.id), method: :delete %>
+<div class="row">
+  <% if @user.id == current_user.id %>
+   <h1>マイページ</h1>
   <% else %>
-    <%= link_to "フォロー", user_relationships_path(@user.id), method: :post %>
+   <h1><%= @user.nickname %>さんのページ</h1>
   <% end %>
-<% end %>
 
-<% unless @user.id == current_user.id %>
-  <% if @isRoom == true %>
-    <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg">チャットへ</a>
+  <% if @user.category == "先生" %>
+   <div>先生</div>
   <% else %>
-    <%= form_for @room do |f| %>
-      <%= fields_for @entry do |e| %>
-        <%= e.hidden_field :user_id, value: @user.id %>
-      <% end %>
-      <%= f.submit "チャットを始める", class:"btn btn-primary btn-lg user-show-chat"%>
+   <div>生徒</div>
+  <% end %>
+
+  <% if @user.id == current_user.id %>
+      <div><%= link_to "プロフィール編集", edit_user_path(@user) %></div>
+  <% end %>
+
+  <% if @user.id != current_user.id %>
+    <% if current_user.following?(@user) %>
+      <%= link_to "フォロー解除", user_relationships_path(@user.id), method: :delete %>
+    <% else %>
+      <%= link_to "フォロー", user_relationships_path(@user.id), method: :post %>
     <% end %>
   <% end %>
-<% end %>
 
-<div class="profile-container">
-  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-  <h3 class="profile-name"><%= @user.nickname %></h3>
-  <div><%= @user.introduction %></div>
-  <div><%= link_to @user.followings.count, user_followings_path(@user) %>フォロー</div>
-  <div><%= link_to @user.followers.count, user_followers_path(@user) %>フォロワー</div>
+  <% unless @user.id == current_user.id %>
+    <% if @isRoom == true %>
+      <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg">チャットへ</a>
+    <% else %>
+      <%= form_for @room do |f| %>
+        <%= fields_for @entry do |e| %>
+          <%= e.hidden_field :user_id, value: @user.id %>
+        <% end %>
+        <%= f.submit "チャットを始める", class:"btn btn-primary btn-lg user-show-chat"%>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>
 
-<% @hobbies.each do |hobby| %>
-  <div>
-    <p>投稿ユーザー画像：<%= attachment_image_tag hobby.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></p>
-    <p>ニックネーム：<%= hobby.user.nickname %></p>
-    <p>趣味名：<%= hobby.name %></p>
-    <p>ジャンル：<%= hobby.genre.name  if hobby.genre %></p>
-    <p>コメント <%= hobby.comment %></p>
-    <% if @user == current_user %>
-      <%= link_to "編集", edit_hobby_path(hobby.id), class:"btn btn-sm btn-success" %>
-    <% end %>
-    <% if @user == current_user %>
-      <%= link_to "投稿を消す", hobby_path(hobby), class:"btn btn-sm btn-danger", method: :delete %>
+<div class="container">
+  <div class="col-xs-offset-3 col-xs-6">
+    <div class="profile-container text-center">
+      <%= attachment_image_tag @user, :profile_image, :fill, 300, 300, format: 'jpeg', fallback: "no_image.jpg" %>
+      <h3 class="profile-name m-5"><%= @user.nickname %></h3>
+    </div>
+      <div class="introduction"><%= @user.introduction %></div>
+      <div class="row follor">
+        <div class="following"><%= link_to @user.followings.count, user_followings_path(@user) %>フォロー</div>
+        <div><%= link_to @user.followers.count, user_followers_path(@user) %>フォロワー</div>
+      </div>
+    </div>
+</div>
+
+<div class="container">
+  <div class="col-xs-offset-1 col-xs-10">
+    <% @hobbies.each do |hobby| %>
+          <div class="row">
+            <div class="col-2 text-center">
+              <p>
+                <%= link_to user_path(hobby.user) do %>
+                  <%= attachment_image_tag hobby.user, :profile_image, :fill, 110, 110, fallback: "no_image.jpg", class: "prof_image" %>
+                <% end %><br>
+                <span class="prof_name"><%= hobby.user.nickname%></span>
+              </p>
+              </div>
+              <div class="hobby col-2 hobby_name">
+              <p>趣味名：<%= hobby.name %></p>
+              <p>ジャンル：<%= hobby.genre.name if hobby.genre %></p>
+              </div>
+            <div class="col-8 row">
+                <p class="ml-4 comment rounded"><%= hobby.comment %></p>
+                <div class="button">
+                  <% if @user == current_user %>
+                    <%= link_to "編集", edit_hobby_path(hobby.id), class:"btn btn-success mb-3" %><br>
+                    <%= link_to "投稿を消す", hobby_path(hobby), class:"btn btn-danger", method: :delete %>
+                  <% end %>
+                </div>
+            </div>
+          </div>
+
+        <hr>
     <% end %>
   </div>
-<% end %>
+</div>

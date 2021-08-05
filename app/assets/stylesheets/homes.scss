@@ -3,7 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .main-container {
-  background-image: url('friends.jpg');
-  height: 800px;
-  background-size:cover;
+  background-image: url('top.jpg');
+  height: 600px;
+  margin: 70px;
+  background-size:contain;
+  background-repeat: no-repeat;
+
+}
+
+.top-theme {
+  margin-top: 150px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.btn-gradient {
+  background-color: #e2eba3;
+}
+
+.shadow {
+  color: #fff !important;
 }

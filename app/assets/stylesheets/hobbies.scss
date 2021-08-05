@@ -1,3 +1,32 @@
 // Place all the styles related to the Hobbies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.comment {
+  width: 700px;
+  height: 140px;
+  border: 1px solid #b3d0d7;
+  text-align: justify;
+}
+
+.post-title {
+ margin: 30px;
+}
+
+.prof_image {
+  border-radius: 50%;
+}
+
+.prof_name {
+  margin-left: 5px;
+}
+
+.hobby {
+  margin-top: 30px;
+  margin-left: 15px;
+}
+
+.hobby_name {
+  margin-bottom: 20px;
+}

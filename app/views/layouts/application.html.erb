@@ -10,37 +10,47 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <li>
-      <%= link_to 'マイページ', user_path(current_user.id) %>
-      </li>
+    <nav class="navbar navbar-dark  justify-content-end">
+      <div>
+        <ul class="navbar-nav ml-auto">
+          <% if user_signed_in? %>
+           <div class="row">
+            <li class="nav-item active mr-3">
+            <%= link_to 'マイページ', user_path(current_user.id), class: "nav-link" %>
+            </li>
 
-      <li>
-      <%= link_to '投稿一覧', hobbies_path %>
-      </li>
+            <li class="nav-item active mr-3">
+            <%= link_to '投稿一覧', hobbies_path, class: "nav-link" %>
+            </li>
 
-      <li>
-        <%= link_to '投稿フォーム', new_hobby_path %>
-      </li>
+            <li class="nav-item active mr-3">
+              <%= link_to '投稿フォーム', new_hobby_path, class: "nav-link" %>
+            </li>
 
-      <li>
-        <%= link_to 'ジャンル一覧', genres_path %>
-      </li>
+            <li class="nav-item active mr-3">
+              <%= link_to 'ジャンル一覧', genres_path, class: "nav-link" %>
+            </li>
 
-      <li>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to "about", homes_about_path %>
-      </li>
-      <li>
-        <%= link_to "新規登録", new_user_registration_path %>
-      </li>
-      <li>
-        <%= link_to "ログイン", new_user_session_path %>
-      </li>
-    <% end %>
+            <li class="nav-item active mr-3">
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+            </li>
+           </div>
+          <% else %>
+           <div class="row">
+            <li class="nav-item active mr-3">
+              <%= link_to "about", homes_about_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item active mr-3">
+              <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item active mr-3">
+              <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+            </li>
+           </div>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
