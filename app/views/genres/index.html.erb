@@ -1,1 +1,62 @@
 <h1>ジャンル一覧</h1>
+
+<h2 class="category mt-5">音楽系</h2>
+<% @genres_1.each do |genre| %>
+ <tr>・<%= genre.name %></tr>
+<% end %>
+
+<h2 class="category mt-5">鑑賞系</h2>
+<% @genres_2.each do |genre| %>
+ <tr>・<%= genre.name %></tr>
+<% end %>
+
+<h2 class="category mt-5">美容・健康</h2>
+<% @genres_3.each do |genre| %>
+ <tr>・<%= genre.name %></tr>
+<% end %>
+
+<h2 class="category mt-5">旅行・お出かけ</h2>
+<% @genres_4.each do |genre| %>
+ <tr>・<%= genre.name %></tr>
+<% end %>
+
+<h2 class="category mt-5">スポーツ系</h2>
+<% @genres_5.each do |genre| %>
+ <tr>・<%= genre.name %></tr>
+<% end %>
+
+<h2 class="category mt-5">自然・アウトドア系</h2>
+<% @genres_6.each do |genre| %>
+ <tr>・<%= genre.name %></tr>
+<% end %>
+
+<h2 class="category mt-5">ゲームボードゲーム</h2>
+<% @genres_7.each do |genre| %>
+ <tr>・<%= genre.name %></tr>
+<% end %>
+
+<h2 class="category mt-5">作る系</h2>
+<% @genres_8.each do |genre| %>
+ <tr>・<%= genre.name %></tr>
+<% end %>
+
+<h2 class="category mt-5">ペット・育てる系</h2>
+<% @genres_9.each do |genre| %>
+ <tr>・<%= genre.name %></tr>
+<% end %>
+
+<h2 class="category mt-5">スキル系</h2>
+<% @genres_10.each do |genre| %>
+ <tr>・<%= genre.name %></tr>
+<% end %>
+
+<h2 class="category mt-5">乗り物系</h2>
+<% @genres_11.each do |genre| %>
+ <tr>・<%= genre.name %></tr>
+<% end %>
+
+<h2 class="category mt-5">その他</h2>
+<div class="mb-5"><% @genres_12.each do |genre| %>
+       <tr>・<%= genre.name %></tr>
+     <% end %>
+</div>

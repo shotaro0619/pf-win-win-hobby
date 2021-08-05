@@ -4,15 +4,20 @@
  <h1><%= @user.nickname %>さんのページ</h1>
 <% end %>
 
+<% if @user.category == "先生" %>
+ <div>先生</div>
+<% else %>
+ <div>生徒</div>
+<% end %>
 <% if @user.id == current_user.id %>
     <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
 <% end %>
 
 <% if @user.id != current_user.id %>
   <% if current_user.following?(@user) %>
-    <%= link_to "Unfollow", user_relationships_path(@user.id), method: :delete %>
+    <%= link_to "フォロー解除", user_relationships_path(@user.id), method: :delete %>
   <% else %>
-    <%= link_to "Follow", user_relationships_path(@user.id), method: :post %>
+    <%= link_to "フォロー", user_relationships_path(@user.id), method: :post %>
   <% end %>
 <% end %>
 
@@ -33,8 +38,8 @@
   <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
   <h3 class="profile-name"><%= @user.nickname %></h3>
   <div><%= @user.introduction %></div>
-  <div>フォロー<%= link_to @user.followings.count, user_followings_path(@user) %></div>
-  <div>フォロワー<%= link_to @user.followers.count, user_followers_path(@user) %></div>
+  <div><%= link_to @user.followings.count, user_followings_path(@user) %>フォロー</div>
+  <div><%= link_to @user.followers.count, user_followers_path(@user) %>フォロワー</div>
 </div>
 
 <% @hobbies.each do |hobby| %>
@@ -42,13 +47,13 @@
     <p>投稿ユーザー画像：<%= attachment_image_tag hobby.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></p>
     <p>ニックネーム：<%= hobby.user.nickname %></p>
     <p>趣味名：<%= hobby.name %></p>
-    <p>ジャンル：<%#= hobby.genre.name %></p>
+    <p>ジャンル：<%= hobby.genre.name  if hobby.genre %></p>
     <p>コメント <%= hobby.comment %></p>
     <% if @user == current_user %>
-      <%= link_to "Edit", edit_hobby_path(hobby.id), class:"btn btn-sm btn-success" %>
+      <%= link_to "編集", edit_hobby_path(hobby.id), class:"btn btn-sm btn-success" %>
     <% end %>
     <% if @user == current_user %>
-      <%= link_to "Destroy", hobby_path(hobby), class:"btn btn-sm btn-danger", method: :delete %>
+      <%= link_to "投稿を消す", hobby_path(hobby), class:"btn btn-sm btn-danger", method: :delete %>
     <% end %>
   </div>
 <% end %>

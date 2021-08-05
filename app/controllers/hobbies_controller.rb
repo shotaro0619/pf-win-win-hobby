@@ -1,8 +1,5 @@
 class HobbiesController < ApplicationController
 
-  def index
-  end
-
   def new
     @hobby = Hobby.new
   end
@@ -42,7 +39,7 @@ class HobbiesController < ApplicationController
   private
 
   def hobby_params
-    params.require(:hobby).permit(:name, :comment, :genre)
+    params.require(:hobby).permit(:name, :comment, :genre_id)
   end
 
 end

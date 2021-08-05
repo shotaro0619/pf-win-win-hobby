@@ -7,7 +7,7 @@
       </p>
       <p>ニックネーム：<%= hobby.user.name %></p>
       <p>趣味名：<%= hobby.name %></p>
-      <p>ジャンル：<%#= hobby.genre.name %></p>
+      <p>ジャンル：<%= hobby.genre.name if hobby.genre %></p>
       <p>コメント <%= hobby.comment %></p>
     </div>
 <% end %>
