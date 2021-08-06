@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-dark  justify-content-end">
+    <nav class="navbar navbar-light  justify-content-end">
       <div>
         <ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
@@ -18,9 +18,17 @@
             <li class="nav-item active mr-3">
             <%= link_to 'マイページ', user_path(current_user.id), class: "nav-link" %>
             </li>
-
-            <li class="nav-item active mr-3">
-            <%= link_to '投稿一覧', hobbies_path, class: "nav-link" %>
+            <li class="nav-item dropdown">
+              <label class=" dropdown-toggle nav-item active mr-3 mt-2" id="dropdownMenu1" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">
+                投稿一覧
+              </label>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                <%= link_to '全投稿一覧', hobbies_path, class: "dropdown-item" %>
+                </li>
+                <li><%= link_to "先生側の投稿", hobbies_teacher_path, class: "dropdown-item" %></li>
+                <li><%= link_to "生徒側の投稿", hobbies_student_path, class: "dropdown-item" %></li>
+              </ul>
             </li>
 
             <li class="nav-item active mr-3">
