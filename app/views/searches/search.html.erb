@@ -1,0 +1,53 @@
+<div class="container back">
+  <div class="col-xs-12 bg-mask">
+    <% if @model == "user" %>
+    <h2>'<%= @value %>' をニックネームに含む会員一覧</h2>
+    <table class="table table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Introduction</th>
+            </tr>
+        </thead>
+    <% @datas.each do |user| %>
+        <tbody>
+            <tr>
+                <td>
+                    <%= attachment_image_tag(user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg", size:'40x40') %>
+                </td>
+                <td>
+                    <%= link_to user.nickname, user_path(user.id) %>
+                </td>
+                <td>
+                    <%= user.introduction %>
+                </td>
+            </tr>
+        </tbody>
+    <% end %>
+    <% elsif @model == "hobby" %>
+     <h2>趣味名 '<%= @value %>'の投稿一覧</h2>
+    
+        <% @datas.each do |hobby| %>
+              <div class="row">
+                <div class="col-2 text-center">
+                  <p>
+                    <%= link_to user_path(hobby.user) do %>
+                      <%= attachment_image_tag hobby.user, :profile_image, :fill, 110, 110, fallback: "no_image.jpg", class: "prof_image" %>
+                    <% end %><br>
+                    <span class="prof_name"><%= hobby.user.nickname%></span>
+                  </p>
+                  </div>
+                  <div class="hobby col-2 hobby_name">
+                  <p>趣味名：<%= hobby.name %></p>
+                  <p>ジャンル：<%= hobby.genre.name if hobby.genre %></p>
+                  </div>
+                <div class="col-6">
+                  <p class="ml-4 comment rounded"><%= hobby.comment %></p>
+                </div>
+              </div>
+            <hr>
+        <% end %>
+    <% end %>
+  </div>
+</div>

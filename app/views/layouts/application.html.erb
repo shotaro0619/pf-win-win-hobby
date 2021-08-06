@@ -34,6 +34,12 @@
             <li class="nav-item active mr-3">
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
             </li>
+            <%= form_with url:search_path, method: :get, local: true do |f| %>
+              <%= f.text_field :value %>
+              <%= f.select :model, options_for_select({ "User" => "user", "趣味名" => "hobby" }) %>
+              <%#= :how, options_for_select({ "完全一致" => "perfect_match", "前方一致" => "forward", "後方一致" => "backward", "部分一致" => "partical" }) %>
+                <%= f.submit :"検索", class: "btn btn-primary" %>
+            <% end %>
            </div>
           <% else %>
            <div class="row">
