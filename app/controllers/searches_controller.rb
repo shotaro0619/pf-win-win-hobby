@@ -2,7 +2,6 @@ class SearchesController < ApplicationController
   def search
     @value = params[:value]
     @model = params[:model]
-    @how = params[:how]
     @datas = search_for('partical', @model, @value)
   end
 
@@ -14,6 +13,8 @@ class SearchesController < ApplicationController
       User.where("nickname LIKE ?", "%#{value}%")
     elsif model == 'hobby'
       Hobby.where("name LIKE ?", "%#{value}%")
+    elsif model == 'genre'
+      Genre.where("name LIKE ?", "%#{value}%")
     end
   end
 

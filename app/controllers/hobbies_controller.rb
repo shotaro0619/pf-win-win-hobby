@@ -12,7 +12,15 @@ class HobbiesController < ApplicationController
   end
 
   def index
-    @hobbies = Hobby.all
+    @hobbies = Hobby.all.order(created_at: :desc)
+  end
+  
+  def teacher
+    @hobbies = Hobby.all.order(created_at: :desc)
+  end
+  
+  def student
+    @hobbies = Hobby.all.order(created_at: :desc)
   end
 
   def show
@@ -27,7 +35,6 @@ class HobbiesController < ApplicationController
     @hobby = Hobby.find(params[:id])
     @hobby.update(hobby_params)
     redirect_to hobbies_path
-  # 　とりあえず
   end
 
   def destroy

@@ -26,8 +26,8 @@
         </tbody>
     <% end %>
     <% elsif @model == "hobby" %>
-     <h2>趣味名 '<%= @value %>'の投稿一覧</h2>
-    
+     <h2>趣味名 <span class="hobby-name"><%= @value %></span>の投稿一覧</h2>
+
         <% @datas.each do |hobby| %>
               <div class="row">
                 <div class="col-2 text-center">
@@ -43,11 +43,17 @@
                   <p>ジャンル：<%= hobby.genre.name if hobby.genre %></p>
                   </div>
                 <div class="col-6">
-                  <p class="ml-4 comment rounded"><%= hobby.comment %></p>
+                  <p class="ml-4 comment rounded comment-box"><%= hobby.comment %></p>
                 </div>
               </div>
             <hr>
         <% end %>
+
+    <% elsif @model == "genre" %>
+       <h2>趣味のジャンル が'<%= @value %>'の投稿一覧</h2>
+       <% @datas.each do |genre| %>
+       　<p>ジャンル：<%= genre.name  %></p>
+       <% end %>
     <% end %>
   </div>
 </div>
