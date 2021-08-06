@@ -1,40 +1,48 @@
-<div class="row">
-  <% if @user.id == current_user.id %>
-   <h1>マイページ</h1>
-  <% else %>
-   <h1><%= @user.nickname %>さんのページ</h1>
-  <% end %>
-
-  <% if @user.category == "先生" %>
-   <div>先生</div>
-  <% else %>
-   <div>生徒</div>
-  <% end %>
-
-  <% if @user.id == current_user.id %>
-      <div><%= link_to "プロフィール編集", edit_user_path(@user) %></div>
-  <% end %>
-
-  <% if @user.id != current_user.id %>
-    <% if current_user.following?(@user) %>
-      <%= link_to "フォロー解除", user_relationships_path(@user.id), method: :delete %>
-    <% else %>
-      <%= link_to "フォロー", user_relationships_path(@user.id), method: :post %>
-    <% end %>
-  <% end %>
-
-  <% unless @user.id == current_user.id %>
-    <% if @isRoom == true %>
-      <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg">チャットへ</a>
-    <% else %>
-      <%= form_for @room do |f| %>
-        <%= fields_for @entry do |e| %>
-          <%= e.hidden_field :user_id, value: @user.id %>
-        <% end %>
-        <%= f.submit "チャットを始める", class:"btn btn-primary btn-lg user-show-chat"%>
+<div class="container mypage-top">
+  <div class="row">
+    <div class="col-4">
+      <% if @user.id == current_user.id %>
+       <h1>マイページ</h1>
+      <% else %>
+       <h1><%= @user.nickname %>さんのページ</h1>
       <% end %>
-    <% end %>
-  <% end %>
+    </div>
+
+    <div class="col-4 text-center user-category">
+      <% if @user.category == "先生" %>
+       <div>先生</div>
+      <% else %>
+       <div>生徒</div>
+      <% end %>
+    </div>
+    <div class="col-4 text-right">
+        <% if @user.id == current_user.id %>
+            <div><%= link_to "プロフィール編集", edit_user_path(@user) %></div>
+        <% end %>
+        <div class="row">
+            <% if @user.id != current_user.id %>
+              <% if current_user.following?(@user) %>
+                <%= link_to "フォロー解除", user_relationships_path(@user.id), method: :delete %>
+              <% else %>
+                <%= link_to "フォロー", user_relationships_path(@user.id), method: :post %>
+              <% end %>
+            <% end %>
+
+            <% unless @user.id == current_user.id %>
+              <% if @isRoom == true %>
+                <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary">チャットへ</a>
+              <% else %>
+                <%= form_for @room do |f| %>
+                  <%= fields_for @entry do |e| %>
+                    <%= e.hidden_field :user_id, value: @user.id %>
+                  <% end %>
+                  <%= f.submit "チャットを始める", class:"btn btn-primary user-show-chat"%>
+                <% end %>
+              <% end %>
+            <% end %>
+        </div>
+    </div>
+  </div>
 </div>
 
 <div class="container">

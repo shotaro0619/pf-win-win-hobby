@@ -1,26 +1,2 @@
 <h3 class="post-title text-center">全投稿一覧</h3>
-<div class="container">
-  <div class="col-xs-offset-1 col-xs-10">
-    <% @hobbies.each do |hobby| %>
-          <div class="row">
-            <div class="col-2 text-center">
-              <p>
-                <%= link_to user_path(hobby.user) do %>
-                  <%= attachment_image_tag hobby.user, :profile_image, :fill, 110, 110, fallback: "no_image.jpg", class: "prof_image" %>
-                <% end %><br>
-                <span class="prof_name"><%= hobby.user.nickname%></span>
-              </p>
-              </div>
-              <div class="hobby col-2 hobby_name">
-              <p>趣味名：<%= hobby.name %></p>
-              <p>ジャンル：<%= hobby.genre.name if hobby.genre %></p>
-              </div>
-            <div class="col-6">
-              <p class="ml-4 comment rounded"><%= hobby.comment %></p>
-            </div>
-          </div>
-
-        <hr>
-    <% end %>
-  </div>
-</div>
+<%= render 'hobbies/index', hobbies: @hobbies %>

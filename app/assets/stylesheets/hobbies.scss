@@ -30,3 +30,65 @@
 .hobby_name {
   margin-bottom: 20px;
 }
+
+.hobby-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  border: 2px solid #b3d0d7;
+  width: 500px;
+  margin-left: 300px;
+  height: 500px;
+  box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.6);
+  padding: 50px;
+}
+
+.music {
+  color: #ff6c94;
+}
+
+.view {
+  color: #1760a0;
+}
+
+.health {
+  color: #92cb97;
+}
+
+.trip {
+  color: #871900;
+}
+
+.sports {
+  color: #f0821e;
+}
+
+.nature {
+  color: #339900;
+}
+
+.game {
+  color: #de4d4d;
+}
+
+.make {
+  color: #9944cc;
+}
+
+.pets {
+  color: #3aacad;
+}
+
+.skill {
+  color: #ffbf1f;
+}
+
+.vehicle {
+  color: #432c02;
+}
+
+.others {
+  color: #ab0f50;
+}
