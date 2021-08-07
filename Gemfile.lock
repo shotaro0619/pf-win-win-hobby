@@ -335,7 +335,11 @@ DEPENDENCIES
   rails (~> 5.2.5)
   refile!
   refile-mini_magick
+  rubocop
   rubocop-airbnb
+  rubocop-performance
+  rubocop-rails
+  rubocop-rspec
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
