@@ -23,6 +23,7 @@
   width: 500px;
   border: 1px solid #b3d0d7;
   box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.6);
+  background-color: #ffffff;
 }
 
 .sign-up{
@@ -56,6 +57,7 @@
   box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.6);
   height: 300px;
   padding-top: 60px;
+  background-color: #ffffff;
 }
 
 body {
@@ -64,4 +66,18 @@ body {
 
 .comment-box {
   background-color: #ffffff;
+}
+
+.box-2 {
+  width: 500px;
+  border: 1px solid #b3d0d7;
+  box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.6);
+  height: 400px;
+  padding-top: 60px;
+  background-color: #ffffff;
+}
+
+nav {
+  border-top: 3px solid;
+  border-bottom: 3px solid;
 }

@@ -1,7 +1,8 @@
-<%- if controller_name != 'sessions' %>
-  アカウントをお持ちの方は<%= link_to "こちら", new_session_path(resource_name) %><br />
-<% end %>
-
+<div class="mb-4">
+  <%- if controller_name != 'sessions' %>
+    アカウントをお持ちの方は<%= link_to "こちら", new_session_path(resource_name) %><br />
+  <% end %>
+</div>
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   アカウントをお持ちでない方は<%= link_to "こちら", new_registration_path(resource_name) %><br />
 <% end %>

@@ -1,6 +1,6 @@
 <div class="container mypage-top">
   <div class="row">
-    <div class="col-4">
+    <div class="col-4 font-family">
       <% if @user.id == current_user.id %>
        <h1>マイページ</h1>
       <% else %>
@@ -8,11 +8,11 @@
       <% end %>
     </div>
 
-    <div class="col-4 text-center user-category">
+    <div class="col-4 text-center user-category font-family">
       <% if @user.category == "先生" %>
-       <div>先生</div>
+       <div><i class="far fa-thumbs-up"></i>先生</div>
       <% else %>
-       <div>生徒</div>
+       <div><i class="far fa-hand-paper"></i>生徒</div>
       <% end %>
     </div>
     <div class="col-4 text-right">
@@ -49,7 +49,7 @@
   <div class="col-xs-offset-3 col-xs-6">
     <div class="profile-container text-center">
       <%= attachment_image_tag @user, :profile_image, :fill, 300, 300, format: 'jpeg', fallback: "no_image.jpg" %>
-      <h3 class="profile-name m-5"><%= @user.nickname %></h3>
+      <h3 class="profile-name m-5 font-family"><%= @user.nickname %></h3>
     </div>
       <div class="introduction comment-box"><%= @user.introduction %></div>
       <div class="row follor">
