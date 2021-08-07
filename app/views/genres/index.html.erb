@@ -3,62 +3,99 @@
 
   <div class="category mt-5 music">音楽系</div>
   <% @genres_1.each do |genre| %>
-   <tr>・<%= link_to genre.name, search_path(value: genre.name, model: 'hobby') %></tr>
+   <tr>
+    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+   </tr>
   <% end %>
 
   <div class="category mt-5 view">鑑賞系</div>
   <% @genres_2.each do |genre| %>
-   <tr>・<%= genre.name %></tr>
+   <tr>
+    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+   </tr>
   <% end %>
 
   <div class="category mt-5 health">美容・健康</div>
   <% @genres_3.each do |genre| %>
-   <tr>・<%= genre.name %></tr>
+   <tr>
+    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+   </tr>
   <% end %>
 
   <div class="category mt-5 trip">旅行・お出かけ</div>
   <% @genres_4.each do |genre| %>
-   <tr>・<%= genre.name %></tr>
+   <tr>
+    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+   </tr>
   <% end %>
 
   <div class="category mt-5 sports">スポーツ系</div>
   <% @genres_5.each do |genre| %>
-   <tr>・<%= genre.name %></tr>
+   <tr>
+    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+   </tr>
   <% end %>
 
   <div class="category mt-5 nature">自然・アウトドア系</div>
   <% @genres_6.each do |genre| %>
-   <tr>・<%= genre.name %></tr>
+   <tr>
+    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+   </tr>
   <% end %>
 
   <div class="category mt-5 game">ゲームボードゲーム</div>
   <% @genres_7.each do |genre| %>
-   <tr>・<%= genre.name %></tr>
+   <tr>
+    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+   </tr>
   <% end %>
 
   <div class="category mt-5 make">作る系</div>
   <% @genres_8.each do |genre| %>
-   <tr>・<%= genre.name %></tr>
+   <tr>
+    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+   </tr>
   <% end %>
 
   <div class="category mt-5 pets">ペット・育てる系</div>
   <% @genres_9.each do |genre| %>
-   <tr>・<%= genre.name %></tr>
+   <tr>
+    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+   </tr>
   <% end %>
 
   <div class="category mt-5 skill">スキル系</div>
   <% @genres_10.each do |genre| %>
-   <tr>・<%= genre.name %></tr>
+   <tr>
+    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+   </tr>
   <% end %>
 
   <div class="category mt-5 vehicle">乗り物系</div>
   <% @genres_11.each do |genre| %>
-   <tr>・<%= genre.name %></tr>
+   <tr>
+    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+   </tr>
   <% end %>
 
   <div class="category mt-5 others">その他</div>
-  <div class="mb-5"><% @genres_12.each do |genre| %>
-         <tr>・<%= genre.name %></tr>
-       <% end %>
+  <div class="mb-5">
+   <% @genres_12.each do |genre| %>
+    <tr>
+    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+   </tr>
+   <% end %>
   </div>
 </div>

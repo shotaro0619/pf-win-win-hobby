@@ -1,32 +1,15 @@
 <div class="container back">
   <div class="col-xs-12 bg-mask">
-    <% if @model == "user" %>
-    <h2>'<%= @value %>' をニックネームに含む会員一覧</h2>
-    <table class="table table-hover">
-        <thead class="thead-light">
-            <tr>
-                <th></th>
-                <th>Name</th>
-                <th>Introduction</th>
-            </tr>
-        </thead>
-    <% @datas.each do |user| %>
-        <tbody>
-            <tr>
-                <td>
-                    <%= attachment_image_tag(user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg", size:'40x40') %>
-                </td>
-                <td>
-                    <%= link_to user.nickname, user_path(user.id) %>
-                </td>
-                <td>
-                    <%= user.introduction %>
-                </td>
-            </tr>
-        </tbody>
-    <% end %>
-    <% elsif @model == "hobby" %>
-     <h2>趣味名 <span class="hobby-name"><%= @value %></span>の投稿一覧</h2>
+
+     <h2>
+         <% if @model == 'user' %>
+           <div>ニックネームに<span class="hobby-name"><%= @value %></span>を含む会員の投稿一覧</div>
+         <% elsif @model == 'hobby' %>
+           <div>趣味名が<span class="hobby-name"><%= @value %></span>の投稿一覧</div>
+         <% else %>
+           <div>趣味のジャンルが<span class="hobby-name"><%= @value %></span>の投稿一覧</div>
+         <% end %>
+     </h2>
 
         <% @datas.each do |hobby| %>
               <div class="row">
@@ -48,12 +31,5 @@
               </div>
             <hr>
         <% end %>
-
-    <% elsif @model == "genre" %>
-       <h2>趣味のジャンル が'<%= @value %>'の投稿一覧</h2>
-       <% @datas.each do |genre| %>
-       　<p>ジャンル：<%= genre.name  %></p>
-       <% end %>
-    <% end %>
   </div>
 </div>

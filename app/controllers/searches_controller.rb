@@ -10,11 +10,11 @@ class SearchesController < ApplicationController
 
   def partical(model, value)
     if model == 'user'
-      User.where("nickname LIKE ?", "%#{value}%")
+      Hobby.where(user_id: User.where("nickname LIKE ?", "%#{value}%").pluck(:id))
     elsif model == 'hobby'
       Hobby.where("name LIKE ?", "%#{value}%")
     elsif model == 'genre'
-      Genre.where("name LIKE ?", "%#{value}%")
+      Genre.find_by(name:value).hobbies
     end
   end
 
