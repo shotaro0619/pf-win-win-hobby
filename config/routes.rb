@@ -16,5 +16,11 @@ Rails.application.routes.draw do
   resources :users, only: [:show,:edit,:update]
   resources :messages, only: [:create]
   resources :rooms, only: [:create,:show]
+
+  # お問い合わせ機能
+  resources :contacts, only: [:new, :create]
+  post 'contacts/confirm', to: 'contacts#confirm', as: 'confirm'
+  post 'contacts/back', to: 'contacts#back', as: 'back'
+  get 'thanks', to: 'contacts#thanks', as: 'thanks'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
