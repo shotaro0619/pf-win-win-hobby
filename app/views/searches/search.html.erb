@@ -1,35 +1,46 @@
-<div class="container back">
-  <div class="col-xs-12 bg-mask">
+<% if @datas.empty? %>
+  <h2 class="m-5">
+     <% if @model == 'user' %>
+       <div>該当する会員はいません</div>
+     <% elsif @model == 'hobby' %>
+       <div>趣味名が<span class="hobby-name"><%= @value %>はまだありません</div>
+     <% else %>
+       <div>趣味のジャンルが<span class="hobby-name"><%= @value %></span>の投稿はまだありません</div>
+     <% end %>
+ </h2>
+<% else %>
+    <div class="container back">
+      <div class="col-xs-12 bg-mask">
+         <h2>
+             <% if @model == 'user' %>
+               <div>ニックネームに<span class="hobby-name"><%= @value %></span>を含む会員の投稿一覧</div>
+             <% elsif @model == 'hobby' %>
+               <div>趣味名が<span class="hobby-name"><%= @value %></span>の投稿一覧</div>
+             <% else %>
+               <div>趣味のジャンルが<span class="hobby-name"><%= @value %></span>の投稿一覧</div>
+             <% end %>
+         </h2>
 
-     <h2>
-         <% if @model == 'user' %>
-           <div>ニックネームに<span class="hobby-name"><%= @value %></span>を含む会員の投稿一覧</div>
-         <% elsif @model == 'hobby' %>
-           <div>趣味名が<span class="hobby-name"><%= @value %></span>の投稿一覧</div>
-         <% else %>
-           <div>趣味のジャンルが<span class="hobby-name"><%= @value %></span>の投稿一覧</div>
-         <% end %>
-     </h2>
-
-        <% @datas.each do |hobby| %>
-              <div class="row">
-                <div class="col-2 text-center">
-                  <p>
-                    <%= link_to user_path(hobby.user) do %>
-                      <%= attachment_image_tag hobby.user, :profile_image, :fill, 110, 110, fallback: "no_image.jpg", class: "prof_image" %>
-                    <% end %><br>
-                    <span class="prof_name"><%= hobby.user.nickname%></span>
-                  </p>
+            <% @datas.each do |hobby| %>
+                  <div class="row">
+                    <div class="col-2 text-center">
+                      <p>
+                        <%= link_to user_path(hobby.user) do %>
+                          <%= attachment_image_tag hobby.user, :profile_image, :fill, 110, 110, fallback: "no_image.jpg", class: "prof_image" %>
+                        <% end %><br>
+                        <span class="prof_name"><%= hobby.user.nickname%></span>
+                      </p>
+                      </div>
+                      <div class="hobby col-2 hobby_name">
+                      <p>趣味名：<%= hobby.name %></p>
+                      <p>ジャンル：<%= hobby.genre.name if hobby.genre %></p>
+                      </div>
+                    <div class="col-6">
+                      <p class="ml-4 comment rounded comment-box"><%= hobby.comment %></p>
+                    </div>
                   </div>
-                  <div class="hobby col-2 hobby_name">
-                  <p>趣味名：<%= hobby.name %></p>
-                  <p>ジャンル：<%= hobby.genre.name if hobby.genre %></p>
-                  </div>
-                <div class="col-6">
-                  <p class="ml-4 comment rounded comment-box"><%= hobby.comment %></p>
-                </div>
-              </div>
-            <hr>
-        <% end %>
-  </div>
-</div>
+                <hr>
+            <% end %>
+      </div>
+    </div>
+<% end %>

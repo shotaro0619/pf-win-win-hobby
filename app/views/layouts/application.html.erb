@@ -32,15 +32,15 @@
                   <li><%= link_to "生徒側の投稿", hobbies_student_path, class: "dropdown-item" %></li>
                 </ul>
               </li>
-  
+
               <li class="nav-item active mr-3">
                 <%= link_to '投稿フォーム', new_hobby_path, class: "nav-link" %>
               </li>
-  
+
               <li class="nav-item active mr-3">
                 <%= link_to 'ジャンル一覧検索', genres_path, class: "nav-link" %>
               </li>
-  
+
               <li class="nav-item active mr-3">
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
               </li>
@@ -67,8 +67,14 @@
         </div>
       </nav>
     </header>
-    <main class="mb-5">
+    <main class="mb-2">
       <%= yield %>
     </main>
   </body>
+  <footer class="mb-3 fixed-bottom">
+  <% if !user_signed_in? %>
+   <div class="text-center"><%= link_to "お問い合わせ", new_contact_path , class: 'text-muted'%></div>
+   <div class="text-center">©Win Win Hobby</div>
+  <% end %>
+</footer>
 </html>

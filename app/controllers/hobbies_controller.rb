@@ -14,11 +14,11 @@ class HobbiesController < ApplicationController
   def index
     @hobbies = Hobby.all.order(created_at: :desc)
   end
-  
+
   def teacher
     @hobbies = Hobby.all.order(created_at: :desc)
   end
-  
+
   def student
     @hobbies = Hobby.all.order(created_at: :desc)
   end
@@ -40,7 +40,7 @@ class HobbiesController < ApplicationController
   def destroy
     @hobby = Hobby.find(params[:id])
     @hobby.destroy
-    redirect_to hobbies_path
+    redirect_to user_path(current_user)
   end
 
   private

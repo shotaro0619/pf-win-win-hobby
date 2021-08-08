@@ -1,4 +1,4 @@
-<div class="sign-up">
+<div class="sign-up mt-5">
 
   <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
@@ -14,8 +14,7 @@
           <%#= f.label :nickname, "ニックネーム" %>
           <%= f.text_field :nickname, autofocus: true, placeholder: 'ニックネーム' %>
         </div>
-        <div class="field text-center pt-2">
-          <span><%= f.label :category, "先生or生徒：" %></span>
+        <div class="field text-center mt-5 category">
           <%= f.radio_button :category, "先生" %>
           <%= f.label :category, "先生", value: "先生" %>
           <%= f.radio_button :category, "生徒" %>

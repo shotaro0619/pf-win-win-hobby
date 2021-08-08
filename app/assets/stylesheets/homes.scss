@@ -3,12 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .main-container {
-  background-image: url('top.jpg');
+  background-image: image-url('top.jpg');
   height: 600px;
   margin: 70px;
   background-size:contain;
   background-repeat: no-repeat;
-
 }
 
 .top-theme {
