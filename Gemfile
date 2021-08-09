@@ -39,6 +39,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  
+  gem 'pry-byebug'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -72,10 +75,10 @@ gem 'font-awesome-sass', '~> 5.13'
 gem 'dotenv-rails'
 gem 'turbolinks', '~> 5'
 gem 'rubocop-airbnb'
-gem 'pry-byebug'
-gem 'pry-rails'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 group :production do
   gem 'mysql2'
 end
+gem 'social-share-button'
+gem 'impressionist', '~>1.6.1'

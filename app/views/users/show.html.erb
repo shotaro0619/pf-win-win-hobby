@@ -48,10 +48,11 @@
 <div class="container">
   <div class="col-xs-offset-3 col-xs-6">
     <div class="text-center">
-      <%= attachment_image_tag @user, :profile_image, :fill, 300, 300, format: 'jpeg', fallback: "no_image.jpg", size:'300', class: "waku" %>
+      <%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size:'300', class: "waku" %>
       <h3 class="profile-name m-5 font-family"><%= @user.nickname %></h3>
     </div>
       <div class="introduction comment-box"><%= @user.introduction %></div>
+      <div class="follor">マイページに訪れてくれた人数<%=  @user.impressionist_count %>人</div>
       <div class="row follor">
         <div class="following"><%= link_to @user.followings.count, user_followings_path(@user) %>フォロー</div>
         <div><%= link_to @user.followers.count, user_followers_path(@user) %>フォロワー</div>
@@ -73,18 +74,21 @@
                 </div>
               </div>
               </div>
-              <div class="hobby col-2 hobby_name">
+              <div class="hobby col-3 hobby_name">
               <p>趣味名：<%= hobby.name %></p>
               <p>ジャンル：<%= hobby.genre.name if hobby.genre %></p>
               </div>
-            <div class="col-8 row">
-                <p class="ml-4 comment rounded comment-box"><%= hobby.comment %></p>
-                <div class="button">
-                  <% if @user == current_user %>
-                    <%= link_to "編集", edit_hobby_path(hobby.id), class:"btn btn-success mb-3" %><br>
-                    <%= link_to "投稿を消す", hobby_path(hobby), class:"btn btn-danger", method: :delete %>
-                  <% end %>
-                </div>
+            <div class="col-7 row">
+                <p class="comment rounded comment-box"><%= hobby.comment %></p>
+                <% if @user == current_user %>
+                  <div class="button">
+                      <div class="row">
+                        <div class="mr-4 ml-3"><%= social_share_button_tag(hobby.comment) %></div>
+                        <%= link_to "編集", edit_hobby_path(hobby.id), class:"btn btn-success" %>
+                      </div><br>
+                      <%= link_to "投稿を消す", hobby_path(hobby), class:"btn btn-danger", method: :delete %>
+                  </div>
+                <% end %>
             </div>
           </div>
         <hr>

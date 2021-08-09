@@ -10,10 +10,12 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require social-share-button
  *= require_tree .
  *= require_self
  */
   @import "bootstrap";
+  @import "social-share-button";
 
 .navbar {
   background-color: #ffffff;
@@ -61,7 +63,7 @@
 }
 
 body {
-  background-color: #f5fffa;
+  background-color: #f5f5f5;
 }
 
 .comment-box {
@@ -85,4 +87,14 @@ nav {
 .category {
   font-size: 20px;
   font-weight: bold;
+}
+
+$size: 40px;
+
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  }
 }

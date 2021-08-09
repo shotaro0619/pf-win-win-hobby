@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
+impressionist :actions=> [:show]
+
   def show
      @user = User.find(params[:id])
+     impressionist(@user, nil, unique: [:impressionable_id, :ip_address])
      @hobbies = @user.hobbies.page(params[:page]).reverse_order
      @currentUserEntry=Entry.where(user_id: current_user.id)
      @userEntry=Entry.where(user_id: @user.id)

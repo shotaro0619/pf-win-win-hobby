@@ -11,7 +11,7 @@
 <% else %>
     <div class="container back">
       <div class="col-xs-12 bg-mask">
-         <h2>
+         <h2 class="mb-5">
              <% if @model == 'user' %>
                <div>ニックネームに<span class="hobby-name"><%= @value %></span>を含む会員の投稿一覧</div>
              <% elsif @model == 'hobby' %>
@@ -20,10 +20,13 @@
                <div>趣味のジャンルが<span class="hobby-name"><%= @value %></span>の投稿一覧</div>
              <% end %>
          </h2>
-
+        </div>
+    </div>
+         <div class="container">
+           <div class="col-xs-offset-1 col-xs-10">
             <% @datas.each do |hobby| %>
                   <div class="row">
-                    <div class="col-2 text-center">
+                    <div class="col-2 text-center pt-3">
                       <p>
                         <%= link_to user_path(hobby.user) do %>
                           <%= attachment_image_tag hobby.user, :profile_image, :fill, 110, 110, fallback: "no_image.jpg", class: "prof_image" %>
@@ -31,11 +34,12 @@
                         <span class="prof_name"><%= hobby.user.nickname%></span>
                       </p>
                       </div>
-                      <div class="hobby col-2 hobby_name">
+                     <div class="hobby col-3 hobby_name">
+                      <p><%= hobby.user.category %></p>
                       <p>趣味名：<%= hobby.name %></p>
                       <p>ジャンル：<%= hobby.genre.name if hobby.genre %></p>
                       </div>
-                    <div class="col-6">
+                    <div class="col-6 pt-3">
                       <p class="ml-4 comment rounded comment-box"><%= hobby.comment %></p>
                     </div>
                   </div>
