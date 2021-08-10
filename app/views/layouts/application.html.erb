@@ -68,6 +68,7 @@
       </nav>
     </header>
     <main class="mb-2">
+      <%= render partial: 'layouts/flash' %>
       <%= yield %>
     </main>
   </body>
@@ -77,4 +78,9 @@
    <div class="text-center">©Win Win Hobby</div>
   <% end %>
 </footer>
+<script>
+  $(function(){
+    $(".alert").fadeOut(5000);
+  });
+</script>
 </html>

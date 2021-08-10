@@ -7,8 +7,13 @@ class HobbiesController < ApplicationController
   def create
     @hobby = Hobby.new(hobby_params)
     @hobby.user_id = current_user.id
-    @hobby.save
-    redirect_to hobbies_path
+    if @hobby.save
+      flash.keep[:success] = "投稿ができました"
+      redirect_to hobbies_path
+    else
+      flash.now[:danger] = "投稿に失敗しました"
+      render :new
+    end
   end
 
   def index
@@ -33,8 +38,13 @@ class HobbiesController < ApplicationController
 
   def update
     @hobby = Hobby.find(params[:id])
-    @hobby.update(hobby_params)
-    redirect_to hobbies_path
+    if @hobby.update(hobby_params)
+      flash[:success] = "編集完了しました"
+      redirect_to hobbies_path
+    else
+      flash.now[:danger] = "編集に失敗しました"
+      render :edit
+    end
   end
 
   def destroy

@@ -23,7 +23,7 @@
 <hr>
 <div class="ml-3">
     <%= form_with model: message do |f| %>
-      <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , :size => 70, class: "inputComment" %>
+      <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , :size => 70, class: "dm" %>
       <%= f.hidden_field :room_id, :value => room.id %>
       <br>
       <div class="m-3"><%= f.submit "投稿する" %></div>

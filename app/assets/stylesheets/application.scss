@@ -115,3 +115,16 @@ $size: 40px;
 .pagination>li>a:hover {
   border-radius: 15px;    /*角を丸くする*/
 }
+
+.Notification {
+ .notice {
+   background-color: #38AEF0;
+   color: #fff;
+   text-align: center;
+ }
+ .alert {
+   background-color: #F35500;
+   color: #fff;
+   text-align: center;
+ }
+}
