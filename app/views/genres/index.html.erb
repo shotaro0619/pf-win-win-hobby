@@ -99,3 +99,33 @@
    <% end %>
   </div>
 </div>
+
+<!--投稿数ランキング　同率考慮-->
+<table class="table">
+  <% lastHobby = 0 %>
+   <% j = 1 %>
+  <% @all_ranks.each.with_index(1) do |ranking, i| %>
+    <% if i == 1 %>
+      <% lastHobby = ranking.hobbies.count %>
+    <% end %>
+    <% if ranking.hobbies.count != lastHobby %>
+      <% j = i %>
+   <tbody>
+        <th>
+         第<%= j %>位
+         <%= ranking.name %>
+         投稿数：<%= ranking.hobbies.count %>
+        </th>
+      <% lastHobby= ranking.hobbies.count %>
+    <% else %>
+      <% lastHobby = ranking.hobbies.count %>
+      <th>
+        第<%= j %>位
+        <%= ranking.name %>
+        投稿数：<%= ranking.hobbies.count %>
+      </th>
+     <% end %>
+   <br>
+   </tbody>
+  <% end %>
+ </table>

@@ -17,15 +17,15 @@ class HobbiesController < ApplicationController
   end
 
   def index
-    @hobbies = Hobby.page(params[:page]).reverse_order
+    @hobbies = Hobby.page(params[:page]).per(10).order('updated_at DESC')
   end
 
   def teacher
-    @hobbies = Hobby.page(params[:page]).reverse_order
+    @hobbies = Hobby.page(params[:page]).per(10).order('updated_at DESC')
   end
 
   def student
-    @hobbies = Hobby.page(params[:page]).reverse_order
+    @hobbies = Hobby.page(params[:page]).per(10).order('updated_at DESC')
   end
 
   def show

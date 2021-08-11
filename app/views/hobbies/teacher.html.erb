@@ -7,7 +7,7 @@
               <div class="col-2 text-center">
                 <p>
                   <%= link_to user_path(hobby.user) do %>
-                    <%= attachment_image_tag hobby.user, :profile_image, :fill, 110, 110, fallback: "no_image.jpg", class: "prof_image" %>
+                    <%= attachment_image_tag hobby.user, :profile_image, :fill, 110, 110, fallback: "unnamed.png", size:'110', class: "prof_image" %>
                   <% end %><br>
                   <span class="prof_name"><%= hobby.user.nickname%></span>
                 </p>

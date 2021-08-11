@@ -6,11 +6,11 @@
         <div class="text-right mr-5">
           <div class="talk2"><strong><%= m.content %></strong></div>
           <%= m.created_at.strftime('%Y/%m/%d') %>
-          <%= attachment_image_tag m.user, :profile_image, fallback: "no_image.jpg", size:'70', class:"pro_photo" %>
+          <%= attachment_image_tag m.user, :profile_image, fallback: "unnamed.png", size:'70', class:"pro_photo" %>
           <small><strong><a href="/users/<%= m.user_id %>"><%= m.user.nickname %></a></strong></small>
         </div>
         <% else %>
-         <%= attachment_image_tag m.user, :profile_image, fallback: "no_image.jpg", size:'70', class:"pro_photo" %><br>
+         <%= attachment_image_tag m.user, :profile_image, fallback: "unnamed.png", size:'70', class:"pro_photo" %><br>
           <small><strong><a href="/users/<%= m.user_id %>"><%= m.user.nickname %>さん</a></strong></small>
           <div class="talk"><strong><%= m.content %></strong></div>
           <%= m.created_at.strftime('%Y/%m/%d') %>

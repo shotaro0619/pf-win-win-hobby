@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show,:edit,:update]
-  resources :messages, only: [:create]
+  resources :messages
   resources :rooms, only: [:create,:show]
 
   # お問い合わせ機能
