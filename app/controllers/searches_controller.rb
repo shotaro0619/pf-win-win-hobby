@@ -3,6 +3,7 @@ class SearchesController < ApplicationController
     @value = params[:value]
     @model = params[:model]
     @datas = search_for('partical', @model, @value)
+    @hobbies = Hobby.page(params[:page]).per(10).order('updated_at DESC')
   end
 
 

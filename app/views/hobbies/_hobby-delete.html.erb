@@ -22,7 +22,7 @@
                         <div class="mr-4 ml-3">
                          <%= social_share_button_tag(hobby.comment) %>
                          <%= link_to "編集", edit_hobby_path(hobby.id), class:"btn btn-success mb-2" %><br>
-                         <%= link_to "投稿を消す", hobby_path(hobby), class:"btn btn-danger", method: :delete %>
+                         <%= link_to "投稿を消す", hobby_path(hobby), class:"btn btn-danger", method: :delete, remote: true %>
                         </div>
                       </div>
                   </div>
