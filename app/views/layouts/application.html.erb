@@ -4,7 +4,6 @@
     <title>WinWinHobby</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
@@ -12,55 +11,67 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-light  justify-content-end">
-        <div>
-          <ul class="navbar-nav ml-auto font-family">
+      <nav class="navbar navbar-light">
+        <div class= "container">
+          <ul class="col-12 navbar-nav ml-auto font-family">
             <% if user_signed_in? %>
              <div class="row">
-              <li class="nav-item active mr-3">
-              <%= link_to 'マイページ', user_path(current_user.id), class: "nav-link" %>
-              </li>
-              <li class="nav-item dropdown">
-                <label class=" dropdown-toggle nav-item active mr-3 mt-2" id="dropdownMenu1" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">
-                  投稿一覧
-                </label>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li>
-                  <%= link_to '全投稿一覧', hobbies_path, class: "dropdown-item" %>
-                  </li>
-                  <li><%= link_to "先生側の投稿", hobbies_teacher_path, class: "dropdown-item" %></li>
-                  <li><%= link_to "生徒側の投稿", hobbies_student_path, class: "dropdown-item" %></li>
-                </ul>
-              </li>
+              <li class="nav-item active mr-3"><%= link_to image_tag("logo.png"), user_path(current_user.id), class: "logo1" %></li>
+              <div class="row">
+                <li class="nav-item active mr-3 pt-3">
+                <%= link_to 'マイページ', user_path(current_user.id), class: "nav-link" %>
+                </li>
+                <li class="nav-item dropdown pt-3">
+                  <label class=" dropdown-toggle nav-item active mr-3 mt-2" id="dropdownMenu1" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">
+                    投稿一覧
+                  </label>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li>
+                    <%= link_to '全投稿一覧', hobbies_path, class: "dropdown-item" %>
+                    </li>
+                    <li><%= link_to "先生側の投稿", hobbies_teacher_path, class: "dropdown-item" %></li>
+                    <li><%= link_to "生徒側の投稿", hobbies_student_path, class: "dropdown-item" %></li>
+                  </ul>
+                </li>
 
-              <li class="nav-item active mr-3">
-                <%= link_to '投稿フォーム', new_hobby_path, class: "nav-link" %>
-              </li>
+                <li class="nav-item active mr-3 pt-3">
+                  <%= link_to '投稿フォーム', new_hobby_path, class: "nav-link" %>
+                </li>
 
-              <li class="nav-item active mr-3">
-                <%= link_to 'ジャンル一覧検索', genres_path, class: "nav-link" %>
-              </li>
+                <li class="nav-item active mr-3 pt-3">
+                  <%= link_to 'ジャンル一覧検索', genres_path, class: "nav-link" %>
+                </li>
 
-              <li class="nav-item active mr-3">
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
-              </li>
-              <%= form_with url:search_path, method: :get, local: true do |f| %>
-                <%= f.text_field :value %>
-                <%= f.select :model, options_for_select({ "ニックネーム" => "user", "趣味名" => "hobby" }) %>
-                <%= f.submit :"検索", class: "btn btn-primary" %>
-              <% end %>
+                <li class="nav-item active mr-3 pt-3">
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                </li>
+                <li class="pt-3 mr-3">
+                <%= form_with url:search_path, method: :get, local: true do |f| %>
+                  <%= f.text_field :value, placeholder: "ニックネーム・趣味名" %><br>
+                  <div class="mt-1">
+                    <%= f.select :model, options_for_select({ "ニックネーム" => "user", "趣味名" => "hobby" }) %>
+                    <%= f.button :type => "submit", class: "submit" do %>
+                     <i class="fas fa-search fa-lg search"></i>
+                    <% end %>
+                  </div>
+                <% end %>
+                </li>
+               </div>
              </div>
             <% else %>
-             <div class="row">
-              <li class="nav-item active mr-3">
-                <%= link_to "about", homes_about_path, class: "nav-link" %>
-              </li>
-              <li class="nav-item active mr-3">
-                <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
-              </li>
-              <li class="nav-item active mr-3">
-                <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
-              </li>
+             <div class="d-flex flex-row">
+              <div class="d-flex justify-content-start"><%= link_to image_tag("logo.png"), "/", class: "logo" %></div>
+              <div class="d-flex flex-row">
+                <li class="nav-item active mr-3 pt-3">
+                  <%= link_to "about", homes_about_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item active mr-3 pt-3">
+                  <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item active mr-3 pt-3">
+                  <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+                </li>
+              </div>
              </div>
             <% end %>
           </ul>
@@ -70,6 +81,7 @@
     <main class="mb-2">
       <%= render partial: 'layouts/flash' %>
       <%= yield %>
+      <script src="https://unpkg.com/ityped@1.0.3"></script>
     </main>
   </body>
   <footer class="mb-3 fixed-bottom">

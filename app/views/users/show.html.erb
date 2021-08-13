@@ -8,16 +8,9 @@
       <% end %>
     </div>
 
-    <div class="col-4 text-center user-category font-family">
-      <% if @user.category == "先生" %>
-       <div><i class="far fa-thumbs-up"></i>先生</div>
-      <% else %>
-       <div><i class="far fa-hand-paper"></i>生徒</div>
-      <% end %>
-    </div>
     <div class="col-4 text-right">
         <% if @user.id == current_user.id %>
-            <div><%= link_to "プロフィール編集", edit_user_path(@user) %></div>
+           <i class="fas fa-edit prof-edit"></i><%= link_to "プロフィール編集", edit_user_path(@user), class: "prof-edit" %>
         <% end %>
         <div class="row">
             <% if @user.id != current_user.id %>
@@ -36,7 +29,7 @@
                   <%= fields_for @entry do |e| %>
                     <%= e.hidden_field :user_id, value: @user.id %>
                   <% end %>
-                  <%= f.submit "チャットを始める", class:"btn btn-primary user-show-chat"%>
+                  <%= f.submit "チャットを始める", class:"btn btn-primary user-show-chat" %>
                 <% end %>
               <% end %>
             <% end %>
@@ -49,7 +42,13 @@
   <div class="col-xs-offset-3 col-xs-6">
     <div class="text-center">
       <%= attachment_image_tag @user, :profile_image, fallback: "unnamed.png", size:'300', class: "waku" %>
-      <h3 class="profile-name m-5 font-family"><%= @user.nickname %></h3>
+      <div>
+      <% if @user.category == "先生" %>
+       <h3 class="profile-name m-5 font-family"><%= @user.nickname %>(先生)</h3>
+      <% else %>
+       <h3 class="profile-name m-5 font-family"><%= @user.nickname %>(生徒)</h3>
+      <% end %>
+    </div>
     </div>
       <div class="introduction comment-box"><%= @user.introduction %></div>
       <div class="follor">マイページに訪れてくれた人数<%=  @user.impressionist_count %>人</div>
@@ -62,36 +61,6 @@
 
 <div class="container">
   <div class="col-xs-offset-1 col-xs-10">
-    <% @hobbies.each do |hobby| %>
-          <div class="row">
-            <div class="col-2 text-center">
-              <div>
-                <div>
-                  <%= link_to user_path(hobby.user) do %>
-                    <%= attachment_image_tag hobby.user, :profile_image, :fill, 110, 110, fallback: "unnamed.png", size:'110', class: "prof_image" %>
-                  <% end %><br>
-                  <span class="prof_name"><%= hobby.user.nickname%></span>
-                </div>
-              </div>
-              </div>
-              <div class="hobby col-3 hobby_name">
-              <p>趣味名：<%= hobby.name %></p>
-              <p>ジャンル：<%= hobby.genre.name if hobby.genre %></p>
-              </div>
-            <div class="col-7 row">
-                <p class="comment rounded comment-box"><%= hobby.comment %></p>
-                <% if @user == current_user %>
-                  <div class="button">
-                      <div class="row">
-                        <div class="mr-4 ml-3"><%= social_share_button_tag(hobby.comment) %></div>
-                        <%= link_to "編集", edit_hobby_path(hobby.id), class:"btn btn-success" %>
-                      </div><br>
-                      <%= link_to "投稿を消す", hobby_path(hobby), class:"btn btn-danger", method: :delete %>
-                  </div>
-                <% end %>
-            </div>
-          </div>
-        <hr>
-    <% end %>
+    <%= render 'users/hobby-delete', hobbies:@hobbies %>
   </div>
 </div>

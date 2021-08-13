@@ -1,31 +1,34 @@
 <div class="ml-5">
     <% if messages.present? %>
       <% messages.each do |m| %>
-      <hr>
       <% if current_user.id == m.user.id %>
         <div class="text-right mr-5">
-          <div class="talk2"><strong><%= m.content %></strong></div>
           <%= m.created_at.strftime('%Y/%m/%d') %>
+          <div class="right"><strong><%= m.content %></strong></div>
           <%= attachment_image_tag m.user, :profile_image, fallback: "unnamed.png", size:'70', class:"pro_photo" %>
-          <small><strong><a href="/users/<%= m.user_id %>"><%= m.user.nickname %></a></strong></small>
+          <div class="name"><a href="/users/<%= m.user_id %>"><%= m.user.nickname %></a></div>
         </div>
         <% else %>
-         <%= attachment_image_tag m.user, :profile_image, fallback: "unnamed.png", size:'70', class:"pro_photo" %><br>
-          <small><strong><a href="/users/<%= m.user_id %>"><%= m.user.nickname %>さん</a></strong></small>
-          <div class="talk"><strong><%= m.content %></strong></div>
-          <%= m.created_at.strftime('%Y/%m/%d') %>
+          <div class="mb-3">
+            <div class="d-flex flex-column">
+              <div><%= attachment_image_tag m.user, :profile_image, fallback: "unnamed.png", size:'70', class:"pro_photo" %></div>
+              <div><a href="/users/<%= m.user_id %>"><%= m.user.nickname %>さん</a></div>
+              <div class="left"><strong><%= m.content %></strong></div>
+              <%= m.created_at.strftime('%Y/%m/%d') %>
+            </div>
+          </div>
       <% end %>
       <% end %>
     <% else %>
       <h3 class="text-center">メッセージはまだありません</h3>
     <% end %>
 </div>
-<hr>
-<div class="ml-3">
+<div class="ml-3 send-form">
     <%= form_with model: message do |f| %>
       <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , :size => 70, class: "dm" %>
       <%= f.hidden_field :room_id, :value => room.id %>
-      <br>
-      <div class="m-3"><%= f.submit "投稿する" %></div>
+      <%= f.button :type => "submit", class: "submit" do %>
+       <i class="far fa-paper-plane"></i>
+      <% end %>
     <% end %>
 </div>

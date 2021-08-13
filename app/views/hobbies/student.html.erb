@@ -12,9 +12,9 @@
                   <span class="prof_name"><%= hobby.user.nickname%></span>
                 </p>
                 </div>
-                <div class="hobby col-2 hobby_name">
-                <p>趣味名：<%= hobby.name %></p>
-                <p>ジャンル：<%= hobby.genre.name if hobby.genre %></p>
+                <div class="hobby col-3 hobby_name">
+                <p><span class="text-white px-2 py-1 mr-3 rounded-pill shadow bg-info">趣味名</span>　<%= hobby.name %></p>
+                <p><span class="text-white px-2 py-1 mr-3 rounded-pill shadow bg-warning">ジャンル</span><%= hobby.genre.name if hobby.genre %></p>
                 </div>
               <div class="col-6">
                 <p class="ml-4 comment rounded comment-box"><%= hobby.comment %></p>

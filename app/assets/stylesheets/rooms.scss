@@ -1,3 +1,19 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.right {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 19px;
+  padding: 9px 14px;
+}
+
+.left {
+  position: relative;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 19px;
+  padding: 9px 30px;
+  max-width: 240px;
+}

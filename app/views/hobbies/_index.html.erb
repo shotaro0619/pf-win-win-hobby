@@ -9,12 +9,16 @@
                 <% end %><br>
                 <span class="prof_name"><%= hobby.user.nickname%></span>
               </p>
-              </div>
-              <div class="hobby col-3 hobby_name">
-              <p><%= hobby.user.category %></p>
-              <p>趣味名：<%= hobby.name %></p>
-              <p>ジャンル：<%= hobby.genre.name if hobby.genre %></p>
-              </div>
+            </div>
+            <div class="col-3">
+              <% if hobby.user.category == "先生"%>
+              　<p class="category-teacher"><%= hobby.user.category %></p>
+              <% else %>
+                <p class="category-student"><%= hobby.user.category %></p>
+              <% end %>
+              <p><span class="text-white px-2 py-1 mr-3 rounded-pill shadow bg-info">趣味名</span>　<%= hobby.name %></p>
+              <p><span class="text-white px-2 py-1 mr-3 rounded-pill shadow bg-warning">ジャンル</span><%= hobby.genre.name if hobby.genre %></p>
+            </div>
             <div class="col-6 pt-3">
               <p class="comment rounded comment-box"><%= hobby.comment %></p>
             </div>

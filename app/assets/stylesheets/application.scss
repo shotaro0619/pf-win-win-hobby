@@ -63,7 +63,7 @@
 }
 
 body {
-  background-color: #f5f5f5;
+  background-color: #ffffe0;
 }
 
 .comment-box {
@@ -80,8 +80,8 @@ body {
 }
 
 nav {
-  border-top: 3px solid;
-  border-bottom: 3px solid;
+  border-top: 3px solid rgba(0, 0, 0, .4);
+  border-bottom: 3px solid rgba(0, 0, 0, .4);
 }
 
 .category {
@@ -127,4 +127,71 @@ $size: 40px;
    color: #fff;
    text-align: center;
  }
+}
+
+// .logo {
+//   margin-right: 900px;
+// }
+
+// .logo1{
+//   margin-right: 300px;
+// }
+
+.search {
+  color: #0000ff;
+}
+
+.submit {
+  border: 1px solid #b3d0d7;
+  border-style: none;
+  border: 1px solid #b3d0d7;
+  background-color: #ffffff;
+}
+
+.login-btn {
+   display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 13pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #000066;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #000066;    /* 枠の指定 */
+}
+
+.login-btn:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #000066;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+.send-form {
+  text-align:center;
+}
+
+
+.category-teacher {
+  border: 2px solid #f0f8ff;
+  width: 40px;
+  padding: 2px;
+  background-color: #4169e1;
+  border-radius: 30%;
+  color: #ffffff;
+}
+
+.category-student {
+  border: 2px solid #f0f8ff;
+  width: 40px;
+  padding: 2px;
+  background-color: #ff0000;
+  border-radius: 30%;
+  color: #ffffff;
+}
+
+.prof_name {
+  margin-left: 30px;
 }

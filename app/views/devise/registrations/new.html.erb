@@ -6,15 +6,13 @@
      <div class="box-in">
        <h2 class="text-center mb-3">新規登録</h2>
         <div class="field text-center">
-          <%#= f.label :name, "お名前" %>
           <%= f.text_field :name, autofocus: true , placeholder: 'お名前' %>
         </div>
 
         <div class="field text-center">
-          <%#= f.label :nickname, "ニックネーム" %>
           <%= f.text_field :nickname, autofocus: true, placeholder: 'ニックネーム' %>
         </div>
-        <div class="field text-center mt-5 category">
+        <div class="field text-center category">
           <%= f.radio_button :category, "先生" %>
           <%= f.label :category, "先生", value: "先生" %>
           <%= f.radio_button :category, "生徒" %>
@@ -22,23 +20,19 @@
         </div>
 
         <div class="field text-center">
-          <%#= f.label :email, "メールアドレス" %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス' %>
         </div>
 
         <div class="field text-center">
-          <%#= f.label :password, "パスワード" %>
-
           <%= f.password_field :password, autocomplete: "new-password", placeholder: 'パスワード（6文字以上）' %>
         </div>
 
         <div class="field text-center">
-          <%#= f.label :password_confirmation, "パスワード 確認用" %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'パスワード（確認用）' %>
         </div>
 
         <div class="actions text-center mt-3">
-          <%= f.submit "新規登録", class: "btn-outline-primary" %>
+          <%= f.submit "新規登録", class: "login-btn" %>
         </div>
       </div>
     </div>

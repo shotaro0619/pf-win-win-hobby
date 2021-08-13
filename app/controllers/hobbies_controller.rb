@@ -21,11 +21,11 @@ class HobbiesController < ApplicationController
   end
 
   def teacher
-    @hobbies = Hobby.page(params[:page]).per(10).order('updated_at DESC')
+    @hobbies = Hobby.page(params[:page]).per(11).order('updated_at DESC')
   end
 
   def student
-    @hobbies = Hobby.page(params[:page]).per(10).order('updated_at DESC')
+    @hobbies = Hobby.page(params[:page]).per(11).order('updated_at DESC')
   end
 
   def show
@@ -34,6 +34,9 @@ class HobbiesController < ApplicationController
 
   def edit
     @hobby = Hobby.find(params[:id])
+    if @hobby.user != current_user
+     redirect_to hobbies_path
+    end
   end
 
   def update
