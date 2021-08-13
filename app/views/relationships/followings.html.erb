@@ -1,24 +1,4 @@
-<h2>フォロー</h2>
-<% if @users.exists? %>
-  <thead class="table">
-    <tr>
-      <th></th>
-      <th>nickname</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= attachment_image_tag user, :profile_image, :fill, 40, 40, fallback: "unnamed.png", size:'40x40' %></td>
-        <td><%= user.nickname%></td>
-        <td>フォロー数: <%= user.followings.count %></td>
-        <td>フォロワー数: <%= user.followers.count %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<% else %>
-  <p>ユーザーはいません</p>
-<% end %>
+<div class="m-3">
+  <h2>フォロー</h2>
+  <%= render 'relationships/relationship', users: @users %>
+</div>

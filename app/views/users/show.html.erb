@@ -1,14 +1,14 @@
 <div class="container mypage-top">
   <div class="row">
-    <div class="col-4 font-family">
+    <div class="col-6 font-family">
       <% if @user.id == current_user.id %>
-       <h1>マイページ</h1>
+       <div class="outline">マイページ</div>
       <% else %>
-       <h1><%= @user.nickname %>さんのページ</h1>
+       <div><%= @user.nickname %>さんのページ</div>
       <% end %>
     </div>
 
-    <div class="col-4 text-right">
+    <div class="col-6 text-right">
         <% if @user.id == current_user.id %>
            <i class="fas fa-edit prof-edit"></i><%= link_to "プロフィール編集", edit_user_path(@user), class: "prof-edit" %>
         <% end %>

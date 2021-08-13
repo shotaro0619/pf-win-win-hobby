@@ -1,0 +1,17 @@
+<% if users.exists? %>
+    <div class="container">
+       <div class="row">
+         <% users.each do |user| %>
+             <div class="card m-3">
+               <%= link_to user_path(user) do %>
+                <div><%= attachment_image_tag user, :profile_image, :fill, 200, 200, fallback: "unnamed.png", size:'200x200' %></div>
+               <% end %>
+                <div><%= user.nickname %></div>
+                <div><%= user.category %>側 投稿数<%= user.hobbies.count%></div>
+              </div>
+         <% end %>
+       </div>
+    </div>
+  <% else %>
+    <p>ユーザーはいません</p>
+  <% end %>

@@ -57,7 +57,7 @@
   width: 500px;
   border: 1px solid #b3d0d7;
   box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.6);
-  height: 300px;
+  height: 380px;
   padding-top: 60px;
   background-color: #ffffff;
 }
@@ -149,7 +149,7 @@ $size: 40px;
 }
 
 .login-btn {
-   display       : inline-block;
+  display       : inline-block;
   border-radius : 5%;          /* 角丸       */
   font-size     : 13pt;        /* 文字サイズ */
   text-align    : center;      /* 文字位置   */
@@ -192,6 +192,21 @@ $size: 40px;
   color: #ffffff;
 }
 
-.prof_name {
+.user-name {
   margin-left: 30px;
+}
+
+.guest-btn {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 13pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #c71585;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #c71585;    /* 枠の指定 */
 }

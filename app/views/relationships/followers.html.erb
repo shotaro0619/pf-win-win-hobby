@@ -1,17 +1,4 @@
-<div class="m-5">
+<div class="m-3">
   <h2>フォロワー</h2>
-  <% if @users.exists? %>
-   <% @users.each do |user| %>
-   <div class="">
-     <div class="col">
-        <div><%= attachment_image_tag user, :profile_image, :fill, 100, 100, fallback: "unnamed.png", size:'100x100' %></div>
-        <div><%= user.nickname %></div>
-        <div>フォロー数: <%= user.followings.count %></div>
-        <div>フォロワー数: <%= user.followers.count %></div>
-      </div>
-    </div>
-  <% end %>
-  <% else %>
-    <p>ユーザーはいません</p>
-  <% end %>
+  <%= render 'relationships/relationship', users: @users %>
 </div>

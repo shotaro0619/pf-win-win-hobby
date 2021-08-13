@@ -23,3 +23,35 @@
 .shadow {
   color: #fff !important;
 }
+
+.signup-img {
+  background-image: image-url('signup.png');
+  height: 300px;
+  background-size:contain;
+  background-repeat: no-repeat;
+  width: 400px;
+}
+
+.post-img {
+  background-image: image-url('post.png');
+  height: 300px;
+  background-size:contain;
+  background-repeat: no-repeat;
+  width: 400px;
+}
+
+.search-img {
+  background-image: image-url('search.png');
+  height: 300px;
+  background-size:contain;
+  background-repeat: no-repeat;
+  width: 400px;
+}
+
+.chat-img {
+  background-image: image-url('chat.png');
+  height: 300px;
+  background-size:contain;
+  background-repeat: no-repeat;
+  width: 400px;
+}

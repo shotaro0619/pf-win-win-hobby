@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'homes#top'
   get 'homes/about'
+  post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
   get '/search' => 'searches#search'
   get 'hobbies/teacher'
   get 'hobbies/student'

@@ -34,6 +34,9 @@
         <div class="actions text-center mt-3">
           <%= f.submit "新規登録", class: "login-btn" %>
         </div>
+
+        <div class="field text-center"><%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, class: "guest-btn", method: :post %></div>
+
       </div>
     </div>
   <% end %>
