@@ -1,27 +1,37 @@
-<div class="ml-5">
-    <% if messages.present? %>
-      <% messages.each do |m| %>
-      <% if current_user.id == m.user.id %>
-        <div class="text-right mr-5">
-          <%= m.created_at.strftime('%Y/%m/%d') %>
-          <div class="right"><strong><%= m.content %></strong></div>
-          <%= attachment_image_tag m.user, :profile_image, fallback: "unnamed.png", size:'70', class:"pro_photo" %>
-          <div class="name"><a href="/users/<%= m.user_id %>"><%= m.user.nickname %></a></div>
-        </div>
-        <% else %>
-          <div class="mb-3">
-            <div class="d-flex flex-column">
-              <div><%= attachment_image_tag m.user, :profile_image, fallback: "unnamed.png", size:'70', class:"pro_photo" %></div>
-              <div><a href="/users/<%= m.user_id %>"><%= m.user.nickname %>さん</a></div>
-              <div class="left"><strong><%= m.content %></strong></div>
+<div class="container chat-all">
+  <div class="col-11 text-center">
+    <div class="ml-5" style="width: 100%;height:650px;overflow:auto;">
+        <% if messages.present? %>
+          <% messages.each do |m| %>
+          <% if current_user.id == m.user.id %>
+            <div class="text-right mr-5 mt-3">
               <%= m.created_at.strftime('%Y/%m/%d') %>
+              <div class="right"><strong><%= m.content %></strong></div>
+              <%= link_to user_path(m.user) do %>
+               <%= attachment_image_tag m.user, :profile_image, fallback: "unnamed.png", size:'70', class:"pro_photo" %>
+              <% end %>
+              <div class="name"><%= m.user.nickname %></div>
             </div>
-          </div>
-      <% end %>
-      <% end %>
-    <% else %>
-      <h3 class="text-center">メッセージはまだありません</h3>
-    <% end %>
+          <% else %>
+             <div class="d-flex flex-row mt-3">
+               <div>
+                 <%= link_to user_path(m.user) do %>
+                   <%= attachment_image_tag m.user, :profile_image, fallback: "unnamed.png", size:'70', class:"pro_photo" %>
+                 <% end %>
+                 <div><%= m.user.nickname %>さん</div>
+               </div>
+               <div class="chat-content">
+                 <div class="left"><strong><%= m.content %></strong></div>
+                 <%= m.created_at.strftime('%Y/%m/%d') %>
+               </div>
+             </div>
+          <% end %>
+          <% end %>
+        <% else %>
+          <h3 class="text-center">メッセージはまだありません</h3>
+        <% end %>
+    </div>
+  </div>
 </div>
 <div class="ml-3 send-form">
     <%= form_with model: message do |f| %>
