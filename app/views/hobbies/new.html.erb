@@ -10,7 +10,7 @@
               <h4 class="col-5"><%= f.label :ジャンル %></h4>
               <%#= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "--選択して下さい--" %>
                <!--Button trigger modal-->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+            <button type="button" class="btn btn-primary selectbotton" data-toggle="modal" data-target="#exampleModalLong">
               選ぶ
             </button>
 
@@ -27,7 +27,7 @@
                   <div class="modal-body">
                     <div class="music">音楽系</div>
                       <%= f.radio_button :genre_id, 1 %>
-                      <%= f.label :genre, "楽器", value: "楽器" %>
+                      <%= f.label :genre_id, "楽器", value: "楽器" %>
                       <%= f.radio_button :genre_id, 2 %>
                       <%= f.label :genre, "音楽ライブ", value: "音楽ライブ" %>
                       <%= f.radio_button :genre_id, 3 %>

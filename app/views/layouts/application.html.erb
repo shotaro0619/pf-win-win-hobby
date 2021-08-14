@@ -11,18 +11,39 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-light">
-        <div class= "container">
-          <ul class="col-12 navbar-nav font-family">
-            <% if user_signed_in? %>
-            <li class="nav-item active mr-3 pt-3">ようこそ、<%= current_user.nickname %>さん！</li>
-             <div class="row">
-              <li class="nav-item active mr-3"><%= link_to image_tag("logo.png"), user_path(current_user.id), class: "logo1" %></li>
-              <div class="d-flex justify-content-end">
-                <li class="nav-item active mr-3 pt-3">
-                <%= link_to 'マイページ', user_path(current_user.id), class: "nav-link" %>
+      <nav class="navbar navbar-expand-sm navbar-light mb-3">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <% if !user_signed_in? %>
+         <div><%= link_to "LOGO", "/", class: "logo" %></div>
+        <% else %>
+         <div>
+           <div>
+             <%= link_to "LOGO", user_path(current_user.id), class: "logo" %>
+           </div>
+         </div>
+        <% end %>
+        <div class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav font-family">
+              <% if !user_signed_in? %>
+                <li class="nav-item active">
+                    <%= link_to "about", homes_about_path, class: "nav-link" %>
                 </li>
-                <li class="nav-item dropdown pt-3">
+                <li class="nav-item active">
+                    <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item active">
+                    <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+                </li>
+              <% else %>
+                <li class="nav-item active pt-3 top-header">
+                    <%= link_to 'マイページ', user_path(current_user.id), class: "nav-link" %>
+                </li>
+                <li class="nav-item active pt-3 top-header">
+                    <%= link_to '投稿フォーム', new_hobby_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item dropdown pt-3 top-header">
                   <label class=" dropdown-toggle nav-item active mr-3 mt-2" id="dropdownMenu1" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">
                     投稿一覧
                   </label>
@@ -34,53 +55,33 @@
                     <li><%= link_to "生徒側の投稿", hobbies_student_path, class: "dropdown-item" %></li>
                   </ul>
                 </li>
-
-                <li class="nav-item active mr-3 pt-3">
-                  <%= link_to '投稿フォーム', new_hobby_path, class: "nav-link" %>
+                <li class="nav-item active pt-3 top-header">
+                    <%= link_to 'ジャンル一覧検索', genres_path, class: "nav-link" %>
                 </li>
-
-                <li class="nav-item active mr-3 pt-3">
-                  <%= link_to 'ジャンル一覧検索', genres_path, class: "nav-link" %>
+                <li class="nav-item active pt-3 top-header">
+                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
                 </li>
-
-                <li class="nav-item active mr-3 pt-3">
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                <li class="nav-item active">
+                  <%= form_with url:search_path, method: :get, local: true do |f| %>
+                    <%= f.text_field :value, placeholder: "ニックネーム・趣味名" %><br>
+                    <div class="mt-1">
+                      <%= f.select :model, options_for_select({ "ニックネーム" => "user", "趣味名" => "hobby" }) %>
+                      <%= f.button :type => "submit", class: "submit" do %>
+                       <i class="fas fa-search fa-lg search"></i>
+                      <% end %>
+                    </div>
+                 <% end %>
                 </li>
-                <li class="pt-3 mr-3">
-                <%= form_with url:search_path, method: :get, local: true do |f| %>
-                  <%= f.text_field :value, placeholder: "ニックネーム・趣味名" %><br>
-                  <div class="mt-1">
-                    <%= f.select :model, options_for_select({ "ニックネーム" => "user", "趣味名" => "hobby" }) %>
-                    <%= f.button :type => "submit", class: "submit" do %>
-                     <i class="fas fa-search fa-lg search"></i>
-                    <% end %>
-                  </div>
-                <% end %>
-                </li>
-               </div>
-             </div>
-            <% else %>
-             <div class="d-flex flex-row">
-              <div><%= link_to image_tag("logo.png"), "/", class: "logo" %></div>
-              <div class="d-flex flex-row float-right">
-                <li class="nav-item active mr-3 pt-3">
-                  <%= link_to "about", homes_about_path, class: "nav-link" %>
-                </li>
-                <li class="nav-item active mr-3 pt-3">
-                  <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
-                </li>
-                <li class="nav-item active mr-3 pt-3">
-                  <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
-                </li>
-              </div>
-             </div>
-            <% end %>
-          </ul>
+              <% end %>
+            </ul>
         </div>
-      </nav>
+    </nav>
     </header>
     <main class="mb-2">
       <%= render partial: 'layouts/flash' %>
+      <% if user_signed_in? %>
+       <div>ようこそ、<%= current_user.nickname %>さん！</div>
+      <% end %>
       <%= yield %>
       <script src="https://unpkg.com/ityped@1.0.3"></script>
     </main>

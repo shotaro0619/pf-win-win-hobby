@@ -51,8 +51,9 @@ class HobbiesController < ApplicationController
   end
 
   def destroy
-    @hobby = Hobby.find(params[:id])
-    @hobby.destroy
+    @hobbies = Hobby.page(params[:page]).per(10).order('updated_at DESC')
+    hobby = Hobby.find(params[:id])
+    hobby.destroy
     # redirect_to user_path(current_user)
   end
 

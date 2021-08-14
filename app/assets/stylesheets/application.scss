@@ -18,7 +18,7 @@
   @import "social-share-button";
 
 .navbar {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 .box {
@@ -63,7 +63,7 @@
 }
 
 body {
-  background-color: #ffffe0;
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
 }
 
 .comment-box {
@@ -172,6 +172,7 @@ $size: 40px;
 .send-form {
   text-align:center;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 
@@ -211,3 +212,4 @@ $size: 40px;
   box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
   border        : 2px solid #c71585;    /* 枠の指定 */
 }
+

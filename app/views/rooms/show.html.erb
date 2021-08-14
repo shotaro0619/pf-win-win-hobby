@@ -1,11 +1,11 @@
 <div>
 <% @entries.each do |e| %>
   <% if current_user.id != e.user.id %>
-    <h1><strong><%= e.user.nickname %>さんとのチャット</strong></h1>
+    <h1 class="m-5"><strong><%= e.user.nickname %>さんとのチャット</strong></h1>
   <% end %>
 <% end %>
 </div>
 <hr>
-<div>
+<div id="chat">
  <%= render partial: 'rooms/chat', locals:{ message: @message, room: @room, messages: @messages } %>
 </div>

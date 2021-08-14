@@ -1,131 +1,139 @@
-<div class="genre-page">
-  <h1>ジャンル一覧</h1>
+<div class="container">
+ <div class="row">
+  <div class="col-8">
+  <div class="genre-page">
+    <h1>ジャンル一覧</h1>
 
-  <div class="category mt-5 music">音楽系</div>
-  <% @genres_1.each do |genre| %>
-   <tr>
-    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
-   </tr>
-  <% end %>
-
-  <div class="category mt-5 view">鑑賞系</div>
-  <% @genres_2.each do |genre| %>
-   <tr>
-    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
-   </tr>
-  <% end %>
-
-  <div class="category mt-5 health">美容・健康</div>
-  <% @genres_3.each do |genre| %>
-   <tr>
-    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
-   </tr>
-  <% end %>
-
-  <div class="category mt-5 trip">旅行・お出かけ</div>
-  <% @genres_4.each do |genre| %>
-   <tr>
-    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
-   </tr>
-  <% end %>
-
-  <div class="category mt-5 sports">スポーツ系</div>
-  <% @genres_5.each do |genre| %>
-   <tr>
-    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
-   </tr>
-  <% end %>
-
-  <div class="category mt-5 nature">自然・アウトドア系</div>
-  <% @genres_6.each do |genre| %>
-   <tr>
-    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
-   </tr>
-  <% end %>
-
-  <div class="category mt-5 game">ゲームボードゲーム</div>
-  <% @genres_7.each do |genre| %>
-   <tr>
-    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
-   </tr>
-  <% end %>
-
-  <div class="category mt-5 make">作る系</div>
-  <% @genres_8.each do |genre| %>
-   <tr>
-    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
-   </tr>
-  <% end %>
-
-  <div class="category mt-5 pets">ペット・育てる系</div>
-  <% @genres_9.each do |genre| %>
-   <tr>
-    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
-   </tr>
-  <% end %>
-
-  <div class="category mt-5 skill">スキル系</div>
-  <% @genres_10.each do |genre| %>
-   <tr>
-    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
-   </tr>
-  <% end %>
-
-  <div class="category mt-5 vehicle">乗り物系</div>
-  <% @genres_11.each do |genre| %>
-   <tr>
-    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
-   </tr>
-  <% end %>
-
-  <div class="category mt-5 others">その他</div>
-  <div class="mb-5">
-   <% @genres_12.each do |genre| %>
-    <tr>
-    ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-    <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
-   </tr>
-   <% end %>
-  </div>
-</div>
-
-<!--投稿数ランキング　同率考慮-->
-<table class="table">
-  <% lastHobby = 0 %>
-   <% j = 1 %>
-  <% @all_ranks.each.with_index(1) do |ranking, i| %>
-    <% if i == 1 %>
-      <% lastHobby = ranking.hobbies.count %>
+    <div class="category mt-5 music">音楽系</div>
+    <% @genres_1.each do |genre| %>
+     <tr>
+      ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+     </tr>
     <% end %>
-    <% if ranking.hobbies.count != lastHobby %>
-      <% j = i %>
-   <tbody>
-        <th>
-         第<%= j %>位
-         <%= ranking.name %>
-         投稿数：<%= ranking.hobbies.count %>
-        </th>
-      <% lastHobby= ranking.hobbies.count %>
-    <% else %>
-      <% lastHobby = ranking.hobbies.count %>
-      <th>
-        第<%= j %>位
-        <%= ranking.name %>
-        投稿数：<%= ranking.hobbies.count %>
-      </th>
+
+    <div class="category mt-5 view">鑑賞系</div>
+    <% @genres_2.each do |genre| %>
+     <tr>
+      ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+     </tr>
+    <% end %>
+
+    <div class="category mt-5 health">美容・健康</div>
+    <% @genres_3.each do |genre| %>
+     <tr>
+      ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+     </tr>
+    <% end %>
+
+    <div class="category mt-5 trip">旅行・お出かけ</div>
+    <% @genres_4.each do |genre| %>
+     <tr>
+      ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+     </tr>
+    <% end %>
+
+    <div class="category mt-5 sports">スポーツ系</div>
+    <% @genres_5.each do |genre| %>
+     <tr>
+      ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+     </tr>
+    <% end %>
+
+    <div class="category mt-5 nature">自然・アウトドア系</div>
+    <% @genres_6.each do |genre| %>
+     <tr>
+      ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+     </tr>
+    <% end %>
+
+    <div class="category mt-5 game">ゲームボードゲーム</div>
+    <% @genres_7.each do |genre| %>
+     <tr>
+      ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+     </tr>
+    <% end %>
+
+    <div class="category mt-5 make">作る系</div>
+    <% @genres_8.each do |genre| %>
+     <tr>
+      ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+     </tr>
+    <% end %>
+
+    <div class="category mt-5 pets">ペット・育てる系</div>
+    <% @genres_9.each do |genre| %>
+     <tr>
+      ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+     </tr>
+    <% end %>
+
+    <div class="category mt-5 skill">スキル系</div>
+    <% @genres_10.each do |genre| %>
+     <tr>
+      ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+     </tr>
+    <% end %>
+
+    <div class="category mt-5 vehicle">乗り物系</div>
+    <% @genres_11.each do |genre| %>
+     <tr>
+      ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+     </tr>
+    <% end %>
+
+    <div class="category mt-5 others">その他</div>
+    <div class="mb-5">
+     <% @genres_12.each do |genre| %>
+      <tr>
+      ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
+      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+     </tr>
      <% end %>
-   <br>
-   </tbody>
-  <% end %>
- </table>
+    </div>
+   </div>
+  </div>
+  <div class="col-4">
+    <!--投稿数ランキング　同率考慮-->
+    <div class="rank">投稿数ランキング</div>
+    <table class="table rank-all">
+      <% lastHobby = 0 %>
+       <% j = 1 %>
+      <% @all_ranks.each.with_index(1) do |ranking, i| %>
+        <% if i == 1 %>
+          <% lastHobby = ranking.hobbies.count %>
+        <% end %>
+        <% if ranking.hobbies.count != lastHobby %>
+          <% j = i %>
+       <tbody>
+            <th>
+             第<%= j %>位
+             <%= ranking.name %>
+             投稿数：<%= ranking.hobbies.count %>
+            </th>
+          <% lastHobby= ranking.hobbies.count %>
+        <% else %>
+          <% lastHobby = ranking.hobbies.count %>
+          <th>
+            第<%= j %>位
+            <%= ranking.name %>
+            投稿数：<%= ranking.hobbies.count %>
+          </th>
+         <% end %>
+       <br>
+       </tbody>
+      <% end %>
+     </table>
+   </div>
+  </div>
+ </div>
