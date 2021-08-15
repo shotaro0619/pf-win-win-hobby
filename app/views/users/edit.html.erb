@@ -5,7 +5,6 @@
       　<div class="form-group text-center ">
       　  <%= render 'layouts/error_messages', model: f.object %>
           <%= attachment_image_tag @user, :profile_image, :fill, 180, 180, fallback: "unnamed.png", size:'110' %>
-          <label class="mb-4" for="inputImage">Profile画像</label>
         </div>
         <div class="form-group text-center ">
           <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
@@ -18,7 +17,7 @@
           <label for="inputIntroduction">自己紹介文</label>
           <%= f.text_area :introduction, autofocus: true, size: "10x5", class:"form-control introduction"%>
         </div>
-        <%= f.submit "変更を保存" %>
+        <%= f.submit "変更を保存", class: 'btn btn-outline-primary shadow-sm rounded-pill float-right' %>
       <% end %>
   </div>
 </div>

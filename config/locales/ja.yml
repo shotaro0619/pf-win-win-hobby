@@ -30,6 +30,6 @@ ja:
     attributes:
       contact:
         name: お名前
-        email: Eメール
+        email: メールアドレス
         phone_number: お電話番号
         message: メッセージ

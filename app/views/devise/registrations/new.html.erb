@@ -1,8 +1,8 @@
 <div class="sign-up mt-5">
   <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
   　<div class="box rounded">
      <div class="box-in">
+       <%= render "devise/shared/error_messages", resource: resource %>
        <h2 class="text-center mb-3">新規登録</h2>
         <div class="field text-center">
           <%= f.text_field :name, autofocus: true , placeholder: 'お名前' %>
@@ -23,7 +23,7 @@
         </div>
 
         <div class="field text-center">
-          <%= f.password_field :password, autocomplete: "new-password", placeholder: 'パスワード（6文字以上）' %>
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: 'パスワード 6文字以上' %>
         </div>
 
         <div class="field text-center">
@@ -31,10 +31,10 @@
         </div>
 
         <div class="actions text-center mt-3">
-          <%= f.submit "新規登録", class: "login-btn" %>
+          <%= f.submit "新規登録", class: 'btn btn-outline-info shadow-sm rounded-pill' %>
         </div>
 
-        <div class="field text-center"><%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, class: "guest-btn", method: :post %></div>
+        <div class="field text-center"><%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, class: 'btn btn-outline-dark shadow-sm rounded-pill', method: :post %></div>
 
       </div>
     </div>

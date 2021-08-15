@@ -8,7 +8,7 @@
     <% @genres_1.each do |genre| %>
      <tr>
       ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+      <span class="badge badge-dark badge-pill"><%= genre.hobbies.count %></span>
      </tr>
     <% end %>
 
@@ -16,7 +16,7 @@
     <% @genres_2.each do |genre| %>
      <tr>
       ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+      <span class="badge badge-dark badge-pill"><%= genre.hobbies.count %></span>
      </tr>
     <% end %>
 
@@ -24,7 +24,7 @@
     <% @genres_3.each do |genre| %>
      <tr>
       ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+      <span class="badge badge-dark badge-pill"><%= genre.hobbies.count %></span>
      </tr>
     <% end %>
 
@@ -32,7 +32,7 @@
     <% @genres_4.each do |genre| %>
      <tr>
       ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+      <span class="badge badge-dark badge-pill"><%= genre.hobbies.count %></span>
      </tr>
     <% end %>
 
@@ -40,7 +40,7 @@
     <% @genres_5.each do |genre| %>
      <tr>
       ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+      <span class="badge badge-dark badge-pill"><%= genre.hobbies.count %></span>
      </tr>
     <% end %>
 
@@ -48,7 +48,7 @@
     <% @genres_6.each do |genre| %>
      <tr>
       ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+      <span class="badge badge-dark badge-pill"><%= genre.hobbies.count %></span>
      </tr>
     <% end %>
 
@@ -56,7 +56,7 @@
     <% @genres_7.each do |genre| %>
      <tr>
       ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+      <span class="badge badge-dark badge-pill"><%= genre.hobbies.count %></span>
      </tr>
     <% end %>
 
@@ -64,7 +64,7 @@
     <% @genres_8.each do |genre| %>
      <tr>
       ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+      <span class="badge badge-dark badge-pill"><%= genre.hobbies.count %></span>
      </tr>
     <% end %>
 
@@ -72,7 +72,7 @@
     <% @genres_9.each do |genre| %>
      <tr>
       ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+      <span class="badge badge-dark badge-pill"><%= genre.hobbies.count %></span>
      </tr>
     <% end %>
 
@@ -80,7 +80,7 @@
     <% @genres_10.each do |genre| %>
      <tr>
       ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+      <span class="badge badge-dark badge-pill"><%= genre.hobbies.count %></span>
      </tr>
     <% end %>
 
@@ -88,7 +88,7 @@
     <% @genres_11.each do |genre| %>
      <tr>
       ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+      <span class="badge badge-dark badge-pill"><%= genre.hobbies.count %></span>
      </tr>
     <% end %>
 
@@ -97,7 +97,7 @@
      <% @genres_12.each do |genre| %>
       <tr>
       ・<%= link_to genre.name, search_path(value: genre.name, model: 'genre') %>
-      <span class="badge badge-primary badge-pill"><%= genre.hobbies.count %></span>
+      <span class="badge badge-dark badge-pill"><%= genre.hobbies.count %></span>
      </tr>
      <% end %>
     </div>
@@ -106,7 +106,7 @@
   <div class="col-4">
     <!--投稿数ランキング　同率考慮-->
     <div class="rank">投稿数ランキング</div>
-    <table class="table rank-all">
+    <table class="rank-all">
       <% lastHobby = 0 %>
        <% j = 1 %>
       <% @all_ranks.each.with_index(1) do |ranking, i| %>
@@ -116,19 +116,19 @@
         <% if ranking.hobbies.count != lastHobby %>
           <% j = i %>
        <tbody>
-            <th>
+            <th class="tnumber">
              第<%= j %>位
              <%= ranking.name %>
-             投稿数：<%= ranking.hobbies.count %>
             </th>
+            <td class="postcount">投稿数：<%= ranking.hobbies.count %></td>
           <% lastHobby= ranking.hobbies.count %>
         <% else %>
           <% lastHobby = ranking.hobbies.count %>
-          <th>
+          <th class="tnumber">
             第<%= j %>位
             <%= ranking.name %>
-            投稿数：<%= ranking.hobbies.count %>
           </th>
+          <td class="postcount">投稿数：<%= ranking.hobbies.count %></td>
          <% end %>
        <br>
        </tbody>
