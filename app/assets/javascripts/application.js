@@ -23,6 +23,7 @@
 //= require_tree .
 //= require social-share-button
 
+// ジャンル検索時
 $(document).on('turbolinks:load', function() {
   $(document).on('click', 'input[name="hobby[genre_id]"]', function(){
     let text = $(this).val();
@@ -30,7 +31,7 @@ $(document).on('turbolinks:load', function() {
   });
 });
 
-
+// aboutページのトップに戻るボタン
 $(function() {
   $('.back-btn a').on('click',function(event){
     $('body, html').animate({
@@ -40,10 +41,12 @@ $(function() {
   });
 });
 
+// エラーメッセージ
  $(function(){
     $(".topalert").fadeOut(5000);
   });
 
+// aboutページの一つ目の画像
   $(document).on('turbolinks:load', function(){
     $('.imgone').hide().fadeIn(2000);
   });
