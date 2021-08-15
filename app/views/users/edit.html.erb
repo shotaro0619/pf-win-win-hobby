@@ -3,16 +3,17 @@
       <h2 class="text-center">プロフィール編集</h2>
       <%= form_with model:@user, local:true do |f| %>
       　<div class="form-group text-center ">
+      　  <%= render 'layouts/error_messages', model: f.object %>
           <%= attachment_image_tag @user, :profile_image, :fill, 180, 180, fallback: "unnamed.png", size:'110' %>
           <label class="mb-4" for="inputImage">Profile画像</label>
         </div>
         <div class="form-group text-center ">
           <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
         </div>
-    
+
         <label for="inputName">ニックネーム</label>
         <%= f.text_field :nickname, autofocus: true, placeholder:"名前"%>
-    
+
         <div class="form-group">
           <label for="inputIntroduction">自己紹介文</label>
           <%= f.text_area :introduction, autofocus: true, size: "10x5", class:"form-control introduction"%>

@@ -2,4 +2,52 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.contact-box {
+  width: 500px;
+  border: 1px solid #b3d0d7;
+  box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.6);
+  background-color: #ffffff;
+  height: 100%;
+  padding: 20px;
+}
 
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 400px;
+  padding-top: 80px;
+}
+
+.contact-p {
+  font-size: 30px;
+}
+
+.page-header {
+  padding-top: 30px;
+}
+
+.contact-thanks{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 670px;
+}
+
+.contact-in {
+  width: 600px;
+  height: 300px;
+  border: 1px solid #b3d0d7;
+  box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.6);
+  background-color: #ffffff;
+}
+
+.thanks-p {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.show-p {
+margin-left: 60px;
+}

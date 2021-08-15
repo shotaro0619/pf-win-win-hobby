@@ -1,27 +1,42 @@
-<table>
-  <tbody>
-    <tr>
-      <td class="text-center" style="width: 30%;">お名前</td>
-      <td><%= @contact.name %></td>
-    </tr>
-    <tr>
-      <td class="text-center">メッセージ</td>
-      <td style="white-space: pre-wrap;"><%= @contact.message %></td>
-    </tr>
-  </tbody>
-</table>
+<div class="contact mt-5">
+  <div class="contact-box mt-5">
+    <div class="text-center m-3 contact-p">以下の内容でよろしいですか？</div>
+    <div>
+      <div class="mb-2">
+        <div>お名前</div>
+        <div><%= @contact.name %></div>
+      </div>
+      <div class="mb-2">
+        <div>メールアドレス</div>
+        <div><%= @contact.email %></div>
+      </div>
+      <div class="mb-2">
+        <div>電話番号</div>
+        <div><%= @contact.phone_number %></div>
+      </div>
+      <div class="mb-2">
+        <div>お問い合わせ内容</div>
+        <div style="white-space: pre-wrap;"><%= @contact.message %></div>
+      </div>
+      <div class="text-center">
+        <div class="d-flex justify-content-around">
+          <%= form_for @contact, url: back_path do |f| %>
+            <%= f.hidden_field :name %>
+            <%= f.hidden_field :email %>
+            <%= f.hidden_field :phone_number %>
+            <%= f.hidden_field :message %>
+            <div><%= f.submit '入力画面に戻る', class: 'btn btn-outline-secondary shadow-sm rounded-pill' %></div>
+          <% end %>
 
-<%= form_for(@contact) do |f| %>
-  <%= f.hidden_field :name %>
-  <%= f.hidden_field :email %>
-  <%= f.hidden_field :phone_number %>
-  <%= f.hidden_field :message %>
-  <div><%= f.submit '送信' %></div>
-<% end %>
-<%= form_for @contact, url: back_path do |f| %>
-  <%= f.hidden_field :name %>
-  <%= f.hidden_field :email %>
-  <%= f.hidden_field :phone_number %>
-  <%= f.hidden_field :message %>
-  <div><%= f.submit '入力画面に戻る' %></div>
-<% end %>
+          <%= form_for(@contact) do |f| %>
+            <%= f.hidden_field :name %>
+            <%= f.hidden_field :email %>
+            <%= f.hidden_field :phone_number %>
+            <%= f.hidden_field :message %>
+            <div><%= f.submit '送信', class: 'btn btn-outline-info shadow-sm rounded-pill' %></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

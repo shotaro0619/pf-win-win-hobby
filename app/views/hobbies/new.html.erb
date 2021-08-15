@@ -2,8 +2,8 @@
     <div class="hobby-post rounded col-xs-offset-2 col-xs-8 float-center">
         <h1>投稿する</h1>
         <%= form_with model: @hobby, local:true do |f| %>
-        <%= render 'layouts/error_messages', model: f.object %>
           <div class="row m-4">
+          <%= render 'layouts/error_messages', model: f.object %>
               <h4 class="col-5">趣味名</h4>
               <div><%= f.text_field :name %></div>
           </div>

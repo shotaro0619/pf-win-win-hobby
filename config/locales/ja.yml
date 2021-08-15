@@ -16,3 +16,20 @@ ja:
         password: パスワード
         nickname: ニックネーム
         category: 先生か生徒
+
+ja:
+  activerecord:
+    attributes:
+      hobby:
+        genre: 趣味名
+        name: 趣味のジャンル
+        comment: コメント
+
+ja:
+  activerecord:
+    attributes:
+      contact:
+        name: お名前
+        email: Eメール
+        phone_number: お電話番号
+        message: メッセージ
