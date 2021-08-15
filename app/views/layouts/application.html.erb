@@ -11,24 +11,20 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-sm navbar-light mb-3">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
+      <nav class="navbar navbar-expand-sm navbar-light mb-3 navhead">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <% if !user_signed_in? %>
-         <div><%= link_to "LOGO", "/", class: "logo" %></div>
+         <div class="logo-area"><%= link_to image_tag("logo.png", class: "logo"), "/"  %></div>
         <% else %>
-         <div>
-           <div>
-             <%= link_to "LOGO", user_path(current_user.id), class: "logo" %>
-           </div>
-         </div>
+         <div class="logo-area"><%= link_to image_tag("logo.png", class: "logo"), user_path(current_user.id) %><div>ようこそ、<%= current_user.nickname %>さん！</div></div>
         <% end %>
-        <div class="collapse navbar-collapse justify-content-end">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav font-family">
               <% if !user_signed_in? %>
                 <li class="nav-item active">
-                    <%= link_to "about", homes_about_path, class: "nav-link" %>
+                    <%= link_to "Win Win Hobbyとは?", homes_about_path, class: "nav-link" %>
                 </li>
                 <li class="nav-item active">
                     <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
@@ -59,11 +55,11 @@
                     <%= link_to 'ジャンル一覧検索', genres_path, class: "nav-link" %>
                 </li>
                 <li class="nav-item active pt-3 top-header">
-                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link text-danger" %>
                 </li>
                 <li class="nav-item active">
                   <%= form_with url:search_path, method: :get, local: true do |f| %>
-                    <%= f.search_field :value, placeholder: "ニックネーム・趣味名", required: true %><br>
+                    <%= f.search_field :value, placeholder: "ニックネーム・趣味名", class: "rounded", required: true %><br>
                     <div class="mt-1">
                       <%= f.select :model, options_for_select({ "ニックネーム" => "user", "趣味名" => "hobby" }) %>
                       <%= f.button :type => "submit", class: "submit" do %>
@@ -79,9 +75,6 @@
     </header>
     <main class="mb-2">
       <%= render partial: 'layouts/flash' %>
-      <% if user_signed_in? %>
-       <div>ようこそ、<%= current_user.nickname %>さん！</div>
-      <% end %>
       <%= yield %>
       <script src="https://unpkg.com/ityped@1.0.3"></script>
     </main>
@@ -92,9 +85,4 @@
    <div class="text-center">©Win Win Hobby</div>
   <% end %>
 </footer>
-<script>
-  $(function(){
-    $(".topalert").fadeOut(5000);
-  });
-</script>
 </html>

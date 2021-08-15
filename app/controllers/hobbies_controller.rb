@@ -17,15 +17,15 @@ class HobbiesController < ApplicationController
   end
 
   def index
-    @hobbies = Hobby.page(params[:page]).per(10).order('updated_at DESC')
+    @hobbies = Hobby.all.page(params[:page]).per(10).order('updated_at DESC')
   end
 
   def teacher
-    @hobbies = Hobby.page(params[:page]).per(11).order('updated_at DESC')
+    @hobbies = Hobby.all.page(params[:page]).per(11).order('updated_at DESC')
   end
 
   def student
-    @hobbies = Hobby.page(params[:page]).per(11).order('updated_at DESC')
+    @hobbies = Hobby.all.page(params[:page]).per(11).order('updated_at DESC')
   end
 
   def show
@@ -35,7 +35,7 @@ class HobbiesController < ApplicationController
   def edit
     @hobby = Hobby.find(params[:id])
     if @hobby.user != current_user
-     redirect_to hobbies_path
+      redirect_to hobbies_path
     end
   end
 

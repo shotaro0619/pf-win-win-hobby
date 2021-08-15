@@ -67,18 +67,19 @@
 .rank-all {
  position: relative;
  bottom: 50px;
- border: 1px solid;
+ border: 1px solid #b3d0d7;
+ border-radius: 40px;
 }
 
 .tnumber {
-   border: 1px solid #b3d0d7;
+   border: double 5px #b3d0d7;
    font-size: 20px;
    padding: 10px;
    background-color: #fff;
 }
 
 .postcount {
-   border: 1px solid #b3d0d7;
+   border: double 5px #b3d0d7;
    font-size: 20px;
    padding: 10px;
    background-color: #fff;

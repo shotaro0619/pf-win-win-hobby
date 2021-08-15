@@ -29,3 +29,21 @@ $(document).on('turbolinks:load', function() {
     $('.btn.btn-primary.shadow-sm.rounded-pill.selectbotton').text(text);
   });
 });
+
+
+$(function() {
+  $('.back-btn a').on('click',function(event){
+    $('body, html').animate({
+      scrollTop:0
+    }, 500);
+    event.preventDefault();
+  });
+});
+
+ $(function(){
+    $(".topalert").fadeOut(5000);
+  });
+
+  $(document).on('turbolinks:load', function(){
+    $('.imgone').hide().fadeIn(2000);
+  });

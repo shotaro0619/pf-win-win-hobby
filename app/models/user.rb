@@ -6,7 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :name, :nickname, presence: true, length: { in: 2..20 }
+  validates :name, :nickname, presence: true, length: {in: 2..20}
   validates :category, presence: true
 
   has_many :messages, dependent: :destroy
@@ -35,5 +35,4 @@ class User < ApplicationRecord
   def following?(user)
     followings.include?(user)
   end
-
 end

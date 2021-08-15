@@ -50,7 +50,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 50px;
+  height: 670px;
 }
 
 .box-1 {
@@ -79,9 +80,9 @@ body {
   background-color: #ffffff;
 }
 
-nav {
-  border-top: 3px solid rgba(0, 0, 0, .4);
-  border-bottom: 3px solid rgba(0, 0, 0, .4);
+.navhead {
+  border-top: 3px solid rgba(179,208,215,0.6);
+  border-bottom: 3px solid rgba(179,208,215,0.6);
 }
 
 .category {
@@ -129,13 +130,6 @@ $size: 40px;
  }
 }
 
-.logo {
-  margin-right: 600px;
-}
-
-// .logo1{
-//   margin-right: 110px;
-// }
 
 .search {
   color: #0000ff;
@@ -148,12 +142,6 @@ $size: 40px;
   background-color: #ffffff;
 }
 
-
-.login-btn:hover {
-  box-shadow    : none;        /* カーソル時の影消去 */
-  color         : #000066;     /* 背景色     */
-  background    : #ffffff;     /* 文字色     */
-}
 
 .send-form {
   text-align:center;
@@ -184,5 +172,27 @@ $size: 40px;
   margin-left: 30px;
 }
 
+.logo {
+  width: 70%;
+  height: 70%;
+}
 
+.logo-area {
+  display: inline-block;
+  width: 200px
+}
+
+.pagination {
+  justify-content: center;
+}
+
+.back-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.back-btn img {
+  width: 50px;
+}
 

@@ -5,7 +5,7 @@ class CreateContacts < ActiveRecord::Migration[5.2]
       t.string :email, null: false
       t.string :phone_number, null: false
       t.text :message, null: false
-      
+
       t.timestamps
     end
   end

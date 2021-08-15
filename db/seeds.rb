@@ -7,7 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Genre.create!(
-  [{label: "音楽系", name: '楽器', id:1},{label: "音楽系", name: '音楽ライブ', id:2},{label: "音楽系", name: 'カラオケ', id:3},
+  [
+    {label: "音楽系", name: '楽器', id:1},{label: "音楽系", name: '音楽ライブ', id:2},{label: "音楽系", name: 'カラオケ', id:3},
   {label: "鑑賞系", name: 'アニメ', id:4},{label: "鑑賞系", name: '漫画', id:5},{label: "鑑賞系", name: '映画', id:6},
   {label: "鑑賞系", name: '天体観測', id:7},{label: "鑑賞系", name: '歌舞伎', id:8},
   {label: "美容・健康", name: '筋トレ', id:9},{label: "美容・健康", name: 'ヨガ', id:10},{label: "美容・健康", name: 'アロマセラピー', id:11},
@@ -30,4 +31,5 @@ Genre.create!(
   {label: "スキル系", name: 'マジック', id:47},
   {label: "乗り物系", name: '車', id:48},{label: "乗り物系", name: 'バイク', id:49},
   {label: "その他", name: 'サバゲー', id:50},{label: "その他", name: '競馬', id:51},{label: "その他", name: 'パチンコ', id:52},
-  {label: "その他", name: 'アイドル', id:53},{label: "その他", name: 'ドローン', id:54},{label: "その他", name: 'その他', id:55}])
+  {label: "その他", name: 'アイドル', id:53},{label: "その他", name: 'ドローン', id:54},{label: "その他", name: 'その他', id:55},
+  ])

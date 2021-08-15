@@ -2,7 +2,7 @@
  <div class="row">
   <div class="col-8">
   <div class="genre-page">
-    <h1>ジャンル一覧</h1>
+    <h1 class="font-family">ジャンル一覧</h1>
 
     <div class="category mt-5 music">音楽系</div>
     <% @genres_1.each do |genre| %>
@@ -105,8 +105,8 @@
   </div>
   <div class="col-4">
     <!--投稿数ランキング　同率考慮-->
-    <div class="rank">投稿数ランキング</div>
-    <table class="rank-all">
+    <div class="rank font-family">投稿数ランキング</div>
+    <table class="rank-all rounded">
       <% lastHobby = 0 %>
        <% j = 1 %>
       <% @all_ranks.each.with_index(1) do |ranking, i| %>

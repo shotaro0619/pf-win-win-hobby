@@ -15,7 +15,7 @@ class SearchesController < ApplicationController
     elsif model == 'hobby'
       Hobby.where("name LIKE ?", "%#{value}%")
     elsif model == 'genre'
-      Genre.find_by(name:value).hobbies
+      Genre.find_by(name: value).hobbies
     end
   end
 
