@@ -23,9 +23,9 @@
 //= require_tree .
 //= require social-share-button
 
-// $(document).on('turbolinks:load', function() {
-//   $(document).on('click', 'input[name="hobby[genre_id]"]', function(){
-//     let text = $(this).val();
-//     $('.btn.btn-primary.selectbotton').text(text);
-//   });
-// });
+$(document).on('turbolinks:load', function() {
+  $(document).on('click', 'input[name="hobby[genre_id]"]', function(){
+    let text = $(this).val();
+    $('.btn.btn-primary.selectbotton').text(text);
+  });
+});

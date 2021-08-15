@@ -63,7 +63,7 @@
                 </li>
                 <li class="nav-item active">
                   <%= form_with url:search_path, method: :get, local: true do |f| %>
-                    <%= f.text_field :value, placeholder: "ニックネーム・趣味名" %><br>
+                    <%= f.search_field :value, placeholder: "ニックネーム・趣味名", required: true %><br>
                     <div class="mt-1">
                       <%= f.select :model, options_for_select({ "ニックネーム" => "user", "趣味名" => "hobby" }) %>
                       <%= f.button :type => "submit", class: "submit" do %>
@@ -94,7 +94,7 @@
 </footer>
 <script>
   $(function(){
-    $(".alert").fadeOut(5000);
+    $(".topalert").fadeOut(5000);
   });
 </script>
 </html>

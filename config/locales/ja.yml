@@ -7,3 +7,12 @@ ja:
       next: "次 &rsaquo;"
       truncate: "..."
 
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        nickname: ニックネーム
+        category: 先生か生徒

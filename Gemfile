@@ -81,3 +81,4 @@ group :production do
 end
 gem 'social-share-button'
 gem 'impressionist', '~>1.6.1'
+gem 'rails-i18n'
