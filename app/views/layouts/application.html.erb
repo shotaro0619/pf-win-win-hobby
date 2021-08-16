@@ -79,9 +79,9 @@
       <script src="https://unpkg.com/ityped@1.0.3"></script>
     </main>
   </body>
-<footer class="mb-3 fixed-bottom">
+<footer class="mt-5 mb-1 fixed-bottom">
   <% if !user_signed_in? %>
-   <div class="text-center"><%= link_to "お問い合わせ", new_contact_path , class: 'text-muted'%></div>
+   <div class="text-center"><%= link_to "お問い合わせ", new_contact_path , class: 'text-muted content-btn'%></div>
    <div class="text-center">©Win Win Hobby</div>
   <% end %>
 </footer>

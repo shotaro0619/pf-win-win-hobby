@@ -32,7 +32,7 @@ $(document).on('turbolinks:load', function() {
 });
 
 // aboutページのトップに戻るボタン
-$(function() {
+document.addEventListener('turbolinks:load', function(event) {
   $('.back-btn a').on('click',function(event){
     $('body, html').animate({
       scrollTop:0
@@ -50,3 +50,11 @@ $(function() {
   $(document).on('turbolinks:load', function(){
     $('.imgone').hide().fadeIn(2000);
   });
+
+document.addEventListener("turbolinks:load", () => {
+  function scrollToEnd() {
+      const messageDetails = document.getElementById('chatchatbox');
+      messageDetails.scrollTop = messageDetails.scrollHeight;
+  }
+  scrollToEnd()
+})

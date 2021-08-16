@@ -50,14 +50,18 @@
       <div class="introduction comment-box"><%= @user.introduction %></div>
       <div class="follor">マイページに訪れてくれた人数<%=  @user.impressionist_count %>人</div>
       <div class="row follor">
-        <div class="following"><%= link_to @user.followings.count, user_followings_path(@user) %>フォロー</div>
-        <div><%= link_to @user.followers.count, user_followers_path(@user) %>フォロワー</div>
+        <div class="follow_count">
+          <%= link_to @user.followings.count, user_followings_path(@user) %>フォロー
+        </div>
+        <div class="follower_count">
+          <%= link_to @user.followers.count, user_followers_path(@user) %>フォロワー
+        </div>
       </div>
     </div>
 </div>
 
 <div class="container">
-  <div class="col-xs-offset-1 col-xs-10 hobby-delete">
+  <div class="col-xs-offset-1 col-xs-10 hobby-delete" id="delete-btn">
     <%= render 'hobbies/hobby-delete', hobbies: @hobbies %>
   </div>
 </div>

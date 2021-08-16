@@ -186,13 +186,19 @@ $size: 40px;
   justify-content: center;
 }
 
+// aboutページの上に戻るボタン
 .back-btn {
   position: fixed;
   right: 20px;
-  bottom: 20px;
+  bottom: 60px;
 }
 
 .back-btn img {
   width: 50px;
+}
+
+.content-btn {
+  display: inline-block;
+  width: 200px
 }
 
