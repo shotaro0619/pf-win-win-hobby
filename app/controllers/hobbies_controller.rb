@@ -5,9 +5,9 @@ class HobbiesController < ApplicationController
   end
 
   def create
-    @hobby = Hobby.new(hobby_params)
-    @hobby.user_id = current_user.id
-    if @hobby.save
+    hobby = Hobby.new(hobby_params)
+    hobby.user_id = current_user.id
+    if hobby.save
       flash.keep[:success] = "投稿ができました"
       redirect_to hobbies_path
     else
@@ -17,15 +17,15 @@ class HobbiesController < ApplicationController
   end
 
   def index
-    @hobbies = Hobby.all.page(params[:page]).per(10).order('updated_at DESC')
+    @hobbies = Hobby.page(params[:page]).per(10).order('updated_at DESC')
   end
 
   def teacher
-    @hobbies = Hobby.all.page(params[:page]).per(11).order('updated_at DESC')
+    @hobbies = Hobby.page(params[:page]).per(10).order('updated_at DESC')
   end
 
   def student
-    @hobbies = Hobby.all.page(params[:page]).per(11).order('updated_at DESC')
+    @hobbies = Hobby.page(params[:page]).per(10).order('updated_at DESC')
   end
 
   def show
@@ -40,8 +40,8 @@ class HobbiesController < ApplicationController
   end
 
   def update
-    @hobby = Hobby.find(params[:id])
-    if @hobby.update(hobby_params)
+    hobby = Hobby.find(params[:id])
+    if hobby.update(hobby_params)
       flash[:success] = "編集完了しました"
       redirect_to hobbies_path
     else

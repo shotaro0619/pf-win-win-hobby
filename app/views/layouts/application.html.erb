@@ -33,10 +33,10 @@
                     <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
                 </li>
               <% else %>
-                <li class="nav-item active pt-3 top-header">
+                <li class="nav-item active pt-3 mr-3 top-header">
                     <%= link_to 'マイページ', user_path(current_user.id), class: "nav-link" %>
                 </li>
-                <li class="nav-item active pt-3 top-header">
+                <li class="nav-item active pt-3 mr-3 top-header">
                     <%= link_to '投稿フォーム', new_hobby_path, class: "nav-link" %>
                 </li>
                 <li class="nav-item dropdown pt-3 top-header">
@@ -54,7 +54,7 @@
                 <li class="nav-item active pt-3 top-header">
                     <%= link_to 'ジャンル一覧検索', genres_path, class: "nav-link" %>
                 </li>
-                <li class="nav-item active pt-3 top-header">
+                <li class="nav-item active pt-3 mr-3 top-header">
                     <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link text-danger" %>
                 </li>
                 <li class="nav-item active">
