@@ -71,6 +71,14 @@ body {
   background-color: #ffffff;
 }
 
+.password-forget {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 670px;
+}
+
 .box-2 {
   width: 500px;
   border: 1px solid #b3d0d7;
@@ -202,3 +210,11 @@ $size: 40px;
   width: 200px
 }
 
+
+#error_explanation {
+  color: #ff0000;
+}
+
+.alert-warning {
+  color: #ff0000;
+}

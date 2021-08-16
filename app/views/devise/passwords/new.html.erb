@@ -1,4 +1,4 @@
-<div class="log-in">
+<div class="password-forget">
   <div class="box-2 rounded">
       <h2 class="text-center mb-3">パスワードをお忘れですか?</h2>
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
@@ -9,7 +9,7 @@
         </div>
 
         <div class="actions text-center m-4">
-          <%= f.submit "パスワード再設定メールを送る" %>
+          <%= f.submit "パスワード再設定メールを送る", class: 'btn btn-outline-info shadow-sm rounded-pill' %>
         </div>
       <% end %>
 
