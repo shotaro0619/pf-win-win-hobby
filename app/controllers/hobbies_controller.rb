@@ -5,9 +5,9 @@ class HobbiesController < ApplicationController
   end
 
   def create
-    hobby = Hobby.new(hobby_params)
-    hobby.user_id = current_user.id
-    if hobby.save
+    @hobby = Hobby.new(hobby_params)
+    @hobby.user_id = current_user.id
+    if @hobby.save
       flash.keep[:success] = "投稿ができました"
       redirect_to hobbies_path
     else
