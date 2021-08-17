@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index,:show,:edit,:update]
   resources :messages
-  resources :rooms, only: [:create,:show]
+  resources :rooms, only: [:index, :create,:show]
 
   # お問い合わせ機能
   resources :contacts, only: [:new, :create]

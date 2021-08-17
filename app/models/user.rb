@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  is_impressionable
+  is_impressionable counter_cache: true
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

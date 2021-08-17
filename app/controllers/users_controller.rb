@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-impressionist :actions=> [:show]
+impressionist :actions => [:show], :unique => [:impressionable_id, :ip_address]
 
   def index
     redirect_to new_user_registration_path
@@ -7,7 +7,7 @@ impressionist :actions=> [:show]
 
   def show
      @user = User.find(params[:id])
-     impressionist(@user, nil, unique: [:impressionable_id, :ip_address])
+     impressionist(@user, nil, unique: [:ip_address])
      @hobbies = @user.hobbies.page(params[:page]).reverse_order
      @currentUserEntry=Entry.where(user_id: current_user.id)
      @userEntry=Entry.where(user_id: @user.id)
