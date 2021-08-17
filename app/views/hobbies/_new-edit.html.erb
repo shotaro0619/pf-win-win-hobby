@@ -1,0 +1,160 @@
+<%= form_with model: hobby, local:true do |f| %>
+            <div class="row m-4">
+            <%= render 'layouts/error_messages', model: f.object %>
+                <h4 class="col-5">趣味名</h4>
+                <div><%= f.text_field :name, class:"rounded-pill" %></div>
+            </div>
+            <div class="row m-4">
+                <h4 class="col-5"><%= f.label :ジャンル %></h4>
+                 <!--Button trigger modal-->
+              <button type="button" class="btn btn-primary shadow-sm rounded-pill selectbotton" data-toggle="modal" data-target="#exampleModalLong">
+                選ぶ
+              </button>
+
+               <!--Modal-->
+              <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">ジャンル一覧</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="music">音楽系</div>
+                        <%= f.radio_button :genre_id, 1 %>
+                        <%= f.label :genre_id, "楽器", value: 1 %>
+                        <%= f.radio_button :genre_id, 2 %>
+                        <%= f.label :genre_id, "音楽ライブ", value: 2 %>
+                        <%= f.radio_button :genre_id, 3 %>
+                        <%= f.label :genre_id, "カラオケ", value: 3 %>
+                      <div class="view">鑑賞系</div>
+                      <%= f.radio_button :genre_id, 4 %>
+                        <%= f.label :genre_id, "アニメ", value: 4 %>
+                        <%= f.radio_button :genre_id, 5 %>
+                        <%= f.label :genre_id, "漫画", value: 5 %>
+                        <%= f.radio_button :genre_id, 6 %>
+                        <%= f.label :genre_id, "映画", value: 6 %>
+                        <%= f.radio_button :genre_id, 7 %>
+                        <%= f.label :genre_id, "天体観測", value: 7 %>
+                        <%= f.radio_button :genre_id, 8 %>
+                        <%= f.label :genre_id, "歌舞伎", value: 8 %>
+                      <div class="health">美容・健康</div>
+                        <%= f.radio_button :genre_id, 9 %>
+                        <%= f.label :genre_id, "筋トレ", value: 9 %>
+                        <%= f.radio_button :genre_id,10 %>
+                        <%= f.label :genre_id, "ヨガ", value: 10 %>
+                        <%= f.radio_button :genre_id, 11 %>
+                        <%= f.label :genre_id, "アロマセラピー", value: 11 %>
+                      <div class="trip">旅行・お出かけ</div>
+                        <%= f.radio_button :genre_id, 12 %>
+                        <%= f.label :genre_id, "温泉めぐり", value: 12 %>
+                        <%= f.radio_button :genre_id, 13 %>
+                        <%= f.label :genre_id, "美術館", value: 13 %>
+                        <%= f.radio_button :genre_id, 14 %>
+                        <%= f.label :genre_id, "博物館", value: 14 %>
+                        <%= f.radio_button :genre_id, 15 %>
+                        <%= f.label :genre_id, "寺めぐり", value: 15 %>
+                      <div class="sports">スポーツ系</div>
+                        <%= f.radio_button :genre_id, 16 %>
+                        <%= f.label :genre_id, "ランニング", value: 16 %>
+                        <%= f.radio_button :genre_id, 17 %>
+                        <%= f.label :genre_id, "サッカー", value: 17 %>
+                        <%= f.radio_button :genre_id, 18 %>
+                        <%= f.label :genre_id, "野球", value: 18 %>
+                        <%= f.radio_button :genre_id, 19 %>
+                        <%= f.label :genre_id, "バスケットボール", value: 19 %>
+                        <%= f.radio_button :genre_id, 20 %>
+                        <%= f.label :genre_id, "ゴルフ", value: 20 %>
+                        <%= f.radio_button :genre_id, 21 %>
+                        <%= f.label :genre_id, "ボルダリング", value: 21 %>
+                        <%= f.radio_button :genre_id, 22 %>
+                        <%= f.label :genre_id, "ダーツ", value: 22 %>
+                        <%= f.radio_button :genre_id, 23 %>
+                        <%= f.label :genre_id, "ダンス", value: 23 %>
+                        <%= f.radio_button :genre_id, 24 %>
+                        <%= f.label :genre_id, "自転車", value: 24 %>
+                      <div class="nature">自然・アウトドア系</div>
+                        <%= f.radio_button :genre_id, 25 %>
+                        <%= f.label :genre_id, "登山", value: 25 %>
+                        <%= f.radio_button :genre_id, 26 %>
+                        <%= f.label :genre_id, "キャンプ", value: 26 %>
+                        <%= f.radio_button :genre_id, 27 %>
+                        <%= f.label :genre_id, "釣り", value: 27 %>
+                      <div class="game">ゲーム・ボードゲーム</div>
+                        <%= f.radio_button :genre_id, 28 %>
+                        <%= f.label :genre_id, "テレビゲーム", value: 28 %>
+                        <%= f.radio_button :genre_id, 29 %>
+                        <%= f.label :genre_id, "トランプ", value: 29 %>
+                        <%= f.radio_button :genre_id, 30 %>
+                        <%= f.label :genre_id, "将棋", value: 30 %>
+                        <%= f.radio_button :genre_id, 31 %>
+                        <%= f.label :genre_id, "囲碁", value: 31 %>
+                        <%= f.radio_button :genre_id, 32 %>
+                        <%= f.label :genre_id, "チェス", value: 32 %>
+                        <%= f.radio_button :genre_id, 33 %>
+                        <%= f.label :genre_id, "オセロ　", value: 33 %>
+                        <%= f.radio_button :genre_id, 34 %>
+                        <%= f.label :genre_id, "ボードゲーム", value: 34 %>
+                        <%= f.radio_button :genre_id, 35 %>
+                        <%= f.label :genre_id, "トレーディングカードゲーム", value: 35 %>
+                      <h5 class="make">作る系</h5>
+                        <%= f.radio_button :genre_id, 36 %>
+                        <%= f.label :genre_id, "料理", value: 36 %>
+                        <%= f.radio_button :genre_id, 37 %>
+                        <%= f.label :genre_id, "イラスト", value: 37 %>
+                        <%= f.radio_button :genre_id, 38 %>
+                        <%= f.label :genre_id, "プラモデル", value: 38 %>
+                        <%= f.radio_button :genre_id, 39 %>
+                        <%= f.label :genre_id, "ハンドメイド", value: 39 %>
+                      <div class="pets">ペット・育てる系</div>
+                        <%= f.radio_button :genre_id, 40 %>
+                        <%= f.label :genre_id, "園芸", value: 40 %>
+                        <%= f.radio_button :genre_id, 41 %>
+                        <%= f.label :genre_id, "観葉植物", value: 41 %>
+                        <%= f.radio_button :genre_id, 42 %>
+                        <%= f.label :genre_id, "アクアリウム", value: 42 %>
+                        <%= f.radio_button :genre_id, 43 %>
+                        <%= f.label :genre_id, "ペット", value: 43 %>
+                        <div class="skill">スキル系</div>
+                        <%= f.radio_button :genre_id, 44 %>
+                        <%= f.label :genre_id, "外国語", value: 44 %>
+                        <%= f.radio_button :genre_id, 45 %>
+                        <%= f.label :genre_id, "プログラミング", value: 45 %>
+                        <%= f.radio_button :genre_id, 46 %>
+                        <%= f.label :genre_id, "カメラ", value: 46 %>
+                        <%= f.radio_button :genre_id, 47 %>
+                        <%= f.label :genre_id, "マジック", value: 47 %>
+                      <div class="vehicle">乗り物系</div>
+                        <%= f.radio_button :genre_id, 48 %>
+                        <%= f.label :genre_id, "車", value: 48 %>
+                        <%= f.radio_button :genre_id, 49 %>
+                        <%= f.label :genre_id, "バイク", value: 49 %>
+                      <div class="others">その他</div>
+                        <%= f.radio_button :genre_id, 50 %>
+                        <%= f.label :genre_id, "サバゲー", value: 50 %>
+                        <%= f.radio_button :genre_id, 51 %>
+                        <%= f.label :genre_id, "競馬", value: 51 %>
+                        <%= f.radio_button :genre_id, 52 %>
+                        <%= f.label :genre_id, "パチンコ", value: 52 %>
+                        <%= f.radio_button :genre_id, 53 %>
+                        <%= f.label :genre_id, "アイドル", value: 53 %>
+                        <%= f.radio_button :genre_id, 54 %>
+                        <%= f.label :genre_id, "ドローン", value: 54 %>
+                        <%= f.radio_button :genre_id, 55 %>
+                        <%= f.label :genre_id, "その他", value: 55 %>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">選択完了</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4 class="row col-5">コメント</h4>
+            <%= f.text_area :comment , size: "50x5" %>
+            <%= f.submit '投稿', class: 'btn btn-outline-primary shadow-sm rounded-pill float-right' %>
+          <% end %>
+          </div>

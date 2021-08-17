@@ -2,20 +2,20 @@
   <div class="col-md-6 col-md-offset-3">
     <h1 class="heading">チャット履歴一覧</h1>
     <% @anotherEntries.each do |e| %>
-    <div class="users-index-item row">
+    <div class="users-index row">
       <div class="user-left">
       <%= link_to room_path(e.room.id) do %>
         <%= attachment_image_tag e.user, :profile_image, fallback: "unnamed.png", size:'70', class:"pro_photo" %>
       <% end %>
       </div>
       <div class="user-right">
-      <%= link_to room_path(e.room.id) do %>
-        <%= e.user.nickname %>さんとチャットをする<br>
-      <% end %>
-      <div>
-       <%= e.room.messages.order(created_at: :desc).take.try(:content) %>
-       <span class="text-muted"><%= e.created_at.strftime('%Y/%m/%d%H:%M') %></span>
-      </div>
+        <%= link_to room_path(e.room.id) do %>
+          <%= e.user.nickname %>さんとチャットをする<br>
+        <% end %>
+        <div>
+         <%= e.room.messages.order(created_at: :desc).take.try(:content) %>
+         <span class="text-muted"><%= e.created_at.strftime('%Y/%m/%d-%H:%M') %></span>
+        </div>
       </div>
     </div>
     <% end %>

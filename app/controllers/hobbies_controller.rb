@@ -21,11 +21,11 @@ class HobbiesController < ApplicationController
   end
 
   def teacher
-    @hobbies = Hobby.page(params[:page]).per(10).order('updated_at DESC')
+    @hobbies = Hobby.joins(:user).where("users.category='先生'").page(params[:page]).per(10).order('updated_at DESC')
   end
 
   def student
-    @hobbies = Hobby.page(params[:page]).per(10).order('updated_at DESC')
+    @hobbies = Hobby.joins(:user).where("users.category='生徒'").page(params[:page]).per(10).order('updated_at DESC')
   end
 
   def show

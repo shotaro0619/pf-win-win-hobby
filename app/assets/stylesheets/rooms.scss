@@ -40,9 +40,12 @@
   overflow-y: scroll;
 }
 
-.users-index-item {
-  margin: 20px;
-  display: inline-block;
+.users-index {
+// display: inline-block;
+// margin: 30px;
+// border: 1px solid;
+// text-align: center；
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }

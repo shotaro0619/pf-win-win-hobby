@@ -26,7 +26,7 @@
 // ジャンル検索時
 $(document).on('turbolinks:load', function() {
   $(document).on('click', 'input[name="hobby[genre_id]"]', function(){
-    let text = $(this).val();
+    let text = $(this).next().text();
     $('.btn.btn-primary.shadow-sm.rounded-pill.selectbotton').text(text);
   });
 });

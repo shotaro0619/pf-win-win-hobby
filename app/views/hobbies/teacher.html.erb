@@ -1,28 +1,3 @@
 <h3 class="heading text-center font-family">先生側の投稿一覧</h3>
-<div class="container">
-  <div class="col-xs-offset-1 col-xs-10">
-    <% @hobbies.each do |hobby| %>
-      <% if hobby.user.category == "先生" %>
-            <div class="row">
-              <div class="col-2 text-center">
-                <p>
-                  <%= link_to user_path(hobby.user) do %>
-                    <%= attachment_image_tag hobby.user, :profile_image, :fill, 110, 110, fallback: "unnamed.png", size:'110', class: "prof_image" %>
-                  <% end %><br>
-                  <span class="prof_name"><%= hobby.user.nickname%></span>
-                </p>
-                </div>
-                <div class="hobby col-3 hobby_name">
-                <p><span class="text-white px-2 py-1 mr-3 rounded-pill shadow bg-info">趣味名</span>　<%= hobby.name %></p>
-                <p><span class="text-white px-2 py-1 mr-3 rounded-pill shadow bg-warning">ジャンル</span><%= hobby.genre.name if hobby.genre %></p>
-                </div>
-              <div class="col-6">
-                <p class="ml-4 comment rounded comment-box"><%= hobby.comment %></p>
-              </div>
-            </div>
-          <hr>
-      <% end %>
-    <% end %>
-  </div>
-</div>
-<div class="page"><%= paginate @hobbies %></div>
+<%= render 'hobbies/index', hobbies: @hobbies %>
+<%= paginate @hobbies %>
