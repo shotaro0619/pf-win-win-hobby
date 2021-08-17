@@ -62,14 +62,13 @@
 .rank {
   position: relative;
   top: 40px;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .rank-all {
- position: relative;
- bottom: 120px;
- border: 1px solid #b3d0d7;
- border-radius: 40px;
+  position: absolute;
+  top: 200px;
+
 }
 
 .tnumber {

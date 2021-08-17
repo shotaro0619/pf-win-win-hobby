@@ -51,6 +51,7 @@ document.addEventListener('turbolinks:load', function(event) {
     $('.imgone').hide().fadeIn(2000);
   });
 
+// DM機能のスクロール
 document.addEventListener("turbolinks:load", () => {
   function scrollToEnd() {
       const messageDetails = document.getElementById('chatchatbox');

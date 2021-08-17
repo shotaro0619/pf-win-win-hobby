@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
 impressionist :actions=> [:show]
 
+  def index
+    redirect_to new_user_registration_path
+  end
+
   def show
      @user = User.find(params[:id])
      impressionist(@user, nil, unique: [:impressionable_id, :ip_address])

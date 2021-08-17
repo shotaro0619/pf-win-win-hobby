@@ -218,3 +218,48 @@ $size: 40px;
 .alert-warning {
   color: #ff0000;
 }
+
+// 数字透過
+.about-p {
+   position: relative;
+   padding-top: 40px;
+   padding-left: 60px;
+}
+
+.about-p span {
+   position: absolute;
+   top: 0;
+   left: 10px;
+   font-size: 70px;
+   color: rgba(186,85,211,0.3);
+   border-bottom: 3px solid rgba(186,85,211,0.5);
+}
+
+// 枠線はみだし
+.heading{
+ display: inline-block;
+ text-align: center;
+ position: relative;
+ padding: 1rem 2rem calc(1rem + 10px);
+ background: #fff;
+ margin: 20px;
+}
+
+.heading:before {
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  width: 100%;
+  height: 100%;
+  content: '';
+  border: 4px solid #000;
+}
+
+// ヘッダーの浮き上がる
+.head-jump {
+	transition: all 0.3s ease 0s;
+}
+.head-jump:hover {
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+	transform: translateY(-0.5em);
+}
