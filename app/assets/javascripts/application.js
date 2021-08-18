@@ -57,5 +57,5 @@ document.addEventListener("turbolinks:load", () => {
       const messageDetails = document.getElementById('chatchatbox');
       messageDetails.scrollTop = messageDetails.scrollHeight;
   }
-  scrollToEnd()
+  scrollToEnd();
 })

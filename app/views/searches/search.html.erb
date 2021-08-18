@@ -1,11 +1,11 @@
 <% if @datas.empty? %>
   <h2 class="m-5">
      <% if @model == 'user' %>
-       <div>該当する会員はいません</div>
+       <div class="heading">該当する会員はいません</div>
      <% elsif @model == 'hobby' %>
-       <div>趣味名が<span class="hobby-name"><%= @value %>はまだありません</div>
+       <div class="heading">趣味名が<span class="hobby-name"><%= @value %></span>はまだありません</div>
      <% else %>
-       <div>趣味のジャンルが<span class="hobby-name"><%= @value %></span>の投稿はまだありません</div>
+       <div class="heading">趣味のジャンルが<span class="hobby-name"><%= @value %></span>の投稿はまだありません</div>
      <% end %>
  </h2>
 <% else %>
@@ -13,11 +13,11 @@
       <div class="col-xs-12 bg-mask">
          <h2 class="mb-5">
              <% if @model == 'user' %>
-               <div>ニックネームに<span class="hobby-name"><%= @value %></span>を含む会員の投稿一覧</div>
+               <div  class="heading">ニックネームに<span class="hobby-name"><%= @value %></span>を含む会員の投稿一覧</div>
              <% elsif @model == 'hobby' %>
-               <div>趣味名が<span class="hobby-name"><%= @value %></span>の投稿一覧</div>
+               <div  class="heading">趣味名が<span class="hobby-name"><%= @value %></span>の投稿一覧</div>
              <% else %>
-               <div>趣味のジャンルが<span class="hobby-name"><%= @value %></span>の投稿一覧</div>
+               <div  class="heading">趣味のジャンルが<span class="hobby-name"><%= @value %></span>の投稿一覧</div>
              <% end %>
          </h2>
         </div>

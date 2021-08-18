@@ -1,2 +1,10 @@
 $("#chat").html("<%= j(render partial: 'rooms/chat', locals:{ message: @message, room: @room, messages: @messages }) %>");
 $(".dm").val('');
+
+$(function(){
+  function scrollToEnd() {
+      const messageDetails = document.getElementById('chatchatbox');
+      messageDetails.scrollTop = messageDetails.scrollHeight;
+  }
+  scrollToEnd();
+ })

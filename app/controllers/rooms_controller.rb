@@ -27,7 +27,7 @@ class RoomsController < ApplicationController
     @currentEntries.each do | entry |
       myRoomIds << entry.room.id
     end
-    @anotherEntries = Entry.where(room_id: myRoomIds).where('user_id != ?', @user.id)
+    @anotherEntries = Entry.where(room_id: myRoomIds).order('updated_at DESC').where('user_id != ?', @user.id)
   end
 
 end

@@ -54,8 +54,10 @@ class HobbiesController < ApplicationController
     @user = current_user
     @hobbies = @user.hobbies.page(params[:page]).reverse_order
     hobby = Hobby.find(params[:id])
-    hobby.destroy
-    # redirect_to user_path(current_user)
+    if hobby.destroy
+    else
+      render :show
+    end
   end
 
   private

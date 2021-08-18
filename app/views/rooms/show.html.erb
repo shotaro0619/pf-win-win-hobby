@@ -1,7 +1,7 @@
 <div>
 <% @entries.each do |e| %>
   <% if current_user.id != e.user.id %>
-    <h1 class="m-5"><strong><%= e.user.nickname %>さんとのチャット</strong></h1>
+    <h1 class="m-4 heading"><strong><%= e.user.nickname %>さんとのチャット</strong></h1>
   <% end %>
 <% end %>
 </div>
