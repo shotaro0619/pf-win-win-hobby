@@ -6,8 +6,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :name, :nickname, presence: true, length: {in: 2..20}
+  validates :name, presence: true, length: { maximum: 20, minimum: 2 }
+  validates :nickname, presence: true, length: { maximum: 20, minimum: 2 }
   validates :category, presence: true
+  validates :introduction, length: {maximum: 180}
+  validates :email, presence: true, uniqueness: true, format: { with: /\A\S+@\S+\.\S+\z/ }
 
   has_many :messages, dependent: :destroy
   # DM機能
@@ -15,6 +18,7 @@ class User < ApplicationRecord
   # DM機能
 
   has_many :hobbies, dependent: :destroy
+  
   attachment :profile_image
 
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy

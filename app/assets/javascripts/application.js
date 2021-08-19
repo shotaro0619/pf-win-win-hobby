@@ -58,4 +58,4 @@ document.addEventListener("turbolinks:load", () => {
       messageDetails.scrollTop = messageDetails.scrollHeight;
   }
   scrollToEnd();
-})
+});
