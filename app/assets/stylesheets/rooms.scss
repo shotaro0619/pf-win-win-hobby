@@ -2,25 +2,100 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// .right {
+//   display: inline-block;
+//   border: 1px solid black;
+//   border-radius: 19px;
+//   padding: 9px 14px;
+//   background-color: #d1ffff;
+//   max-width: 240px;
+//   text-align: left;
+// }
+
 .right {
+  position: relative;
   display: inline-block;
-  border: 1px solid black;
-  border-radius: 19px;
-  padding: 9px 14px;
-  background-color: #d1ffff;
   max-width: 240px;
+  margin: 1.5em 15px 1.5em 0;
+  padding: 7px 10px;
+  min-width: 30px;
+  color: #555;
+  font-size: 16px;
+  background: #FFF;
+  border: solid 3px #555;
+  box-sizing: border-box;
   text-align: left;
 }
+
+.right:before {
+  content: "";
+  position: absolute;
+  top: 65%;
+  right: -24px;
+  margin-top: -12px;
+  border: 12px solid transparent;
+  border-left: 12px solid #FFF;
+  z-index: 2;
+}
+
+.right:after {
+  content: "";
+  position: absolute;
+  top: 65%;
+  right: -30px;
+  margin-top: -14px;
+  border: 14px solid transparent;
+  border-left: 14px solid #555;
+  z-index: 1;
+}
+
+// .left {
+//   position: relative;
+//   display: inline-block;
+//   border: 1px solid black;
+//   border-radius: 19px;
+//   padding: 9px 14px;
+//   max-width: 240px;
+//   background-color: #d1ffff;
+// }
 
 .left {
   position: relative;
   display: inline-block;
-  border: 1px solid black;
-  border-radius: 19px;
   padding: 9px 14px;
+  margin-left: 10px;
+  min-width: 30px;
   max-width: 240px;
-  background-color: #d1ffff;
+  color: #555;
+  font-size: 16px;
+  background: #FFF;
+  border: solid 3px #555;
+  box-sizing: border-box;
+  text-align: left;
 }
+
+.left:before {
+  content: "";
+  position: absolute;
+  top: 35%;
+  left: -24px;
+  margin-top: -12px;
+  border: 12px solid transparent;
+  border-right: 12px solid #FFF;
+  z-index: 2;
+}
+
+.left:after {
+  content: "";
+  position: absolute;
+  top: 35%;
+  left: -30px;
+  margin-top: -14px;
+  border: 14px solid transparent;
+  border-right: 14px solid #555;
+  z-index: 1;
+}
+
 
 .chat-content {
   padding-top: 15px;
@@ -49,4 +124,10 @@
 
 .user-right {
   padding-left: 30px;
+}
+
+.back-btn2 {
+  position: fixed;
+  right: 200px;
+  bottom: 60px;
 }

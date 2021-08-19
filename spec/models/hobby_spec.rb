@@ -5,7 +5,8 @@ RSpec.describe 'Hobbyモデルのテスト', type: :model do
     subject { hobby.valid? }
 
     let(:user) { create(:user) }
-    let!(:hobby) { build(:hobby, user_id: user.id) }
+    let(:genre) { create(:genre) }
+    let!(:hobby) { build(:hobby, user_id: user.id, genre_id: genre.id) }
 
     context 'nameカラム' do
       it '空欄でないこと' do
@@ -21,11 +22,11 @@ RSpec.describe 'Hobbyモデルのテスト', type: :model do
       end
       it '180文字以下であること: 180文字は◯' do
         hobby.comment = Faker::Lorem.characters(number: 180)
-        is_expected.to eq true
+        expect(hobby.valid?).to eq true;
       end
       it '180文字以下であること: 181文字はx' do
         hobby.comment = Faker::Lorem.characters(number: 181)
-        is_expected.to eq false
+        expect(hobby.valid?).to eq false;
       end
     end
 

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   # お問い合わせ機能
   resources :contacts, only: [:new, :create]
+  get 'contacts/confirm'
   post 'contacts/confirm', to: 'contacts#confirm', as: 'confirm'
   post 'contacts/back', to: 'contacts#back', as: 'back'
   get 'thanks', to: 'contacts#thanks', as: 'thanks'

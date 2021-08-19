@@ -48,7 +48,7 @@ document.addEventListener('turbolinks:load', function(event) {
 
 // aboutページの一つ目の画像
   $(document).on('turbolinks:load', function(){
-    $('.imgone').hide().fadeIn(2000);
+    $('.imgone').hide().fadeIn(3000);
   });
 
 // DM機能のスクロール
@@ -58,4 +58,14 @@ document.addEventListener("turbolinks:load", () => {
       messageDetails.scrollTop = messageDetails.scrollHeight;
   }
   scrollToEnd();
+});
+
+// messesのトップに戻るボタン
+document.addEventListener('turbolinks:load', function(event) {
+  $('.back-btn2 a').on('click',function(event){
+    $('#chatchatbox').animate({
+      scrollTop:0
+    }, 500);
+    event.preventDefault();
+  });
 });

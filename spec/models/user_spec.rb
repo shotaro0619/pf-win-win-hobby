@@ -95,8 +95,14 @@ RSpec.describe 'Userモデルのテスト', type: :model do
         user.password = ""
         is_expected.to eq false
       end
+      it '6文字以上であること: 6文字は◯' do
+        user.password = Faker::Lorem.characters(number: 6)
+        user.password_confirmation = user.password
+        expect(user).to be_valid
+      end
       it '6文字以上であること: 5文字はx' do
         user.password = Faker::Lorem.characters(number: 5)
+        user.password_confirmation = user.password
         is_expected.to eq false
       end
     end

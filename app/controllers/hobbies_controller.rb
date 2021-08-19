@@ -1,5 +1,5 @@
 class HobbiesController < ApplicationController
-
+before_action :authenticate_user!
   def new
     @hobby = Hobby.new
   end

@@ -20,7 +20,7 @@
       </div>
       <div class="text-center">
         <div class="d-flex justify-content-around">
-          <%= form_for @contact, url: back_path do |f| %>
+          <%= form_with model: @contact, url: back_path, local: true do |f| %>
             <%= f.hidden_field :name %>
             <%= f.hidden_field :email %>
             <%= f.hidden_field :phone_number %>
@@ -28,7 +28,7 @@
             <div><%= f.submit '入力画面に戻る', class: 'btn btn-outline-secondary shadow-sm rounded-pill' %></div>
           <% end %>
 
-          <%= form_for(@contact) do |f| %>
+          <%= form_with model: @contact, local: true do |f| %>
             <%= f.hidden_field :name %>
             <%= f.hidden_field :email %>
             <%= f.hidden_field :phone_number %>

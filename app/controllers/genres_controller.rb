@@ -1,4 +1,5 @@
 class GenresController < ApplicationController
+  before_action :authenticate_user!
   def index
     @genres_1 = Genre.where(label: "音楽系")
     @genres_2 = Genre.where(label: "鑑賞系")
