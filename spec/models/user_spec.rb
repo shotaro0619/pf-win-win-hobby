@@ -76,11 +76,11 @@ RSpec.describe 'Userモデルのテスト', type: :model do
         user.email = ""
         is_expected.to eq false
       end
-      it 'emailに@含まれていること' do
-        user.email = "testtest@test.com"
-        is_expected.to eq true
+      it 'emailに@が含まれていること: @が含まれてれば◯' do
+      user.email = "testtest@test.com"
+      is_expected.to eq true
       end
-      it 'emailに@含まれていること' do
+      it 'emailに@が含まれていること: @が含まれてればx' do
         user.email = "testtest.com"
         is_expected.to eq false
       end

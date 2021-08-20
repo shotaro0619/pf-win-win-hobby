@@ -1,5 +1,6 @@
 class Contact < ApplicationRecord
   validates :name, presence: true, length: {in: 2..20}
-  validates :email, :phone_number, :message, presence: true
-  validates :phone_number, numericality: {only_integer: true}
+  validates :message, presence: true, length: {in: 2..200}
+  validates :email, presence: true, format: { with: /\A\S+@\S+\.\S+\z/ }
+  validates :phone_number, presence: true, format: {with: /\A[0-9]{10,11}\z/}, numericality: {only_integer: true}
 end
