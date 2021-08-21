@@ -52,11 +52,11 @@ URL:http://win-win-hobby.com/
 RSpecテストは現在155項目をテストしており今後も増やしていく予定です。
 <kbd><img width="511" alt="スクリーンショット 2021-08-26 22 56 58" src="https://user-images.githubusercontent.com/83491747/133381402-3a712d01-e716-487a-9353-dbfcf175d7c4.png"></kbd>
 
-チャレンジ要素一覧 https://docs.google.com/spreadsheets/d/1cjLShFfCwpjb9DvkrizhEmcc6WbCV1Ul9xNj-pee6Mc/edit?usp=sharing
+[チャレンジ要素一覧](https://docs.google.com/spreadsheets/d/1cjLShFfCwpjb9DvkrizhEmcc6WbCV1Ul9xNj-pee6Mc/edit?usp=sharing)
 
 ## :pencil: 設計書
-- ER図 https://app.diagrams.net/#G1CIbPMSS-m9fy7JEJaFBOiaJMLjfSejlJ
-- テーブ定義書 https://docs.google.com/spreadsheets/d/1fo-s5qV6ePNgv5Ttwgg7-9Xm6zImNa-LH6vpGUFJfG4/edit?usp=sharing
+- [ER図](https://app.diagrams.net/#G1CIbPMSS-m9fy7JEJaFBOiaJMLjfSejlJ)
+- [テーブ定義書](https://docs.google.com/spreadsheets/d/1fo-s5qV6ePNgv5Ttwgg7-9Xm6zImNa-LH6vpGUFJfG4/edit?usp=sharing)
 
 
 
