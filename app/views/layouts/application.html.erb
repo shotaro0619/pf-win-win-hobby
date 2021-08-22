@@ -5,8 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -16,9 +16,9 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <% if !user_signed_in? %>
-         <div class="logo-area"><%= link_to image_tag("logo.png", class: "logo"), "/"  %></div>
+         <div class="logo-area"><%= link_to image_tag("logo.png", class: "logo", alt: "ロゴ画像"), "/"  %></div>
         <% else %>
-         <div class="logo-area"><%= link_to image_tag("logo.png", class: "logo"), user_path(current_user.id) %><div>ようこそ、<%= current_user.nickname %>さん！</div></div>
+         <div class="logo-area"><%= link_to image_tag("logo.png", class: "logo", alt: "ロゴ画像"), user_path(current_user.id) %><div>ようこそ、<%= current_user.nickname %>さん！</div></div>
         <% end %>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav font-family">

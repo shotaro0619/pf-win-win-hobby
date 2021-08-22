@@ -243,7 +243,7 @@ describe '[STEP1]ユーザーログイン前のテスト', type: :system do
     end
   end
 
-  describe 'ユーザーロスアウトのテスト' do
+  describe 'ユーザーログアウトのテスト' do
     let(:user) { create(:user) }
 
     before do
