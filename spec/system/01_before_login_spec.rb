@@ -89,11 +89,12 @@ describe '[STEP1]ユーザーログイン前のテスト', type: :system do
     end
     context 'お問い合わせ送信のテスト' do
       before do
-        fill_in 'contact[name]', with: Faker::Lorem.characters(number: 10)
-        fill_in 'contact[email]', with: Faker::Internet.email
+        
+        fill_in 'contact[name]', with: 'テストユーザー'
+        fill_in 'contact[email]', with: 'test@example.com'
         fill_in 'contact[phone_number]', with: '09012345678'
-        fill_in 'contact[message]', with: Faker::Lorem.characters(number: 20)
-        click_button '入力画面に戻る'
+        fill_in 'contact[message]', with: 'あああああああああああああああ'
+        click_button '入力内容確認'
         click_button '送信'
       end
 

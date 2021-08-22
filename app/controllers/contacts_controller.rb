@@ -8,6 +8,12 @@ class ContactsController < ApplicationController
   # newアクションから入力内容を受け取り、
   # 送信ボタンを押されたらcreateアクションを実行します。
   def confirm
+    # session[:contact] = contact_params if params[:contact]
+    # @contact = if params[:contact]
+    #             Contact.new(contact_params)
+    #           else
+    #             Contact.new(session[:contact])
+    #           end
     @contact = Contact.new(contact_params)
     if @contact.invalid?
       render :new
