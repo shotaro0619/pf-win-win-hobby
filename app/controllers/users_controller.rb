@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
 impressionist :actions => [:show], :unique => [:impressionable_id, :ip_address]
 
   def index

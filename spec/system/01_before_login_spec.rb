@@ -87,13 +87,13 @@ describe '[STEP1]ユーザーログイン前のテスト', type: :system do
         expect(page).to have_content 'あああああああああああああああ'
       end
     end
-  end
     context 'お問い合わせ送信のテスト' do
       before do
         fill_in 'contact[name]', with: Faker::Lorem.characters(number: 10)
         fill_in 'contact[email]', with: Faker::Internet.email
         fill_in 'contact[phone_number]', with: '09012345678'
         fill_in 'contact[message]', with: Faker::Lorem.characters(number: 20)
+        click_button '入力画面に戻る'
         click_button '送信'
       end
 
@@ -104,6 +104,7 @@ describe '[STEP1]ユーザーログイン前のテスト', type: :system do
         expect(page).to have_content 'お問い合わせいただきありがとうございました。'
       end
     end
+  end
   describe 'ユーザー新規登録のテスト' do
     before do
       visit new_user_registration_path
@@ -163,11 +164,11 @@ describe '[STEP1]ユーザーログイン前のテスト', type: :system do
   end
   describe 'ユーザーログイン' do
     let(:user) { create(:user) }
-    
+
     before do
       visit new_user_session_path
     end
-    
+
     context '表示内容の確認' do
       it 'URLが正しい' do
         expect(current_path).to eq '/users/sign_in'
@@ -188,12 +189,76 @@ describe '[STEP1]ユーザーログイン前のテスト', type: :system do
         expect(page).to have_link 'ゲストログイン（閲覧用）'
       end
     end
-    
+
     context 'ログイン成功のテスト' do
       before do
-        fill_in 'user[email]', with: user.name
+        fill_in 'user[email]', with: user.email
         fill_in 'user[password]', with: user.password
         click_button 'ログイン'
+      end
+      it 'ログイン後のリダイレクト先が、投稿全一覧になっている' do
+        expect(current_path).to eq '/hobbies'
+      end
+    end
+    context 'ログイン失敗のテスト' do
+      before do
+        fill_in 'user[email]', with: ''
+        fill_in 'user[password]', with: ''
+        click_button 'ログイン'
+      end
+
+      it 'ログインに失敗し、ログイン画面にリダイレクトされる' do
+        expect(current_path).to eq '/users/sign_in'
+     end
+    end
+  end
+
+  describe 'ヘッダーのテスト:　ログインしている場合' do
+    let(:user) { create(:user) }
+
+    before do
+      visit new_user_session_path
+      fill_in 'user[email]', with: user.email
+      fill_in 'user[password]', with: user.password
+      click_button 'ログイン'
+    end
+
+    context 'ヘッダーの表示を確認' do
+      it 'ようこそが表示される' do
+        expect(page).to have_content 'ようこそ'
+      end
+      it 'マイページリンクが表示される' do
+        expect(page).to have_link 'マイページ'
+      end
+      it '投稿フォームが表示される' do
+        expect(page).to have_link '投稿フォーム'
+      end
+      it '投稿一覧' do
+        expect(page).to have_link '投稿一覧'
+      end
+      it 'ジャンル一覧検索' do
+        expect(page).to have_link 'ログアウト'
+      end
+    end
+  end
+
+  describe 'ユーザーロスアウトのテスト' do
+    let(:user) { create(:user) }
+
+    before do
+      visit new_user_session_path
+      fill_in 'user[email]', with: user.email
+      fill_in 'user[password]', with: user.password
+      click_button 'ログイン'
+      click_link href: destroy_user_session_path
+    end
+
+    context 'ログアウトの機能テスト' do
+      it '正しくログアウトできている: ログアウト後のリダイレクト先においてWin Win Hobbyとは?画面へのリンクが存在する' do
+        expect(page).to have_link '', href: '/homes/about'
+      end
+      it 'ログアウト後のリダイレクト先が、トップになっている' do
+        expect(current_path).to eq '/'
       end
     end
   end
