@@ -157,23 +157,19 @@ $size: 40px;
   margin-bottom: 20px;
 }
 
+.user-info {
+  width: 65px !important;
+  height: 30px !important;
+}
 
 .category-teacher {
-  border: 2px solid #f0f8ff;
-  width: 40px;
-  padding: 2px;
   background-color: #4169e1;
-  border-radius: 30%;
-  color: #ffffff;
+  text-align: center;
 }
 
 .category-student {
-  border: 2px solid #f0f8ff;
-  width: 40px;
-  padding: 2px;
+  text-align: center;
   background-color: #ff0000;
-  border-radius: 30%;
-  color: #ffffff;
 }
 
 .user-name {

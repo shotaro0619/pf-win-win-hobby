@@ -80,6 +80,12 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
       it '投稿一覧に自分の投稿のコメントが表示される' do
         expect(page).to have_content hobby.comment
       end
+      it '自分の投稿の編集リンクが存在する' do
+        expect(page).to have_link, href: edit_hobby_path(hobby)
+      end
+      it '自分の投稿の削除リンクが存在する' do
+        expect(page).to have_link, href: hobby_path(hobby)
+      end
       it '他人の投稿は表示されない' do
         expect(page).not_to have_link '', href: user_path(other_user)
         expect(page).not_to have_content other_hobby.name
@@ -138,7 +144,7 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
       it 'URLが正しい' do
         expect(current_path).to eq '/hobbies/new'
       end
-      it '「投稿する」と表示される' do
+      it '「投稿する」が表示される' do
         expect(page).to have_content '投稿する'
       end
       it 'nameフォームが表示される' do
@@ -223,7 +229,7 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
     end
   end
 
-  describe '投稿一覧画面のテスト' do
+  describe '全投稿一覧画面のテスト' do
     before do
       visit hobbies_path
     end
@@ -242,7 +248,53 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
       end
     end
   end
-  describe 'ジャンル一覧検索のテスト' do
+
+  describe '先生側の投稿一覧' do
+    before do
+      visit hobbies_teacher_path
+    end
+
+    context '表示内容の確認' do
+      it 'URLが正しい' do
+        expect(current_path).to eq '/hobbies/teacher'
+      end
+      it '自分と他人の画像のリンク先が正しい' do
+        expect(page).to have_link '', href: user_path(hobby.user)
+        expect(page).to have_link '', href: user_path(other_hobby.user)
+      end
+      it '自分の投稿と他人の投稿のコメントが表示される' do
+        expect(page).to have_content hobby.comment
+        expect(page).to have_content other_hobby.comment
+      end
+      it '自分と他人のニックネームが表示される' do
+        expect(page).to have_content user.nickname
+        expect(page).to have_content other_user.nickname
+      end
+      it '自分の投稿と他人のカテゴリーが「先生」と表示される' do
+        expect(page).to have_content user.category = '先生'
+        expect(page).to have_content other_user.category = '先生'
+      end
+    end
+  end
+  describe '生徒側の投稿一覧' do
+    before do
+      visit hobbies_student_path
+    end
+
+    context '表示内容の確認' do
+      it 'URLが正しい' do
+        expect(current_path).to eq '/hobbies/student'
+      end
+      it '他人の画像のリンク先が正しい' do
+        expect(page).to have_link '', href: user_path(hobby.user)
+      end
+      it '他人のカテゴリーが「生徒」と表示される' do
+        expect(page).to have_content other_user.category = '生徒'
+      end
+    end
+  end
+
+  describe 'ジャンル一覧検索画面のテスト' do
     before do
       visit genres_path
     end
@@ -259,4 +311,15 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
       end
     end
   end
+  # describe 'フォロー一覧画面のテスト' do
+  #   before do
+  #     visit user_followings_path
+  #   end
+
+  #   context '表示内容の確認' do
+  #     it 'URLが正しい' do
+  #       expect(current_path).to eq '/users/'+ user.id.to_s + '/followings'
+  #     end
+  #   end
+  # end
 end
