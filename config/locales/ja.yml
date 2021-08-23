@@ -16,6 +16,8 @@ ja:
         email: メールアドレス
         phone_number: お電話番号
         message: メッセージ
+      genre:
+        name: 趣味名
   views:
     pagination:
       first: "&laquo; 最初"

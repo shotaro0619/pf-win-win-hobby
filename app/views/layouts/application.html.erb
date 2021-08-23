@@ -69,7 +69,7 @@
                   <%= form_with url:search_path, method: :get, local: true do |f| %>
                     <%= f.search_field :value, placeholder: "ニックネーム・趣味名", class: "rounded", required: true %><br>
                     <div class="mt-1">
-                      <%= f.select :model, options_for_select({ "ニックネーム" => "user", "趣味名" => "hobby" }) %>
+                      <%= f.select :model, options_for_select({ "選択してください" => "user","ニックネーム" => "user", "趣味名" => "hobby" }) %>
                       <%= f.button :type => "submit", class: "submit" do %>
                        <i class="fas fa-search fa-lg search"></i>
                       <% end %>
