@@ -27,7 +27,7 @@
 $(document).on('turbolinks:load', function() {
   $(document).on('click', 'input[name="hobby[genre_id]"]', function(){
     let text = $(this).next().text();
-    $('.btn.btn-primary.shadow-sm.rounded-pill.selectbotton').text(text);
+    $('.btn.btn-outline-primary.shadow-sm.rounded-pill.selectbotton').text(text);
   });
 });
 

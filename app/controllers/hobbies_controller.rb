@@ -43,7 +43,7 @@ before_action :authenticate_user!
     hobby = Hobby.find(params[:id])
     if hobby.update(hobby_params)
       flash[:success] = "編集完了しました"
-      redirect_to hobbies_path
+      redirect_to user_path(user_id)
     else
       flash.now[:danger] = "編集に失敗しました"
       render :edit
