@@ -2,21 +2,19 @@
   <div class="box-1 rounded">
     <h2 class="text-center font-family">ログイン</h2>
     <%= form_with model: @user, url: user_session_path, local: true do |f| %>
-      <div class="field">
-        <%= f.label :email, "メールアドレス" %>
+      <div class="field text-center">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス' %>
       </div>
 
-      <div class="field">
-        <%= f.label :password, "パスワード　　" %>
+      <div class="field text-center">
         <%= f.password_field :password, autocomplete: "current-password", placeholder: 'パスワード 6文字以上' %>
       </div>
 
       <div class="actions text-center mt-3">
-        <%= f.submit "ログイン", class: 'btn btn-outline-info shadow-sm rounded-pill session-login' %>
+        <%= f.submit "ログイン", class: 'btn btn-outline-info shadow-sm rounded-pill session-login loginsize' %>
       </div>
 
-      <div class="field text-center"><%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, class: 'btn btn-outline-dark shadow-sm rounded-pill', method: :post %></div>
+      <div class="field text-center"><%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, class: 'btn btn-outline-dark shadow-sm rounded-pill loginsize', method: :post %></div>
 
     <% end %>
   </div>
