@@ -52,8 +52,8 @@ document.addEventListener('turbolinks:load', function(event) {
   });
 
 // DM機能のスクロール
+const messageDetails = document.getElementById('chatchatbox');
 document.addEventListener("turbolinks:load", () => {
-  const messageDetails = document.getElementById('chatchatbox');
   function scrollToEnd() {
       messageDetails.scrollTop = messageDetails.scrollHeight;
   }
