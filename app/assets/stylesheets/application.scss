@@ -19,6 +19,7 @@
 
 .navbar {
   background-color: #fff;
+  width: 100%;
 }
 
 .box {
@@ -91,6 +92,7 @@ body {
 .navhead {
   border-top: 3px solid rgba(179,208,215,0.6);
   border-bottom: 3px solid rgba(179,208,215,0.6);
+  width: 100%;
 }
 
 .category {
@@ -259,4 +261,14 @@ $size: 40px;
 
 .loginsize {
   width: 220px !important;
+}
+
+@media screen and (max-width:425px) {
+  footer {
+    font-size: 9px;
+  }
+
+  .navhead {
+    width: 100%;
+  }
 }

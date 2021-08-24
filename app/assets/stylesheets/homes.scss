@@ -17,9 +17,6 @@
   font-weight: bold;
 }
 
-.btn-gradient {
-  background-color: #e2eba3;
-}
 
 .shadow {
   color: #fff !important;
@@ -55,4 +52,46 @@
   background-size:contain;
   background-repeat: no-repeat;
   width: 400px;
+}
+
+@media screen and (max-width:425px) {
+  .main-container {
+  background-image: image-url('top.jpg');
+  height: 300px;
+  width: 300px;
+  background-size:contain;
+  background-repeat: no-repeat;
+  }
+
+  .top-theme {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  }
+
+  .whitebtn {
+    height: 20px !important;
+    position: relative;
+    width: 50px;
+  }
+
+  .start-btn {
+    font-size: 9px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+  }
+
+  .reuser {
+    font-size: 9px;
+  }
+
+  .sub {
+    margin-left: 100px;
+  }
+
+  .abouttheme {
+    font-size: 15px;
+  }
 }
