@@ -243,4 +243,33 @@ $size: 40px;
     font-size: 9px;
   }
 
+  .box {
+  width: 250px;
+  border: 1px solid #b3d0d7;
+  box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.6);
+  background-color: #ffffff;
+  }
+
+  .thisis {
+    font-size: 9px;
+  }
+
+  .sign-up {
+    font-size: 9px;
+  }
+
+  .loginsize {
+    width: 150px !important;
+    font-size: 9px;
+  }
+  
+  .box-1 {
+    width: 250px;
+    border: 1px solid #b3d0d7;
+    box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.6);
+    height: 380px;
+    padding-top: 60px;
+    background-color: #ffffff;
+  }
+
 }
