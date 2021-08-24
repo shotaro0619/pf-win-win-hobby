@@ -188,16 +188,6 @@ $size: 40px;
   justify-content: center;
 }
 
-// aboutページの上に戻るボタン
-.back-btn {
-  position: fixed;
-  right: 20px;
-  bottom: 60px;
-}
-
-.back-btn img {
-  width: 50px;
-}
 
 .content-btn {
   display: inline-block;
@@ -213,21 +203,6 @@ $size: 40px;
   color: #ff0000;
 }
 
-// 数字透過
-.about-p {
-   position: relative;
-   padding-top: 40px;
-   padding-left: 60px;
-}
-
-.about-p span {
-   position: absolute;
-   top: 0;
-   left: 10px;
-   font-size: 70px;
-   color: rgba(186,85,211,0.3);
-   border-bottom: 3px solid rgba(186,85,211,0.5);
-}
 
 // 枠線はみだし
 .heading{
@@ -268,7 +243,4 @@ $size: 40px;
     font-size: 9px;
   }
 
-  .navhead {
-    width: 100%;
-  }
 }
