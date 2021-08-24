@@ -1,4 +1,5 @@
 # :star: Win Win Hobby
+Win Win Hobbyは趣味を通じて友達を作るサイトです。
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
