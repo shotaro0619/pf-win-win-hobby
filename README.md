@@ -4,22 +4,18 @@ Win Win Hobbyは趣味を通じて友達を作るサイトです。
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+## サイト概要
+自分の趣味を教えたい人とその趣味を教わりたい人のマッチングサイト
 
-* Ruby version
+### サイトテーマ
+趣味を通して人と人の繋がりを作る
 
-* System dependencies
+### テーマを選んだ理由
+自分自身過去に全く知識のない状態でギターを買ったことがあるのですが、周りの人にギター経験者がおらず動画などをみて練習するしかなかったのですが、なかなか上達せず上手くなってるかもわからない状態でモチベーションもあがらずすぐに挫折してしまった経験があり、その時に『ひとりで趣味を極めて教えたい人と趣味を始めたくても先生がいない人』のマッチングサービスがあればいいのになと考えたことからこのテーマにしました。
 
-* Configuration
+### ターゲットユーザ
+自分の趣味を教えたい人とその趣味を教わりたい人
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 主な利用シーン
+自分の趣味が教えることのできるレベルまで到達して教えたくなった時
+趣味を始めたいが先生がいない時
