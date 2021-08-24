@@ -86,16 +86,16 @@
       <%= yield %>
       <script src="https://unpkg.com/ityped@1.0.3"></script>
     </main>
+    <footer class="mt-5">
+      <% if !user_signed_in? %>
+        <div class="fixed-bottom mb-2">
+          <div class="text-center"><%= link_to "お問い合わせ", new_contact_path , class: 'text-muted content-btn'%></div>
+          <div class="text-center">©Win Win Hobby</div>
+        </div>
+      <% else %>
+        <div class="text-center"><%= link_to "お問い合わせ", new_contact_path , class: 'text-muted content-btn'%></div>
+        <div class="text-center">©Win Win Hobby</div>
+      <% end %>
+    </footer>
   </body>
-<footer class="mt-5 mb-1">
-  <% if !user_signed_in? %>
-    <div class="fixed-bottom">
-      <div class="text-center"><%= link_to "お問い合わせ", new_contact_path , class: 'text-muted content-btn'%></div>
-      <div class="text-center">©Win Win Hobby</div>
-    </div>
-  <% else %>
-    <div class="text-center"><%= link_to "お問い合わせ", new_contact_path , class: 'text-muted content-btn'%></div>
-    <div class="text-center">©Win Win Hobby</div>
-  <% end %>
-</footer>
 </html>
