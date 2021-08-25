@@ -15,7 +15,7 @@
                 </div>
               </div>
             <div class="col-8 row">
-                <p class="comment rounded comment-box ml-5"><%= hobby.comment %></p>
+                <p class="comment rounded comment-box ml-5"><%=safe_join(hobby.comment.split("\n"),tag(:br))%></p>
                 <% if @user == current_user %>
                   <div class="button">
                       <div class="d-flex flex-row mt-2">

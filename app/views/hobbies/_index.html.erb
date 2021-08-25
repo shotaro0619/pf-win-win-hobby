@@ -20,7 +20,7 @@
               <p class="example"><span class="text-white px-2 py-1 mr-3 rounded-pill shadow bg-warning user-info">ジャンル</span><%= hobby.genre.name if hobby.genre %></p>
             </div>
             <div class="col-6 pt-3">
-              <p class="comment rounded comment-box"><%= hobby.comment %></p>
+              <p class="comment rounded comment-box"><%=safe_join(hobby.comment.split("\n"),tag(:br))%></p>
             </div>
           </div>
         <hr>

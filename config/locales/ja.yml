@@ -8,8 +8,8 @@ ja:
         nickname: ニックネーム
         category: 先生か生徒
       hobby:
-        genre: 趣味名
-        name: 趣味のジャンル
+        genre: 趣味のジャンル
+        name: 趣味名
         comment: コメント
       contact:
         name: お名前
