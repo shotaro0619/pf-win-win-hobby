@@ -25,27 +25,27 @@ URL:http://win-win-hobby.com/
 
 ## 実装機能一覧
 | | 機能 | gem/備考 |
-| 1 |------|----------|
-| 2 | ユーザー（ログイン機能) | devise |
-| 3 | プロフィール編集 | devise |
-| 4 | ゲストログイン機能 | x |
-| 5 | 画像投稿機能 | refile, refile-mini_magick |
-| 6 | 投稿機能(CRUD) | x |
-| 7 | フォロー機能 | Ajax(非同期) |
-| 8 | DM機能 | Ajax(非同期) |
-| 9 | ランキング機能 | x / 同率順位を含めたランキング |
-| 10 | PV機能 | impressionist |
-| 11 | SNSシェア機能 | social-share-button |
-| 12 | お問い合わせ機能 | Action Mailer |
-| 13 | ページネーション機能 | kaminari |
-| 14 | rails/devise日本語化 | rails-i18n |
-| 15 | 検索機能 | x / 部分一致(ユーザー名・趣味名・ジャンル名) |
-| 16 | コード解析 | Rubocop |
-| 17 | 単体・結合テスト(一部) | RSpec |
-| 18 | 自動デプロイ | AWS, Github Actions(CI/CDツール) |
-| 19 | ドメイン指定 | お名前.com / AWSRoute 53 |
-| 20 | デザイン | bootstrap |
-| 21 | デバッグ | pry-byebug, pry-rails |
+| ----- |------|----------|
+| 1 | ユーザー（ログイン機能) | devise |
+| 2 | プロフィール編集 | devise |
+| 3 | ゲストログイン機能 | x |
+| 4 | 画像投稿機能 | refile, refile-mini_magick |
+| 5 | 投稿機能(CRUD) | x |
+| 6 | フォロー機能 | Ajax(非同期) |
+| 7 | DM機能 | Ajax(非同期) |
+| 8 | ランキング機能 | x / 同率順位を含めたランキング |
+| 9 | PV機能 | impressionist |
+| 10 | SNSシェア機能 | social-share-button |
+| 11 | お問い合わせ機能 | Action Mailer |
+| 12 | ページネーション機能 | kaminari |
+| 13 | rails/devise日本語化 | rails-i18n |
+| 14 | 検索機能 | x / 部分一致(ユーザー名・趣味名・ジャンル名) |
+| 15 | コード解析 | Rubocop |
+| 16 | 単体・結合テスト(一部) | RSpec |
+| 17 | 自動デプロイ | AWS, Github Actions(CI/CDツール) |
+| 18 | ドメイン指定 | お名前.com / AWSRoute 53 |
+| 19 | デザイン | bootstrap |
+| 20 | デバッグ | pry-byebug, pry-rails |
 -チャレンジ要素一覧 https://docs.google.com/spreadsheets/d/1cjLShFfCwpjb9DvkrizhEmcc6WbCV1Ul9xNj-pee6Mc/edit?usp=sharing
 
 
