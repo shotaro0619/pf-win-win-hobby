@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-6 font-family">
       <% if @user.id == current_user.id %>
-       <h2 class="heading">マイページ</h2>
+       <h2 class="heading my-head">マイページ</h2>
       <% else %>
        <h2 class="heading"><%= @user.nickname %>さんのページ</h2>
       <% end %>
@@ -19,7 +19,7 @@
           <div>
             <% unless @user.id == current_user.id %>
               <% if @isRoom == true %>
-                <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-outline-secondary">チャットへ</a>
+                <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-outline-secondary">チャットへ</a></p>
               <% else %>
                 <%= form_for @room do |f| %>
                   <%= fields_for @entry do |e| %>
@@ -41,24 +41,24 @@
       <%= attachment_image_tag @user, :profile_image, fallback: "unnamed.png", size:'300', class: "waku" %>
       <div>
       <% if @user.category == "先生" %>
-       <h3 class="profile-name m-3 font-family"><%= @user.nickname %>(先生)</h3>
+       <h3 class="profile-name m-3 font-family myname"><%= @user.nickname %>(先生)</h3>
       <% else %>
        <h3 class="profile-name m-3 font-family"><%= @user.nickname %>(生徒)</h3>
       <% end %>
       </div>
     </div>
-    <div class="introduction comment-box"><%= @user.introduction %></div>
-    <div class="text-center mt-2 mb-2">マイページに訪れてくれた人数<%=  @user.impressionist_count %>人</div>
+    <div class="introduction"><%= @user.introduction %></div>
+    <div class="text-center mt-2 mb-2 prof-size">マイページに訪れてくれた人数<%=  @user.impressionist_count %>人</div>
     <div class="text-center">
       <% if @user.id == current_user.id %>
-       <i class="far fa-comment-dots"></i><%= link_to "チャット履歴一覧へ", rooms_path, class: "text-dark" %>
+       <i class="far fa-comment-dots prof-size"></i><%= link_to "チャット履歴一覧へ", rooms_path, class: "text-dark" %>
       <% end %>
     </div>
     <div class="row follor">
-      <div class="follow_count mr-5">
+      <div class="follow_count mr-5 prof-size">
         <%= link_to @user.followings.count, user_followings_path(@user) %>フォロー
       </div>
-      <div class="follower_count">
+      <div class="follower_count prof-size">
         <%= link_to @user.followers.count, user_followers_path(@user) %>フォロワー
       </div>
     </div>

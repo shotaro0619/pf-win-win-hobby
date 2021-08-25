@@ -8,6 +8,7 @@
   height: 100px;
   border: 1px solid #b3d0d7;
   margin: 0 auto;
+  background-color: #fff;
 }
 
 .follor {
@@ -72,5 +73,36 @@
   font-size: 16px;
 }
 
+@media screen and (max-width:425px) {
+  .my-head {
+    font-size: 10px;
+  }
+
+  .prof-edit {
+    list-style: none;
+    color: black ;
+    font-size: 10px;
+    margin-top: 20px;
+  }
+
+  .waku {
+    width: 200px;
+    height: 200px;
+  }
+
+  .myname {
+    font-size: 20px;
+  }
+
+  .introduction {
+    width: 300px;
+    height: 70px;
+    font-size: 10px;
+  }
+
+  .prof-size {
+    font-size: 10px;
+  }
+}
 
 
