@@ -38,9 +38,6 @@
   float: left;
 }
 
-.headhobby {
-
-}
 
 .music {
   color: #ff6c94;
@@ -108,6 +105,15 @@
   height: 30px !important;
 }
 
+.user-name {
+  margin-left: 30px;
+}
+
+.editbtn {
+    width: 105px!important;
+  }
+
+
 @media screen and (max-width:425px) {
   .post-head {
     font-size: 9px;
@@ -166,13 +172,42 @@
     width: 100px;
   }
 
-  
-
   .commentp {
     font-size: 15px;
   }
-  
+
   .postarea {
     width: 200px!important;
   }
+
+  .img-zone{
+    position: relative;
+  }
+
+  .hobby_name{
+    position: absolute;
+    bottom: 90px;
+    font-size: 10px;
+  }
+
+  .info{
+    position: absolute;
+    bottom: 60px;
+  }
+
+
+  .user-name {
+    margin-left: 5px;
+    font-size: 10px;
+  }
+
+  .profile_image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .editbtn {
+    font-size: 10px!important;
+  }
+
 }
