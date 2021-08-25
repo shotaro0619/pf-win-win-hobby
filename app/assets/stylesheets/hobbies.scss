@@ -34,6 +34,14 @@
   background-color: #ffffff;
 }
 
+.post-size {
+  float: left;
+}
+
+.headhobby {
+
+}
+
 .music {
   color: #ff6c94;
 }
@@ -130,8 +138,41 @@
   font-size: 9px;
   }
 
-  .example  {
-    display: inline;
+  .example {
+    display: flex;
+    flex-direction: column;
+    display: block;
   }
 
+  .hobby-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #b3d0d7;
+  width: 250px;
+  margin: 0 auto;
+  box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.6);
+  padding: 50px;
+  background-color: #ffffff;
+  }
+
+  .post{
+    font-size: 30px;
+  }
+
+  .post-size{
+    font-size: 13px;
+    width: 100px;
+  }
+
+  
+
+  .commentp {
+    font-size: 15px;
+  }
+  
+  .postarea {
+    width: 200px!important;
+  }
 }

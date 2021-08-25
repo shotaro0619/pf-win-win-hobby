@@ -1,13 +1,13 @@
 <%= form_with model: hobby, local:true do |f| %>
   <div class="row m-4">
     <%= render 'layouts/error_messages', model: f.object %>
-    <h4 class="col-5">趣味名</h4>
-    <div><%= f.text_field :name, class:"rounded-pill" %></div>
+    <h4 class="col-5 post-size">趣味名</h4>
+    <div><%= f.text_field :name, class:"rounded-pill post-size" %></div>
   </div>
   <div class="row m-4">
-    <h4 class="col-5"><%= f.label :ジャンル %></h4>
+    <h4 class="col-5"><%= f.label :ジャンル, class: "post-size" %></h4>
     <!--Button trigger modal-->
-    <button type="button" class="btn btn-outline-primary shadow-sm rounded-pill selectbotton" data-toggle="modal" data-target="#exampleModalLong">
+    <button type="button" class="btn btn-outline-primary shadow-sm rounded-pill selectbotton post-size" data-toggle="modal" data-target="#exampleModalLong">
        選ぶ
     </button>
     <!--Modal-->
@@ -15,7 +15,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">ジャンル一覧</h5>
+            <h5 class="modal-title post-size" id="exampleModalLongTitle">ジャンル一覧</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -152,8 +152,8 @@
     </div>
   </div>
   <div>
-    <h4 class="row col-5">コメント</h4>
-    <%= f.text_area :comment , size: "45x5" %>
-    <%= f.submit '投稿', class: 'btn btn-outline-primary shadow-sm rounded-pill float-right' %>
+    <h4 class="row col-5 commentp">コメント</h4>
+    <%= f.text_area :comment , size: "45x5", class:"postarea" %>
+    <%= f.submit '投稿', class: 'btn btn-outline-primary shadow-sm rounded-pill float-right post-size' %>
   </div>
  <% end %>
