@@ -4,10 +4,11 @@
 
 
 .comment {
-  width: 700px;
+  width: 500px;
   height: 140px;
   border: 1px solid #b3d0d7;
   text-align: justify;
+  background-color: #ffffff;
 }
 
 .prof_image {
@@ -92,4 +93,45 @@
 .selectbotton {
   width: 175px !important;
   height: 35px !important;
+}
+
+.user-info {
+  width: 65px !important;
+  height: 30px !important;
+}
+
+@media screen and (max-width:425px) {
+  .post-head {
+    font-size: 9px;
+  }
+
+  img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  }
+
+  .prof_name {
+    font-size: 9px;
+  }
+
+  .user-info {
+    font-size: 9px;
+    width: 30px !important;
+    height: 23px !important;
+  }
+
+  .comment {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #b3d0d7;
+  text-align: justify;
+  background-color: #ffffff;
+  font-size: 9px;
+  }
+
+  .example  {
+    display: inline;
+  }
+
 }

@@ -68,10 +68,6 @@ body {
  background-color: #f0f8ff;
 }
 
-.comment-box {
-  background-color: #ffffff;
-}
-
 .password-forget {
   display: flex;
   flex-direction: column;
@@ -154,10 +150,6 @@ $size: 40px;
   margin-bottom: 20px;
 }
 
-.user-info {
-  width: 65px !important;
-  height: 30px !important;
-}
 
 .category-teacher {
   background-color: #4169e1;
@@ -262,7 +254,7 @@ $size: 40px;
     width: 150px !important;
     font-size: 9px;
   }
-  
+
   .box-1 {
     width: 250px;
     border: 1px solid #b3d0d7;
@@ -271,5 +263,10 @@ $size: 40px;
     padding-top: 60px;
     background-color: #ffffff;
   }
+
+  .pagination {
+  justify-content: center;
+  font-size: 9px;
+}
 
 }
