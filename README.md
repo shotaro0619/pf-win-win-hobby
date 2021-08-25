@@ -23,6 +23,12 @@ URL:http://win-win-hobby.com/
 - 趣味を始めたいが先生がいない時
 - 現在の流行の趣味が知りたいとき
 
+## 実装機能一覧
+| 機能 | gem/備考 |
+|------|----------|
+| ユーザー（ログイン機能) | devise |
+
+
 ## :globe_with_meridians: 開発環境
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
