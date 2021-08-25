@@ -25,7 +25,7 @@ URL:http://win-win-hobby.com/
 
 ## 実装機能一覧
 | | 機能 | gem/備考 |
-| ----- |------|----------|
+| - |------|----------|
 | 1 | ユーザー（ログイン機能) | devise |
 | 2 | プロフィール編集 | devise |
 | 3 | ゲストログイン機能 | x |
@@ -46,7 +46,8 @@ URL:http://win-win-hobby.com/
 | 18 | ドメイン指定 | お名前.com / AWSRoute 53 |
 | 19 | デザイン | bootstrap |
 | 20 | デバッグ | pry-byebug, pry-rails |
--チャレンジ要素一覧 https://docs.google.com/spreadsheets/d/1cjLShFfCwpjb9DvkrizhEmcc6WbCV1Ul9xNj-pee6Mc/edit?usp=sharing
+
+チャレンジ要素一覧 https://docs.google.com/spreadsheets/d/1cjLShFfCwpjb9DvkrizhEmcc6WbCV1Ul9xNj-pee6Mc/edit?usp=sharing
 
 
 
