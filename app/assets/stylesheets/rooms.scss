@@ -91,6 +91,15 @@
 
 .chat-content {
   padding-top: 15px;
+  display: flex;
+}
+
+.cometime {
+  display: flex;
+}
+
+.timearea {
+  padding-top: 50px;
 }
 
 .name {
@@ -124,8 +133,12 @@
   border: 1px solid #b3d0d7;
   background-color: #ffffff;
   margin-top: 5px;
-  width: 50px;
-  height: 50px;
+}
+
+.chatbtnarea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -135,20 +148,22 @@
   }
 
   .right {
-  font-size: 10px;
-}
+    font-size: 10px;
+    max-width: 100px;
+  }
 
 .left {
-  font-size: 10px;
+    font-size: 10px;
+    max-width: 100px;
   }
 
  .dmbox {
-   width: 350px;
-   height: 100px;
- }
+    width: 250px;
+    height: 100px;
+  }
 
- .chatsend {
-
+  .timearea {
+    font-size: 10px;
   }
 
 }

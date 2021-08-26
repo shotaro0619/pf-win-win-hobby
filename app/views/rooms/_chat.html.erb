@@ -24,7 +24,7 @@
                </div>
                <div class="chat-content ml-2">
                  <div class="left"><strong><%= m.content %></strong></div>
-                 <%= m.created_at.strftime('%Y/%m/%d') %>
+                 <div class="timearea"><%= m.created_at.strftime('%Y/%m/%d') %></div>
                </div>
              </div>
           <% end %>
@@ -37,15 +37,17 @@
 </div>
 <div class="ml-3 send-form">
     <%= form_with model: message do |f| %>
-      <div>
-        <%= f.text_area :content, :placeholder => "メッセージを入力して下さい" , size: "100x3", class: "dmbox" %>
-        <%= f.hidden_field :room_id, :value => room.id %>
-      </div>
-      <div>
-        <%= f.button :type => "submit", class: "chatsend" do %>
-         <i class="far fa-paper-plane"></i>
-        <% end %>
-      </div>
+        <div class="chatbtnarea">
+            <div>
+                <%= f.text_area :content, :placeholder => "メッセージを入力して下さい" , size: "90x3", class: "dmbox" %>
+            </div>
+            <%= f.hidden_field :room_id, :value => room.id %>
+            <div>
+                <%= f.button :type => "submit", class: "chatsend ml-3" do %>
+                 <i class="far fa-paper-plane"></i>
+                <% end %>
+            </div>
+        </div>
       <div class="back-btn2" data-turbolinks-action="replace">
         <%= link_to "#" do%>
          <i class="fas fa-angle-double-up"></i>
