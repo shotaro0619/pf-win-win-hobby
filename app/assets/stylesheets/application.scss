@@ -265,5 +265,26 @@ $size: 40px;
   font-size: 9px;
   }
 
+  $size: 20px;
+
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  }
+}
+
+  .follow-btn {
+    font-size: 12px;
+    margin: 10px;
+  }
+
+  .dm {
+    font-size: 12px;
+    margin: 10px;
+    width: 100px;
+  }
+
 
 }

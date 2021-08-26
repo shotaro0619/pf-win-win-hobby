@@ -2,9 +2,9 @@
   <div class="row">
     <div class="col-6 font-family">
       <% if @user.id == current_user.id %>
-       <h2 class="heading my-head">マイページ</h2>
+       <h2 class="heading user-head">マイページ</h2>
       <% else %>
-       <h2 class="heading"><%= @user.nickname %>さんのページ</h2>
+       <h2 class="heading user-head"><%= @user.nickname %>さんのページ</h2>
       <% end %>
     </div>
 
@@ -19,13 +19,13 @@
           <div>
             <% unless @user.id == current_user.id %>
               <% if @isRoom == true %>
-                <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-outline-secondary">チャットへ</a></p>
+                <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-outline-secondary dm">チャットへ</a></p>
               <% else %>
                 <%= form_for @room do |f| %>
                   <%= fields_for @entry do |e| %>
                     <%= e.hidden_field :user_id, value: @user.id %>
                   <% end %>
-                  <%= f.submit "チャットを始める", class:"btn btn-outline-secondary user-show-chat" %>
+                  <%= f.submit "チャットを始める", class:"btn btn-outline-secondary user-show-chat dm" %>
                 <% end %>
               <% end %>
             <% end %>

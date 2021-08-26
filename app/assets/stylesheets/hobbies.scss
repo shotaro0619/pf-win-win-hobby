@@ -141,7 +141,7 @@
     border: 1px solid #b3d0d7;
     text-align: justify;
     background-color: #ffffff;
-    font-size: 9px;
+    font-size: 10px;
   }
 
   .example {
@@ -208,6 +208,15 @@
 
   .editbtn {
     font-size: 10px!important;
+    width: 75px!important;
+  }
+
+  .deletebtn {
+    font-size: 10px!important;
+  }
+
+  #delete-btn {
+    margin-left: 80px;
   }
 
 }

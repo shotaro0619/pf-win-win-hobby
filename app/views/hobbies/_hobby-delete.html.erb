@@ -17,15 +17,13 @@
             <div class="col-md-8 row info">
                 <p class="comment rounded comment-box ml-5"><%=safe_join(hobby.comment.split("\n"),tag(:br))%></p>
                 <% if @user == current_user %>
-                  <div>
-                      <div class="d-flex flex-row mt-2">
+                      <div class="mt-2">
                         <div class="mr-4 ml-3 button">
                          <div><%= social_share_button_tag(hobby.comment) %></div>
                          <div><%= link_to "編集", edit_hobby_path(hobby.id), class:"btn btn-outline-primary mb-2 editbtn" %></div>
-                         <div><%= link_to "投稿を消す", hobby_path(hobby), class:"btn btn-outline-primary", method: :delete, data: {confirm: "本当に削除しますか？"}, remote: true %></div>
+                         <div><%= link_to "投稿を消す", hobby_path(hobby), class:"btn btn-outline-primary deletebtn", method: :delete, data: {confirm: "本当に削除しますか？"}, remote: true %></div>
                         </div>
                       </div>
-                  </div>
                 <% end %>
             </div>
           </div>
