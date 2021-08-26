@@ -81,6 +81,39 @@
   width: 50px;
 }
 
+#ityped {
+  color: #00608d;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.ityped-cursor {
+    font-size: 1em;
+    opacity: 1;
+    -webkit-animation: blink 0.3s infinite;
+    -moz-animation: blink 0.3s infinite;
+    animation: blink 0.3s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes blink {
+    100% {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes blink {
+    100% {
+        opacity: 0;
+    }
+}
+
 @media screen and (max-width:425px) {
   .main-container {
   background-image: image-url('top.jpg');
@@ -180,6 +213,12 @@
 
   .abouttext {
     font-size: 10px;
+  }
+
+  #ityped {
+  color: #4b0082;
+  font-size: 15px;
+  font-weight: bold;
   }
 
 }
