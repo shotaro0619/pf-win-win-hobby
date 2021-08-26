@@ -1,13 +1,13 @@
 <div class="container">
   <div class="col-11 text-center chat-all">
-    <div class="ml-5" id="chatchatbox">
+    <div id="chatchatbox">
         <% if messages.present? %>
           <% messages.each do |m| %>
           <% if current_user.id == m.user.id %>
-            <div class="text-right mr-5 mt-3">
+            <div class="text-right mt-3">
               <%= m.created_at.strftime('%Y/%m/%d') %>
               <div class="right">
-                <strong><%= m.content %></strong>
+                <strong><%=simple_format(m.content)%></strong>
               </div>
               <%= link_to user_path(m.user) do %>
                <%= attachment_image_tag m.user, :profile_image, fallback: "unnamed.png", size:'70', class:"pro_photo" %>
@@ -37,11 +37,15 @@
 </div>
 <div class="ml-3 send-form">
     <%= form_with model: message do |f| %>
-      <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , :size => 70, class: "dm" %>
-      <%= f.hidden_field :room_id, :value => room.id %>
-      <%= f.button :type => "submit", class: "submit" do %>
-       <i class="far fa-paper-plane"></i>
-      <% end %>
+      <div>
+        <%= f.text_area :content, :placeholder => "メッセージを入力して下さい" , size: "100x3", class: "dmbox" %>
+        <%= f.hidden_field :room_id, :value => room.id %>
+      </div>
+      <div>
+        <%= f.button :type => "submit", class: "chatsend" do %>
+         <i class="far fa-paper-plane"></i>
+        <% end %>
+      </div>
       <div class="back-btn2" data-turbolinks-action="replace">
         <%= link_to "#" do%>
          <i class="fas fa-angle-double-up"></i>

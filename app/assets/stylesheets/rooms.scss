@@ -49,15 +49,6 @@
   z-index: 1;
 }
 
-// .left {
-//   position: relative;
-//   display: inline-block;
-//   border: 1px solid black;
-//   border-radius: 19px;
-//   padding: 9px 14px;
-//   max-width: 240px;
-//   background-color: #d1ffff;
-// }
 
 .left {
   position: relative;
@@ -72,6 +63,7 @@
   border: solid 3px #555;
   box-sizing: border-box;
   text-align: left;
+  white-space: pre-wrap;
 }
 
 .left:before {
@@ -126,3 +118,37 @@
   padding-left: 30px;
 }
 
+.chatsend {
+  border: 1px solid #b3d0d7;
+  border-style: none;
+  border: 1px solid #b3d0d7;
+  background-color: #ffffff;
+  margin-top: 5px;
+  width: 50px;
+  height: 50px;
+}
+
+
+@media screen and (max-width:425px) {
+  .chathead {
+    font-size: 15px;
+  }
+
+  .right {
+  font-size: 10px;
+}
+
+.left {
+  font-size: 10px;
+  }
+
+ .dmbox {
+   width: 350px;
+   height: 100px;
+ }
+
+ .chatsend {
+
+  }
+
+}
