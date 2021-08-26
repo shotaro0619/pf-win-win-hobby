@@ -1,8 +1,8 @@
 <div class="container">
  <div class="row">
-  <div class="col-7">
+  <div class="col-sm-7">
   <div class="genre-page">
-    <h1 class="font-family heading">ジャンル一覧</h1>
+    <h1 class="font-family heading genrehead">ジャンル一覧</h1>
 
     <div class="category mt-5 music">音楽系</div>
     <% @genres_1.each do |genre| %>
@@ -103,37 +103,39 @@
     </div>
    </div>
   </div>
-  <div class="col-5 ranking">
+  <div class="col-sm-5 ranking">
     <!--投稿数ランキング　同率考慮-->
     <div class="rank font-family heading">投稿数ランキング</div>
-    <table class="rank-all">
-      <% lastHobby = 0 %>
-       <% j = 1 %>
-      <% @all_ranks.each.with_index(1) do |ranking, i| %>
-        <% if i == 1 %>
-          <% lastHobby = ranking.hobbies.count %>
-        <% end %>
-        <% if ranking.hobbies.count != lastHobby %>
-          <% j = i %>
-       <tbody>
-            <th class="tnumber">
+    <div class="ranktable">
+     <table class="rank-all rank-p">
+       <% lastHobby = 0 %>
+        <% j = 1 %>
+       <% @all_ranks.each.with_index(1) do |ranking, i| %>
+         <% if i == 1 %>
+           <% lastHobby = ranking.hobbies.count %>
+         <% end %>
+         <% if ranking.hobbies.count != lastHobby %>
+           <% j = i %>
+        <tbody>
+             <th class="tnumber">
+              第<%= j %>位
+              <%= ranking.name %>
+             </th>
+             <td class="postcount">投稿数：<%= ranking.hobbies.count %></td>
+           <% lastHobby= ranking.hobbies.count %>
+         <% else %>
+           <% lastHobby = ranking.hobbies.count %>
+           <th class="tnumber">
              第<%= j %>位
              <%= ranking.name %>
-            </th>
-            <td class="postcount">投稿数：<%= ranking.hobbies.count %></td>
-          <% lastHobby= ranking.hobbies.count %>
-        <% else %>
-          <% lastHobby = ranking.hobbies.count %>
-          <th class="tnumber">
-            第<%= j %>位
-            <%= ranking.name %>
-          </th>
-          <td class="postcount">投稿数：<%= ranking.hobbies.count %></td>
-         <% end %>
-       <br>
-       </tbody>
-      <% end %>
-     </table>
+           </th>
+           <td class="postcount">投稿数：<%= ranking.hobbies.count %></td>
+          <% end %>
+        <br>
+        </tbody>
+       <% end %>
+      </table>
+     </div>
    </div>
   </div>
  </div>

@@ -87,3 +87,32 @@
    padding: 10px;
    background-color: #fff;
 }
+
+@media screen and (max-width:425px) {
+  .ranking {
+    margin-bottom: 300px;
+  }
+
+  .rank {
+   position: static;
+  }
+
+  .rank-all {
+   position: static;
+  }
+
+  .ranktable {
+    position: relative;
+  }
+
+  .rank-p {
+    position: absolute;
+    top: 0;
+    left: 30px;
+  }
+
+  .genrehead {
+    font-size: 30px;
+  }
+
+}
