@@ -111,6 +111,7 @@
 
 .editbtn {
     width: 105px!important;
+    margin-bottom: 5px;
   }
 
 
@@ -119,14 +120,13 @@
     font-size: 9px;
   }
 
-  img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
+  .prof_image {
+    margin-top : 20px;
   }
 
   .prof_name {
     font-size: 9px;
+    margin-left: 10px;
   }
 
   .user-info {
@@ -142,12 +142,7 @@
     text-align: justify;
     background-color: #ffffff;
     font-size: 10px;
-  }
-
-  .example {
-    display: flex;
-    flex-direction: column;
-    display: block;
+    margin-left: 50px;
   }
 
   .hobby-post {
@@ -186,7 +181,8 @@
 
   .hobby_name{
     position: absolute;
-    bottom: 90px;
+    left: 15px;
+    bottom: 95px;
     font-size: 10px;
   }
 
@@ -209,14 +205,34 @@
   .editbtn {
     font-size: 10px!important;
     width: 75px!important;
+    margin-bottom: 0;
   }
 
   .deletebtn {
     font-size: 10px!important;
+    padding-bottom: 10px;
   }
 
   #delete-btn {
     margin-left: 80px;
+  }
+
+  .button {
+    width: 250px;
+    padding-left: 30px;
+
+  }
+
+  .button  div{
+    display: inline;
+  }
+
+  .example {
+    width: 300px;
+  }
+
+  .customer-info {
+    margin-left: 50px;
   }
 
 }
