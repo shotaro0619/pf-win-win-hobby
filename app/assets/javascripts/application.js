@@ -71,3 +71,35 @@ document.addEventListener('turbolinks:load', function(event) {
     event.preventDefault();
   });
 });
+
+
+// $(function(){
+//   $(window).scroll(function (){
+//     $("#fadein").each(function(){
+//       var imgPos = $(this).offset().top;
+//       var scroll = $(window).scrollTop();
+//       var windowHeight = $(window).height();
+//       if (scroll > imgPos - windowHeight + windowHeight/5){
+//         $(this).addClass("fade_on");
+//       } else {
+//         $(this).removeClass("fade_on");
+//       }
+//     });
+//   });
+// });
+
+$(document).on('turbolinks:load', function() {
+  $(window).scroll(function (){
+    $('#fadein').each(function(){
+      const imgPos = $(this).offset().top;
+      const scroll = $(window).scrollTop();
+      const windowHeight = $(window).height();
+      if (scroll > imgPos - windowHeight + windowHeight/5){
+        $(this).addClass("fade_on");
+      } else {
+        $(this).removeClass("fade_on");
+      }
+    });
+  });
+});
+
