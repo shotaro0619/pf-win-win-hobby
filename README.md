@@ -50,7 +50,7 @@ URL:http://win-win-hobby.com/
 チャレンジ要素一覧 https://docs.google.com/spreadsheets/d/1cjLShFfCwpjb9DvkrizhEmcc6WbCV1Ul9xNj-pee6Mc/edit?usp=sharing
 
 ## :pencil: 設計書
-ER図 https://app.diagrams.net/#G1CIbPMSS-m9fy7JEJaFBOiaJMLjfSejlJ
+ER図 https://app.diagrams.net/#G1CIbPMSS-m9fy7JEJaFBOiaJMLjfSejlJ. 
 テーブ定義書 https://docs.google.com/spreadsheets/d/1fo-s5qV6ePNgv5Ttwgg7-9Xm6zImNa-LH6vpGUFJfG4/edit?usp=sharing
 
 
