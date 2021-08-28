@@ -62,6 +62,7 @@ describe '[STEP1]ユーザーログイン前のテスト', type: :system do
         expect(page).to have_button '入力内容確認'
       end
     end
+
     context 'お問合せ内容確認画面のテスト' do
       before do
         fill_in 'contact[name]', with: 'テストユーザー'
@@ -87,9 +88,9 @@ describe '[STEP1]ユーザーログイン前のテスト', type: :system do
         expect(page).to have_content 'あああああああああああああああ'
       end
     end
+
     context 'お問い合わせ送信のテスト' do
       before do
-        
         fill_in 'contact[name]', with: 'テストユーザー'
         fill_in 'contact[email]', with: 'test@example.com'
         fill_in 'contact[phone_number]', with: '09012345678'
@@ -106,6 +107,7 @@ describe '[STEP1]ユーザーログイン前のテスト', type: :system do
       end
     end
   end
+
   describe 'ユーザー新規登録のテスト' do
     before do
       visit new_user_registration_path
@@ -163,6 +165,7 @@ describe '[STEP1]ユーザーログイン前のテスト', type: :system do
       end
     end
   end
+
   describe 'ユーザーログイン' do
     let(:user) { create(:user) }
 
@@ -197,10 +200,12 @@ describe '[STEP1]ユーザーログイン前のテスト', type: :system do
         fill_in 'user[password]', with: user.password
         click_button 'ログイン'
       end
+
       it 'ログイン後のリダイレクト先が、投稿全一覧になっている' do
         expect(current_path).to eq '/hobbies'
       end
     end
+
     context 'ログイン失敗のテスト' do
       before do
         fill_in 'user[email]', with: ''
@@ -210,7 +215,7 @@ describe '[STEP1]ユーザーログイン前のテスト', type: :system do
 
       it 'ログインに失敗し、ログイン画面にリダイレクトされる' do
         expect(current_path).to eq '/users/sign_in'
-     end
+      end
     end
   end
 

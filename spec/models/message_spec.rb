@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe 'Messageモデルのテスト'do
+RSpec.describe 'Messageモデルのテスト' do
   describe 'バリデーションのテスト' do
     subject { message.valid? }
 
-    let(:message) { create(:message)}
+    let(:message) { create(:message) }
 
     context 'contentカラム' do
       it '空欄ではないこと' do
@@ -19,6 +19,7 @@ RSpec.describe 'Messageモデルのテスト'do
           expect(Message.reflect_on_association(:user).macro).to eq :belongs_to
         end
       end
+
       context 'Roomモデルとの関係' do
         it 'N:1となっている' do
           expect(Message.reflect_on_association(:room).macro).to eq :belongs_to

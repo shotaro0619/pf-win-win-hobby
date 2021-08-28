@@ -70,6 +70,14 @@
    border-bottom: 3px solid rgba(186,85,211,0.5);
 }
 
+.whitebtn {
+ background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+}
+
+.white-guest-btn {
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
 // aboutページの上に戻るボタン
 .back-btn {
   position: fixed;
@@ -129,17 +137,17 @@
 
 @media screen and (max-width:425px) {
   .main-container {
-  background-image: image-url('top.jpg');
-  height: 300px;
-  width: 300px;
-  background-size:contain;
-  background-repeat: no-repeat;
+    background-image: image-url('top.jpg');
+    height: 300px;
+    width: 300px;
+    background-size:contain;
+    background-repeat: no-repeat;
   }
 
   .top-theme {
-  margin-top: 10px;
-  font-size: 20px;
-  font-weight: bold;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
   }
 
   .whitebtn {
@@ -148,12 +156,26 @@
     width: 50px;
   }
 
+  .white-guest-btn {
+    height: 20px !important;
+    position: relative;
+    width: 80px;
+  }
+
   .start-btn {
     font-size: 9px;
     position: absolute;
     top: 2px;
     left: 0;
     width: 50px;
+  }
+
+  .guest-btn {
+    font-size: 9px;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 80px;
   }
 
   .reuser {
@@ -183,41 +205,41 @@
   }
 
   .signup-img {
-  background-image: image-url('signup.png');
-  height: 200px;
-  background-size:contain;
-  background-repeat: no-repeat;
-  width: 200px;
-  display: inline-block;
-  text-align: center;
+    background-image: image-url('signup.png');
+    height: 200px;
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 200px;
+    display: inline-block;
+    text-align: center;
   }
 
   .post-img {
-  background-image: image-url('post.png');
-  height: 200px;
-  background-size:contain;
-  background-repeat: no-repeat;
-  width: 200px;
+    background-image: image-url('post.png');
+    height: 200px;
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 200px;
   }
 
   .search-img {
-  background-image: image-url('search.png');
-  height: 200px;
-  background-size:contain;
-  background-repeat: no-repeat;
-  width: 200px;
-  display: inline-block;
-  text-align: center;
+    background-image: image-url('search.png');
+    height: 200px;
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 200px;
+    display: inline-block;
+    text-align: center;
   }
 
   .chat-img {
-  background-image: image-url('chat.png');
-  height: 200px;
-  background-size:contain;
-  background-repeat: no-repeat;
-  width: 200px;
-  display: inline-block;
-  text-align: center;
+    background-image: image-url('chat.png');
+    height: 200px;
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 200px;
+    display: inline-block;
+    text-align: center;
   }
 
   .back-btn img {
@@ -229,9 +251,9 @@
   }
 
   #ityped {
-  color: #4b0082;
-  font-size: 15px;
-  font-weight: bold;
+    color: #4b0082;
+    font-size: 15px;
+    font-weight: bold;
   }
 
 }

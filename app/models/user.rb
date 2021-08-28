@@ -6,11 +6,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :name, presence: true, length: { maximum: 20, minimum: 2 }
-  validates :nickname, presence: true, length: { maximum: 20, minimum: 2 }
+  validates :name, presence: true, length: {maximum: 20, minimum: 2}
+  validates :nickname, presence: true, length: {maximum: 20, minimum: 2}
   validates :category, presence: true
   validates :introduction, length: {maximum: 180}
-  validates :email, presence: true, uniqueness: true, format: { with: /\A\S+@\S+\.\S+\z/ }
+  validates :email, presence: true, uniqueness: true, format: {with: /\A\S+@\S+\.\S+\z/}
 
   has_many :messages, dependent: :destroy
   # DM機能

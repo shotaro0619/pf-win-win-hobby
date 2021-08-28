@@ -35,8 +35,8 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
         is_expected.to eq '/hobbies/new'
       end
       it '「投稿一覧フォーム」を押すと、投稿一覧画面に遷移する' do
-         click_link href: hobbies_path
-         is_expected.to eq '/hobbies'
+        click_link href: hobbies_path
+        is_expected.to eq '/hobbies'
       end
       it '「ジャンル一覧検索」を押すと、ジャンル一覧画面に遷移する' do
         click_link href: genres_path
@@ -44,6 +44,7 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
       end
     end
   end
+
   describe 'マイページ画面のテスト' do
     before do
       visit user_path(user)
@@ -93,6 +94,7 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
       end
     end
   end
+
   describe '自分のユーザー情報編集画面のテスト' do
     before do
       visit edit_user_path(user)
@@ -124,6 +126,7 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
         fill_in 'user[introduction]', with: Faker::Lorem.characters(number: 19)
         click_button '変更を保存'
       end
+
       it 'nicknameが正しく更新される' do
         expect(user.reload.name).not_to eq @user_old_nickname
       end
@@ -135,6 +138,7 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
       end
     end
   end
+
   describe '投稿画面のテスト' do
     before do
       visit new_hobby_path
@@ -166,12 +170,14 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
         expect(page).to have_button '投稿'
       end
     end
+
     context '投稿成功のテスト' do
       before do
         fill_in 'hobby[name]', with: Faker::Lorem.characters(number: 5)
         choose 'hobby_genre_id_1'
         fill_in 'hobby[comment]', with: Faker::Lorem.characters(number: 20)
       end
+
       it '自分の新しい投稿が正しく保存される' do
         expect { click_button '投稿' }.to change(user.hobbies, :count).by(1)
       end
@@ -207,6 +213,7 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
         expect(page).to have_button '投稿'
       end
     end
+
     context '編集成功のテスト' do
       before do
         @hobby_old_name = hobby.name
@@ -217,6 +224,7 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
         fill_in 'hobby[comment]', with: Faker::Lorem.characters(number: 20)
         click_button '投稿'
       end
+
       it 'nameが正しく更新される' do
         expect(hobby.reload.name).not_to eq @hobby_old_name
       end
@@ -276,6 +284,7 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
       end
     end
   end
+
   describe '生徒側の投稿一覧' do
     before do
       visit hobbies_student_path

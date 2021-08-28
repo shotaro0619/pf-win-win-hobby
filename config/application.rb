@@ -20,5 +20,3 @@ module WinWinHobby
     config.time_zone = 'Tokyo'
   end
 end
-
-

@@ -22,11 +22,11 @@ RSpec.describe 'Hobbyモデルのテスト', type: :model do
       end
       it '180文字以下であること: 180文字は◯' do
         hobby.comment = Faker::Lorem.characters(number: 180)
-        expect(hobby.valid?).to eq true;
+        expect(hobby.valid?).to eq true
       end
       it '180文字以下であること: 181文字はx' do
         hobby.comment = Faker::Lorem.characters(number: 181)
-        expect(hobby.valid?).to eq false;
+        expect(hobby.valid?).to eq false
       end
     end
 
@@ -44,6 +44,7 @@ RSpec.describe 'Hobbyモデルのテスト', type: :model do
         expect(Hobby.reflect_on_association(:user).macro).to eq :belongs_to
       end
     end
+
     context 'Genreモデルとの関係' do
       it 'N:1となっている' do
         expect(Hobby.reflect_on_association(:genre).macro).to eq :belongs_to
