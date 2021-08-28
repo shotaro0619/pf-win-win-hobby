@@ -17,6 +17,23 @@
   @import "bootstrap";
   @import "social-share-button";
 
+.footerFixed{
+    min-height: 100vh; /* ←コンテンツの高さの最小値＝ブラウザの高さに指定 */
+    position: relative;/* ←相対位置 */
+    padding-bottom: 60px; /* ←フッターの高さを指定 */
+    box-sizing: border-box;
+}
+
+.footer{
+    position: absolute;/* ←絶対位置 */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+
+
 .navbar {
   background-color: #fff;
   width: 100%;

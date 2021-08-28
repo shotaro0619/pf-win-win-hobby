@@ -13,6 +13,7 @@
   </head>
 
   <body>
+    <div class="footerFixed">
     <header>
       <nav class="navbar navbar-expand-sm navbar-light mb-3 navhead">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,16 +90,19 @@
       <%= yield %>
       <script src="https://unpkg.com/ityped@1.0.3"></script>
     </main>
-    <footer class="mt-5">
+    <footer class="mt-5 mb-2">
       <% if !user_signed_in? %>
-        <div class="fixed-bottom mb-2">
+        <div class="fixed-bottom">
           <div class="text-center"><%= link_to "お問い合わせ", new_contact_path , class: 'text-muted content-btn'%></div>
           <div class="text-center">©Win Win Hobby</div>
         </div>
       <% else %>
-        <div class="text-center"><%= link_to "お問い合わせ", new_contact_path , class: 'text-muted content-btn'%></div>
-        <div class="text-center">©Win Win Hobby</div>
+          <div class="footer">
+          <div class="text-center"><%= link_to "お問い合わせ", new_contact_path , class: 'text-muted content-btn'%></div>
+          <div class="text-center">©Win Win Hobby</div>
+          </div>
       <% end %>
     </footer>
+    </div>
   </body>
 </html>
