@@ -1,9 +1,9 @@
 <div>
-<% @entries.each do |e| %>
-  <% if current_user.id != e.user.id %>
-    <h1 class="m-4 heading chathead"><strong><%= e.user.nickname %>さんとのチャット</strong></h1>
+  <% @entries.each do |e| %>
+    <% if current_user.id != e.user.id %>
+      <h1 class="m-4 heading chathead"><strong><%= e.user.nickname %>さんとのチャット</strong></h1>
+    <% end %>
   <% end %>
-<% end %>
 </div>
 <hr>
 <div id="chat">
