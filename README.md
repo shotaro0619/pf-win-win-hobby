@@ -1,6 +1,6 @@
 # :star: Win Win Hobby
 Win Win Hobbyは趣味を通じて友達を作るサイトです。
-<img width="1432" alt="スクリーンショット 2021-08-24 22 21 06" src="https://user-images.githubusercontent.com/83491747/130623946-b40a5f57-190d-4c54-af53-ea331405bd61.png">
+<img width="1437" alt="スクリーンショット 2021-08-28 16 53 18" src="https://user-images.githubusercontent.com/83491747/131210881-106f4e8a-44df-4adc-8935-fe87d2e982ae.png">
 URL:http://win-win-hobby.com/
 
 ## :blue_book:　サイト概要
