@@ -56,10 +56,14 @@
     </div>
     <div class="row follor">
       <div class="follow_count mr-5 prof-size">
-        <%= link_to @user.followings.count, user_followings_path(@user) %>フォロー
+        <%= link_to user_followings_path(@user), class: "text-dark" do %>
+         <%= @user.followings.count %>フォロー
+        <% end %>
       </div>
       <div class="follower_count prof-size">
-        <%= link_to @user.followers.count, user_followers_path(@user) %>フォロワー
+        <%= link_to user_followers_path(@user), class: "text-dark" do %>
+         <%= @user.followers.count %>フォロワー
+        <% end %>
       </div>
     </div>
   </div>
