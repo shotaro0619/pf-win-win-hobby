@@ -135,6 +135,59 @@
     }
 }
 
+@media screen and (max-width:768px) {
+  .main-container {
+    background-image: image-url('top.jpg');
+    height: 500px;
+    width: 500px;
+    background-size:contain;
+    background-repeat: no-repeat;
+  }
+
+  .top-theme {
+    margin-top: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 100px;
+  }
+
+  .whitebtn {
+    height: 30px !important;
+    position: relative;
+    width: 100px;
+    margin-left: 100px;
+  }
+
+  .white-guest-btn {
+    height: 30px !important;
+    position: relative;
+    width: 120px;
+    margin-left: 100px;
+  }
+
+  .start-btn {
+    font-size: 15px;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 100px;
+  }
+
+  .guest-btn {
+    font-size: 15px;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 120px;
+  }
+
+  .reuser {
+    font-size: 15px;
+    margin-left: 100px;
+  }
+
+}
+
 @media screen and (max-width:425px) {
   .main-container {
     background-image: image-url('top.jpg');
