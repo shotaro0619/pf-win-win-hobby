@@ -46,6 +46,7 @@ URL:http://win-win-hobby.com/
 | 18 | ドメイン指定 | お名前.com / AWSRoute 53 |
 | 19 | デザイン | bootstrap |
 | 20 | デバッグ | pry-byebug, pry-rails |
+| 21 | https設定 | AWS(Certificate Manager・Route53) 
 
 チャレンジ要素一覧 https://docs.google.com/spreadsheets/d/1cjLShFfCwpjb9DvkrizhEmcc6WbCV1Ul9xNj-pee6Mc/edit?usp=sharing
 
