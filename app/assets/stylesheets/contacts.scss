@@ -57,3 +57,36 @@ margin-left: 60px;
   margin: 0 auto;
 }
 
+@media screen and (max-width:425px) {
+  .contact-area {
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  .contact-box {
+    width: 350px;
+    border: 1px solid #b3d0d7;
+    box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.6);
+    background-color: #ffffff;
+    height: 100%;
+    padding: 20px;
+  }
+
+  .contact-p {
+    font-size: 17px;
+  }
+
+  .contact-in {
+    width: 350px;
+    height: 300px;
+    border: 1px solid #b3d0d7;
+    box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.6);
+    background-color: #ffffff;
+  }
+
+  .show-p {
+    margin: 10px;
+  }
+
+}
+
