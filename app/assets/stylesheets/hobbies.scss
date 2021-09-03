@@ -114,6 +114,74 @@
     margin-bottom: 5px;
   }
 
+@media screen and (max-width:768px) {
+  .prof_name {
+    font-size: 20px;
+    margin-left: 10px;
+    display: block;
+    width: 100px;
+  }
+
+  .user-info {
+    font-size: 20px;
+    width: 60px !important;
+    height: 35px !important;
+    margin-left: 50px;
+  }
+
+  .example {
+    width: 300px;
+  }
+
+   .img-zone{
+    position: relative;
+  }
+
+  .hobby_name{
+    position: absolute;
+    left: 10px;
+    bottom: 120px;
+    font-size: 15px;
+  }
+
+   .info{
+    position: absolute;
+    bottom: 60px;
+  }
+
+  .comment {
+    width: 500px;
+    height: 100px;
+    border: 1px solid #b3d0d7;
+    text-align: justify;
+    background-color: #ffffff;
+    font-size: 13px;
+    margin-left: 30px;
+  }
+
+  .editbtn {
+    font-size: 18px!important;
+    width: 75px!important;
+    margin-bottom: 30px;
+  }
+
+  .deletebtn {
+    font-size: 18px!important;
+    margin-bottom: 30px;
+  }
+
+  .button {
+    width: 500px;
+    padding-left: 30px;
+  }
+
+  .button  div{
+    display: inline;
+  }
+
+}
+
+
 
 @media screen and (max-width:425px) {
   .post-head {
@@ -135,6 +203,7 @@
     font-size: 9px;
     width: 30px !important;
     height: 23px !important;
+    margin-left: 0;
   }
 
   .comment {
@@ -213,6 +282,7 @@
   .deletebtn {
     font-size: 10px!important;
     padding-bottom: 10px;
+    margin-bottom: 0;
   }
 
   #delete-btn {
@@ -234,6 +304,10 @@
   }
 
   .customer-info {
+    margin-left: 50px;
+  }
+
+  .hobby-index {
     margin-left: 50px;
   }
 
