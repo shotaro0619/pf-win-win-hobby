@@ -142,6 +142,29 @@
   align-items: center;
 }
 
+@media screen and (max-width:768px) {
+  .dmbox {
+    width: 500px;
+    height: 100px;
+  }
+  
+  .right {
+    font-size: 10px;
+    max-width: 100px;
+  }
+
+ .left {
+    font-size: 10px;
+    max-width: 100px;
+  }
+
+ .dmbox {
+    width: 250px;
+    height: 100px;
+  }
+}
+
+
 
 @media screen and (max-width:425px) {
   .chathead {
@@ -153,7 +176,7 @@
     max-width: 100px;
   }
 
-.left {
+ .left {
     font-size: 10px;
     max-width: 100px;
   }

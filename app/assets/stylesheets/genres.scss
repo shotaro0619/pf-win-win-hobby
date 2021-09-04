@@ -88,6 +88,35 @@
    background-color: #fff;
 }
 
+@media screen and (max-width:768px) {
+  .ranking {
+    margin-bottom: 300px;
+  }
+
+  .rank {
+   position: static;
+   font-size: 30px;
+  }
+
+  .rank-all {
+   position: static;
+  }
+
+  .ranktable {
+    position: relative;
+  }
+
+  .rank-p {
+    position: absolute;
+    top: 0;
+    left: 70px;
+  }
+
+  .genrehead {
+    font-size: 30px;
+  }
+}
+
 @media screen and (max-width:425px) {
   .ranking {
     margin-bottom: 300px;
