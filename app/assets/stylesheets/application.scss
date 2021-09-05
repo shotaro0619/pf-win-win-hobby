@@ -243,6 +243,12 @@ $size: 40px;
   width: 220px !important;
 }
 
+@media screen and (max-width:768px) {
+  .searcharea{
+    margin-top: 50px;
+  }
+}
+
 
 @media screen and (max-width:425px) {
   footer {
