@@ -43,6 +43,11 @@
                     <% end %>
                 </li>
                 <li class="nav-item active pt-3 mr-3 top-header head-jump">
+                    <%= link_to notifications_path, class: "nav-link" do %>
+                     <i class="fas fa-bell"></i>通知
+                    <% end %>
+                </li>
+                <li class="nav-item active pt-3 mr-3 top-header head-jump">
                     <%= link_to new_hobby_path, class: "nav-link" do %>
                      <i class="far fa-smile-beam"></i>投稿フォーム
                     <% end %>

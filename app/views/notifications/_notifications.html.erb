@@ -1,0 +1,19 @@
+<% visitor = notification.visitor %>
+<% visited = notification.visited %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <div class = "text-center ">
+        <div class="card">
+          <% case notification.action %>
+          <% when "follow" then %>
+            <p class = "pt-5">
+              <%= link_to notification.visitor.nickname, user_path(notification.visitor) %>さんがあなたをフォローしました。
+            </p>
+            <p class="small text-muted text-right"><%= time_ago_in_words(notification.created_at).upcase %></p>
+          <% end %>
+      　</div>
+    　</div>
+    </div>
+  </div>
+</div>

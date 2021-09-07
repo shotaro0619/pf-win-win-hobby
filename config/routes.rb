@@ -24,5 +24,7 @@ Rails.application.routes.draw do
   post 'contacts/confirm', to: 'contacts#confirm', as: 'confirm'
   post 'contacts/back', to: 'contacts#back', as: 'back'
   get 'thanks', to: 'contacts#thanks', as: 'thanks'
+
+  resources :notifications, only: :index
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
