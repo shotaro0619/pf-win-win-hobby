@@ -8,6 +8,9 @@
           <% case notification.action %>
           <% when "follow" then %>
             <p class = "pt-5">
+              <%= link_to user_path(notification.visitor) do %>
+                  <%= attachment_image_tag notification.visitor, :profile_image, :fill, 110, 110, fallback: "unnamed.png", size:'40', class: "prof_image" %>
+                <% end %>
               <%= link_to notification.visitor.nickname, user_path(notification.visitor) %>さんがあなたをフォローしました。
             </p>
             <p class="small text-muted text-right"><%= time_ago_in_words(notification.created_at).upcase %></p>
