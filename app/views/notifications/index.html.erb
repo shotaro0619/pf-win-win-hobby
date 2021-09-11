@@ -1,6 +1,6 @@
 <% notifications = @notifications.where.not(visitor_id: current_user.id) %>
 <div class = container>
-  <h1 class = "title text-center">通知一覧</h1>
+  <h1 class = "heading">通知一覧</h1>
   <% if @notifications.exists? %>
     <% @notifications.each do |notification| %>
        <%= render "notifications", notification: notification %>
