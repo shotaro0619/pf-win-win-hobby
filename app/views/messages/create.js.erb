@@ -1,5 +1,5 @@
 $("#chat").html("<%= j(render partial: 'rooms/chat', locals:{ message: @message, room: @room, messages: @messages }) %>");
-$(".dm").val('');
+$(".dmbox").val('');
 
 $(function(){
 const messageDetails = document.getElementById('chatchatbox');
