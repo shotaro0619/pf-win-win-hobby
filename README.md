@@ -49,6 +49,9 @@ URL:http://win-win-hobby.com/
 | 21 | https設定 | AWS(Certificate Manager・Route53)
 | 22 | 通知機能 | x |
 
+RSpecテストは現在155項目をテストしており今後も増やしていく予定です。
+<img width="511" alt="スクリーンショット 2021-08-26 22 56 58" src="https://user-images.githubusercontent.com/83491747/133381402-3a712d01-e716-487a-9353-dbfcf175d7c4.png">
+
 チャレンジ要素一覧 https://docs.google.com/spreadsheets/d/1cjLShFfCwpjb9DvkrizhEmcc6WbCV1Ul9xNj-pee6Mc/edit?usp=sharing
 
 ## :pencil: 設計書
