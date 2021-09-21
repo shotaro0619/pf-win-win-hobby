@@ -17,6 +17,10 @@
   @import "bootstrap";
   @import "social-share-button";
 
+.field_with_errors {
+  display: contents;
+}
+
 .footerFixed{
     min-height: 100vh; /* ←コンテンツの高さの最小値＝ブラウザの高さに指定 */
     position: relative;/* ←相対位置 */
