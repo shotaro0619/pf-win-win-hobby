@@ -68,6 +68,10 @@ RSpecテストは現在155項目をテストしており今後も増やしてい
 - IDE：Cloud9
 
 ## :globe_with_meridians: 使用素材
-- https://o-dan.net/ja/
-- https://www.logofactoryweb.com/default_lg.asp?lg=ja
-- https://undraw.co/search
+- [O-DAN](https://o-dan.net/ja/)
+- [LogoFactory Web](https://www.logofactoryweb.com/default_lg.asp?lg=ja)
+- [unDraw](https://undraw.co/search)
+
+## リンク
+- [Twitter](https://twitter.com/shotaro68046088)
+日々の学習を毎日記録しています
