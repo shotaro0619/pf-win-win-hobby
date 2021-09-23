@@ -52,13 +52,14 @@ URL:http://win-win-hobby.com/
 RSpecテストは現在155項目をテストしており今後も増やしていく予定です。
 <kbd><img width="511" alt="スクリーンショット 2021-08-26 22 56 58" src="https://user-images.githubusercontent.com/83491747/133381402-3a712d01-e716-487a-9353-dbfcf175d7c4.png"></kbd>
 
-チャレンジ要素一覧 https://docs.google.com/spreadsheets/d/1cjLShFfCwpjb9DvkrizhEmcc6WbCV1Ul9xNj-pee6Mc/edit?usp=sharing
+[チャレンジ要素一覧](https://docs.google.com/spreadsheets/d/1cjLShFfCwpjb9DvkrizhEmcc6WbCV1Ul9xNj-pee6Mc/edit?usp=sharing)
 
 ## :pencil: 設計書
-- ER図 https://app.diagrams.net/#G1CIbPMSS-m9fy7JEJaFBOiaJMLjfSejlJ
-- テーブ定義書 https://docs.google.com/spreadsheets/d/1fo-s5qV6ePNgv5Ttwgg7-9Xm6zImNa-LH6vpGUFJfG4/edit?usp=sharing
+- [ER図](https://app.diagrams.net/#G1CIbPMSS-m9fy7JEJaFBOiaJMLjfSejlJ)
+- [テーブ定義書](https://docs.google.com/spreadsheets/d/1fo-s5qV6ePNgv5Ttwgg7-9Xm6zImNa-LH6vpGUFJfG4/edit?usp=sharing)
 
-
+## インフラ構成図
+![スクリーンショット 2021-09-23 16 32 47](https://user-images.githubusercontent.com/83491747/134470032-f11a218e-9e0d-43a6-8960-2fc9241ebce7.png)
 
 ## :globe_with_meridians: 開発環境
 - OS：Linux(CentOS)
@@ -74,4 +75,4 @@ RSpecテストは現在155項目をテストしており今後も増やしてい
 
 ## リンク
 - [Twitter](https://twitter.com/shotaro68046088)
-日々の学習を毎日記録しています
+日々の学習を毎日記録しています。
