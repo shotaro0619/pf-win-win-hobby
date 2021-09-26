@@ -13,7 +13,7 @@ class GenresController < ApplicationController
     @genres_10 = Genre.where(label: "スキル系")
     @genres_11 = Genre.where(label: "乗り物系")
     @genres_12 = Genre.where(label: "その他")
-    # @genre_labels = Genre.group(:label).select("label")
+    # @genre_labels = Genre.group(:label).order('label desc').select("label")
     @all_ranks = Genre.find(Hobby.group(:genre_id).order('count(genre_id) desc').limit(10).pluck(:genre_id))
   end
 end
