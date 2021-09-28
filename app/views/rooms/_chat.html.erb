@@ -1,58 +1,32 @@
-<div class="container">
-  <div class="col-11 text-center chat-all">
-    <div id="chatchatbox">
-        <% if messages.present? %>
-          <% messages.each do |m| %>
-          <% if current_user.id == m.user.id %>
-            <div class="text-right mt-3">
-              <%= m.created_at.strftime('%Y/%m/%d') %>
-              <div class="right">
-                <strong><%=simple_format(m.content)%></strong>
-              </div>
-              <%= link_to user_path(m.user) do %>
-               <%= attachment_image_tag m.user, :profile_image, fallback: "unnamed.png", size:'70', class:"pro_photo" %>
-              <% end %>
-              <div class="name"><%= m.user.nickname %></div>
-            </div>
-          <% else %>
-             <div class="d-flex flex-row mt-3">
-               <div>
-                 <%= link_to user_path(m.user) do %>
-                   <%= attachment_image_tag m.user, :profile_image, fallback: "unnamed.png", size:'70', class:"pro_photo" %>
-                 <% end %>
-                 <div><%= m.user.nickname %>さん</div>
-               </div>
-               <div class="chat-content ml-2">
-                 <div class="left"><strong><%= m.content %></strong></div>
-                 <div class="timearea"><%= m.created_at.strftime('%Y/%m/%d') %></div>
-               </div>
-             </div>
-          <% end %>
-          <% end %>
-        <% else %>
-          <h3 class="text-center">メッセージはまだありません</h3>
-        <% end %>
-    </div>
-  </div>
-</div>
-<div class="ml-3 send-form">
-    <%= form_with model: message do |f| %>
-        <div class="chatbtnarea">
-            <div>
-                <%= f.text_area :content, :placeholder => "メッセージを入力して下さい" , size: "90x3", class: "dmbox" %>
-            </div>
-            <%= f.hidden_field :room_id, :value => room.id %>
-            <div>
-                <%= f.button :type => "submit", class: "chatsend ml-3" do %>
-                 <i class="far fa-paper-plane"></i>
-                <% end %>
-            </div>
-        </div>
-      <div class="back-btn2" data-turbolinks-action="replace">
-        <%= link_to "#" do%>
-         <i class="fas fa-angle-double-up"></i>
-        <% end %>
+<% if messages.present? %>
+  <% messages.each do |m| %>
+  <% if current_user.id == m.user.id %>
+    <div class="text-right mt-3">
+      <%= m.created_at.strftime('%Y/%m/%d') %>
+      <div class="right">
+        <strong><%=simple_format(m.content)%></strong>
       </div>
-    <% end %>
-    <i class="far fa-comment-dots prof-size"></i><%= link_to "チャット履歴一覧へ", rooms_path, class: "text-dark" %>
-</div>
+      <%= link_to user_path(m.user) do %>
+       <%= attachment_image_tag m.user, :profile_image, fallback: "unnamed.png", size:'70', class:"pro_photo" %>
+      <% end %>
+      <div class="name"><%= m.user.nickname %></div>
+    </div>
+  <% else %>
+     <div class="d-flex flex-row mt-3">
+       <div>
+         <%= link_to user_path(m.user) do %>
+           <%= attachment_image_tag m.user, :profile_image, fallback: "unnamed.png", size:'70', class:"pro_photo" %>
+         <% end %>
+         <div><%= m.user.nickname %>さん</div>
+       </div>
+       <div class="chat-content ml-2">
+         <div class="left"><strong><%= m.content %></strong></div>
+         <div class="timearea"><%= m.created_at.strftime('%Y/%m/%d') %></div>
+       </div>
+     </div>
+  <% end %>
+  <% end %>
+<% else %>
+  <h3 class="text-center">メッセージはまだありません</h3>
+<% end %>
+    

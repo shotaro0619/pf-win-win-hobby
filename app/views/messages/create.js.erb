@@ -1,4 +1,4 @@
-$("#chat").html("<%= j(render partial: 'rooms/chat', locals:{ message: @message, room: @room, messages: @messages }) %>");
+$("#chatchatbox").html("<%= j(render partial: 'rooms/chat', locals:{ message: @message, room: @room, messages: @messages }) %>");
 $(".dmbox").val('');
 
 $(function(){
