@@ -56,7 +56,7 @@ RSpecテストは現在155項目をテストしており今後も増やしてい
 
 ## :pencil: 設計書
 - [ER図](https://app.diagrams.net/#G1CIbPMSS-m9fy7JEJaFBOiaJMLjfSejlJ)
-- [テーブ定義書](https://docs.google.com/spreadsheets/d/1fo-s5qV6ePNgv5Ttwgg7-9Xm6zImNa-LH6vpGUFJfG4/edit?usp=sharing)
+- [テーブル定義書](https://docs.google.com/spreadsheets/d/1fo-s5qV6ePNgv5Ttwgg7-9Xm6zImNa-LH6vpGUFJfG4/edit?usp=sharing)
 
 ## インフラ構成図
 ![スクリーンショット 2021-09-23 16 32 47](https://user-images.githubusercontent.com/83491747/134470032-f11a218e-9e0d-43a6-8960-2fc9241ebce7.png)
